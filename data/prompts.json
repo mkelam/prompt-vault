@@ -1,0 +1,1382 @@
+[
+  {
+    "id": "strat-001",
+    "title": "McKinsey 7S Organization Analysis",
+    "description": "Analyze organizational alignment using the McKinsey 7S framework. Identify gaps between Strategy, Structure, and Systems.",
+    "template": "Act as a Senior Strategy Consultant (ex-McKinsey). Analyze the organizational alignment of {{company_name}} using the 7S Framework.\n\nContext: {{context_description}}\n\nCurrent State:\n- Strategy: {{strategy_summary}}\n- Structure: {{structure_summary}}\n- Systems: {{systems_summary}}\n\nOutput:\n1. Analysis of Hard S's (Strategy, Structure, Systems)\n2. Analysis of Soft S's (Shared Values, Style, Staff, Skills)\n3. Alignment Gaps & Risks\n4. Strategic Recommendations",
+    "variables": [
+      {"name": "company_name", "description": "Name of the target company/division", "example": "Acme Corp Logistics Division", "required": true},
+      {"name": "context_description", "description": "Why this analysis is being run", "example": "We are merging two sales teams", "required": true},
+      {"name": "strategy_summary", "description": "Current strategy summary", "example": "Aggressive growth via acquisition", "required": false},
+      {"name": "structure_summary", "description": "Current org structure", "example": "Centralized command and control", "required": false},
+      {"name": "systems_summary", "description": "IT/HR systems summary", "example": "Fragmented legacy systems", "required": false}
+    ],
+    "category": "strategy",
+    "frameworks": ["McKinsey 7S", "Organizational Design"],
+    "tier": "free",
+    "tags": ["consulting", "change-management", "re-org"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "strat-002",
+    "title": "SWOT + PESTLE Combined Analysis",
+    "description": "Comprehensive strategic analysis combining internal (SWOT) and external (PESTLE) factors.",
+    "template": "Act as a Strategy Director. Perform a combined SWOT and PESTLE analysis for {{company_name}} in the {{industry}} industry.\n\nCompany Context: {{company_context}}\nMarket Data: {{market_data}}\n\nDeliver:\n1. SWOT Matrix (Strengths, Weaknesses, Opportunities, Threats)\n2. PESTLE Analysis (Political, Economic, Social, Technological, Legal, Environmental)\n3. Cross-Impact Matrix linking external factors to internal capabilities\n4. Top 5 Strategic Priorities with rationale",
+    "variables": [
+      {"name": "company_name", "description": "Company being analyzed", "example": "TechStart Inc.", "required": true},
+      {"name": "industry", "description": "Industry sector", "example": "B2B SaaS", "required": true},
+      {"name": "company_context", "description": "Brief company background", "example": "5-year-old startup, $10M ARR, 50 employees", "required": true},
+      {"name": "market_data", "description": "Relevant market information", "example": "Market growing 15% YoY, 3 major competitors", "required": false}
+    ],
+    "category": "strategy",
+    "frameworks": ["SWOT", "PESTLE"],
+    "tier": "free",
+    "tags": ["analysis", "strategic-planning", "market-research"],
+    "estimatedTimeSaved": "3-5 hours"
+  },
+  {
+    "id": "strat-003",
+    "title": "Porter's Five Forces Industry Analysis",
+    "description": "Analyze industry competitiveness and profitability using Porter's Five Forces framework.",
+    "template": "Act as an Industry Analyst. Conduct a Porter's Five Forces analysis for the {{industry}} industry.\n\nContext: {{context}}\nKey Players: {{key_players}}\n\nAnalyze each force (1-5 scale with justification):\n1. Threat of New Entrants\n2. Bargaining Power of Suppliers\n3. Bargaining Power of Buyers\n4. Threat of Substitutes\n5. Competitive Rivalry\n\nConclude with:\n- Overall Industry Attractiveness Score\n- Strategic Implications for {{company_name}}\n- Recommended Defensive/Offensive Moves",
+    "variables": [
+      {"name": "industry", "description": "Industry to analyze", "example": "Electric Vehicle Manufacturing", "required": true},
+      {"name": "company_name", "description": "Your company name", "example": "AutoTech Motors", "required": true},
+      {"name": "context", "description": "Industry context", "example": "Post-pandemic recovery, government incentives increasing", "required": false},
+      {"name": "key_players", "description": "Major competitors", "example": "Tesla, BYD, Rivian, Legacy OEMs", "required": false}
+    ],
+    "category": "strategy",
+    "frameworks": ["Porter's Five Forces"],
+    "tier": "premium",
+    "tags": ["competitive-analysis", "industry-analysis"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "strat-004",
+    "title": "Pyramid Principle Executive Summary",
+    "description": "Structure complex findings into a clear, executive-ready summary using the Minto Pyramid Principle.",
+    "template": "Act as a McKinsey-trained consultant. Transform the following information into a Pyramid Principle structured executive summary.\n\nRaw Information:\n{{raw_information}}\n\nAudience: {{audience}}\nKey Question to Answer: {{key_question}}\n\nStructure your response as:\n1. SITUATION: Context (2-3 sentences)\n2. COMPLICATION: The problem/change (2-3 sentences)\n3. ANSWER: Your recommendation (1 sentence, bold)\n4. SUPPORTING ARGUMENTS: 3 key points, each with:\n   - Claim\n   - Evidence\n   - Impact\n5. NEXT STEPS: 3 concrete actions",
+    "variables": [
+      {"name": "raw_information", "description": "Unstructured findings/data to organize", "example": "Sales declined 15%, customer churn increased, NPS dropped from 45 to 32...", "required": true},
+      {"name": "audience", "description": "Who will read this", "example": "CEO and Board of Directors", "required": true},
+      {"name": "key_question", "description": "Main question to answer", "example": "Should we pivot our product strategy?", "required": true}
+    ],
+    "category": "strategy",
+    "frameworks": ["Pyramid Principle", "SCQA"],
+    "tier": "premium",
+    "tags": ["communication", "executive-summary", "consulting"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "strat-005",
+    "title": "Competitive Positioning Map",
+    "description": "Create a strategic positioning analysis comparing your company against competitors on key dimensions.",
+    "template": "Act as a Competitive Intelligence Analyst. Create a competitive positioning analysis for {{company_name}}.\n\nCompetitors: {{competitors}}\nIndustry: {{industry}}\n\nDeliver:\n1. Positioning Map on two axes: {{axis_1}} vs {{axis_2}}\n2. Competitor Profile Cards (for each competitor):\n   - Key Strengths\n   - Key Weaknesses\n   - Target Segment\n   - Pricing Strategy\n3. White Space Opportunities\n4. Recommended Positioning Strategy for {{company_name}}",
+    "variables": [
+      {"name": "company_name", "description": "Your company", "example": "CloudSync Pro", "required": true},
+      {"name": "competitors", "description": "List of competitors", "example": "Dropbox, Box, Google Drive, OneDrive", "required": true},
+      {"name": "industry", "description": "Industry sector", "example": "Cloud Storage", "required": true},
+      {"name": "axis_1", "description": "First positioning dimension", "example": "Price (Low to High)", "required": true},
+      {"name": "axis_2", "description": "Second positioning dimension", "example": "Feature Complexity (Simple to Enterprise)", "required": true}
+    ],
+    "category": "strategy",
+    "frameworks": ["Positioning Map", "Competitive Analysis"],
+    "tier": "premium",
+    "tags": ["competitive-intelligence", "positioning", "market-analysis"],
+    "estimatedTimeSaved": "4-5 hours"
+  },
+  {
+    "id": "pm-001",
+    "title": "PMBOK 7th Ed Project Charter",
+    "description": "Generate a comprehensive Project Charter aligned with PMI PMBOK 7th Edition standards.",
+    "template": "Act as a PMP-certified Project Manager. Draft a Project Charter for {{project_name}}.\n\nProject Goal: {{project_goal}}\nStakeholders: {{stakeholders}}\nConstraints: {{constraints}}\n\nInclude:\n1. Project Purpose & Justification\n2. Measurable Project Objectives\n3. High-Level Requirements\n4. High-Level Project Description, Boundaries, and Key Deliverables\n5. Overall Project Risk\n6. Summary Milestone Schedule\n7. Preapproved Financial Resources",
+    "variables": [
+      {"name": "project_name", "description": "Official title of the project", "example": "ERP Migration 2024", "required": true},
+      {"name": "project_goal", "description": "Primary objective", "example": "Migrate from SAP to Oracle by Q4", "required": true},
+      {"name": "stakeholders", "description": "Key people involved", "example": "CFO, CIO, VP of Operations", "required": true},
+      {"name": "constraints", "description": "Budget, timeline, or resource limits", "example": "Budget capped at $2M", "required": false}
+    ],
+    "category": "project-management",
+    "frameworks": ["PMBOK 7th Ed", "PMP"],
+    "tier": "free",
+    "tags": ["charter", "initiation", "pmi"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "pm-002",
+    "title": "Risk Register & Mitigation Plan",
+    "description": "Create a comprehensive risk register with probability, impact, and mitigation strategies.",
+    "template": "Act as a Risk Management Specialist (PMI-RMP). Create a Risk Register for {{project_name}}.\n\nProject Context: {{project_context}}\nKnown Concerns: {{known_concerns}}\n\nFor each risk, provide:\n| Risk ID | Description | Category | Probability (1-5) | Impact (1-5) | Risk Score | Owner | Mitigation Strategy | Contingency Plan | Trigger |\n\nIdentify at least 10 risks across categories:\n- Technical\n- Resource\n- Schedule\n- Budget\n- External/Vendor\n- Organizational\n\nConclude with Top 5 Risks requiring immediate attention.",
+    "variables": [
+      {"name": "project_name", "description": "Project being assessed", "example": "Data Center Migration", "required": true},
+      {"name": "project_context", "description": "Project background", "example": "Moving 500 servers to AWS over 6 months", "required": true},
+      {"name": "known_concerns", "description": "Already identified issues", "example": "Legacy system dependencies, limited cloud expertise", "required": false}
+    ],
+    "category": "project-management",
+    "frameworks": ["PMBOK Risk Management", "PMI-RMP"],
+    "tier": "premium",
+    "tags": ["risk-management", "mitigation", "planning"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "pm-003",
+    "title": "Stakeholder Analysis Matrix",
+    "description": "Map stakeholders by power, interest, and influence to develop engagement strategies.",
+    "template": "Act as a Stakeholder Management Expert. Create a Stakeholder Analysis for {{project_name}}.\n\nProject Overview: {{project_overview}}\nKnown Stakeholders: {{stakeholders}}\n\nDeliver:\n1. Stakeholder Register (Name, Role, Department, Contact)\n2. Power/Interest Grid Classification:\n   - High Power/High Interest: Manage Closely\n   - High Power/Low Interest: Keep Satisfied\n   - Low Power/High Interest: Keep Informed\n   - Low Power/Low Interest: Monitor\n3. Influence/Impact Assessment\n4. Engagement Strategy per stakeholder:\n   - Current Engagement Level\n   - Desired Engagement Level\n   - Communication Frequency & Channel\n   - Key Messages\n5. RACI Matrix for key decisions",
+    "variables": [
+      {"name": "project_name", "description": "Project name", "example": "CRM Implementation", "required": true},
+      {"name": "project_overview", "description": "Brief project description", "example": "Implementing Salesforce across 3 regions", "required": true},
+      {"name": "stakeholders", "description": "Known stakeholder list", "example": "CEO, Sales VP, IT Director, Regional Managers, End Users", "required": true}
+    ],
+    "category": "project-management",
+    "frameworks": ["PMBOK Stakeholder Management", "Power/Interest Grid"],
+    "tier": "premium",
+    "tags": ["stakeholder-management", "communication", "raci"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "pm-004",
+    "title": "Project Status Report (RAG)",
+    "description": "Generate a professional RAG status report for executive stakeholders.",
+    "template": "Act as a Senior Project Manager. Create a Project Status Report for {{project_name}}.\n\nReporting Period: {{reporting_period}}\nProject Data:\n{{project_data}}\n\nFormat as Executive Status Report:\n\n## Overall Status: [RED/AMBER/GREEN]\n\n### Summary\n[2-3 sentence executive summary]\n\n### RAG Status by Area\n| Area | Status | Trend | Comments |\n| Schedule | | | |\n| Budget | | | |\n| Scope | | | |\n| Resources | | | |\n| Risks | | | |\n\n### Key Accomplishments This Period\n### Planned Activities Next Period\n### Issues Requiring Escalation\n### Risks & Mitigation Updates\n### Budget Summary (Planned vs Actual)\n### Decision Requests",
+    "variables": [
+      {"name": "project_name", "description": "Project name", "example": "Platform Modernization", "required": true},
+      {"name": "reporting_period", "description": "Report timeframe", "example": "Week of Jan 15-19, 2024", "required": true},
+      {"name": "project_data", "description": "Raw status information", "example": "3 of 5 milestones complete, budget 10% over, 2 open risks...", "required": true}
+    ],
+    "category": "project-management",
+    "frameworks": ["RAG Reporting", "PMBOK"],
+    "tier": "free",
+    "tags": ["status-report", "executive-communication", "rag"],
+    "estimatedTimeSaved": "1-2 hours"
+  },
+  {
+    "id": "pm-005",
+    "title": "Work Breakdown Structure (WBS)",
+    "description": "Decompose project scope into manageable work packages with clear deliverables.",
+    "template": "Act as a Project Planning Specialist. Create a Work Breakdown Structure for {{project_name}}.\n\nProject Scope: {{project_scope}}\nDeliverables: {{deliverables}}\nConstraints: {{constraints}}\n\nCreate a hierarchical WBS:\n1. Level 1: Project Name\n2. Level 2: Major Phases/Deliverables\n3. Level 3: Work Packages\n4. Level 4: Tasks (where needed)\n\nFor each work package include:\n- WBS Code (e.g., 1.2.3)\n- Description\n- Estimated Duration\n- Dependencies\n- Responsible Party\n\nPresent as both:\n1. Hierarchical outline\n2. WBS Dictionary table",
+    "variables": [
+      {"name": "project_name", "description": "Project name", "example": "Mobile App Launch", "required": true},
+      {"name": "project_scope", "description": "High-level scope", "example": "Design, develop, test, and launch iOS/Android app", "required": true},
+      {"name": "deliverables", "description": "Key deliverables", "example": "App design, backend API, mobile apps, documentation", "required": true},
+      {"name": "constraints", "description": "Known constraints", "example": "Must use existing backend, 4-month timeline", "required": false}
+    ],
+    "category": "project-management",
+    "frameworks": ["PMBOK WBS", "Work Breakdown Structure"],
+    "tier": "premium",
+    "tags": ["planning", "scope-management", "wbs"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "ops-001",
+    "title": "DMAIC Process Improvement",
+    "description": "Structure a Six Sigma DMAIC improvement project from Define through Control.",
+    "template": "Act as a Six Sigma Black Belt. Guide a DMAIC improvement project for {{process_name}}.\n\nCurrent State: {{current_state}}\nProblem Statement: {{problem_statement}}\nGoal: {{improvement_goal}}\n\nProvide a complete DMAIC framework:\n\n## DEFINE\n- Problem Statement (SMART)\n- Project Charter elements\n- Voice of Customer (VOC)\n- CTQ (Critical to Quality) tree\n\n## MEASURE\n- Key metrics to collect\n- Data collection plan\n- Current baseline performance\n- Measurement system analysis needs\n\n## ANALYZE\n- Potential root causes (Fishbone diagram structure)\n- Analysis techniques to apply\n- Hypothesis to test\n\n## IMPROVE\n- Solution brainstorming framework\n- Pilot plan structure\n- Implementation roadmap\n\n## CONTROL\n- Control chart recommendations\n- Standard Operating Procedure outline\n- Training requirements\n- Handoff checklist",
+    "variables": [
+      {"name": "process_name", "description": "Process to improve", "example": "Customer Onboarding", "required": true},
+      {"name": "current_state", "description": "Current process state", "example": "Average 14 days to onboard, 30% drop-off rate", "required": true},
+      {"name": "problem_statement", "description": "The problem to solve", "example": "High customer churn during onboarding", "required": true},
+      {"name": "improvement_goal", "description": "Target improvement", "example": "Reduce onboarding time to 7 days, drop-off to 15%", "required": true}
+    ],
+    "category": "operations",
+    "frameworks": ["Six Sigma", "DMAIC"],
+    "tier": "premium",
+    "tags": ["process-improvement", "six-sigma", "quality"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "ops-002",
+    "title": "Root Cause Analysis (5 Whys + Fishbone)",
+    "description": "Systematic root cause analysis using 5 Whys and Ishikawa diagram methodologies.",
+    "template": "Act as a Quality Engineer. Conduct a Root Cause Analysis for the following problem.\n\nProblem: {{problem_description}}\nContext: {{context}}\nImpact: {{impact}}\n\nDeliver:\n\n## 5 Whys Analysis\nProblem: [restate]\n1. Why? → \n2. Why? → \n3. Why? → \n4. Why? → \n5. Why? → Root Cause\n\n## Fishbone (Ishikawa) Diagram\nAnalyze contributing factors across 6Ms:\n- Man (People)\n- Machine (Equipment)\n- Method (Process)\n- Material (Inputs)\n- Measurement (Data)\n- Mother Nature (Environment)\n\n## Root Cause Summary\n- Primary Root Cause\n- Contributing Factors\n- Evidence/Data Supporting\n\n## Corrective Actions\n| Action | Owner | Due Date | Type (Immediate/Long-term) |",
+    "variables": [
+      {"name": "problem_description", "description": "The problem to analyze", "example": "Production line stopped for 4 hours on Tuesday", "required": true},
+      {"name": "context", "description": "Surrounding circumstances", "example": "Night shift, new operator, high humidity day", "required": true},
+      {"name": "impact", "description": "Business impact", "example": "$50K lost production, missed customer delivery", "required": true}
+    ],
+    "category": "operations",
+    "frameworks": ["5 Whys", "Ishikawa Diagram", "RCA"],
+    "tier": "free",
+    "tags": ["root-cause-analysis", "quality", "problem-solving"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "ops-003",
+    "title": "Standard Operating Procedure (SOP)",
+    "description": "Create a detailed, compliant SOP document for any business process.",
+    "template": "Act as a Process Documentation Specialist. Create a Standard Operating Procedure for {{process_name}}.\n\nProcess Overview: {{process_overview}}\nCompliance Requirements: {{compliance}}\n\nFormat as official SOP:\n\n# SOP: {{process_name}}\n**Document Number:** SOP-[XXX]\n**Version:** 1.0\n**Effective Date:** [Date]\n**Review Date:** [Date + 1 year]\n\n## 1. Purpose\n## 2. Scope\n## 3. Responsibilities\n| Role | Responsibility |\n## 4. Definitions\n## 5. Prerequisites\n## 6. Procedure\n[Numbered steps with sub-steps]\n## 7. Quality Control Checkpoints\n## 8. Exception Handling\n## 9. Related Documents\n## 10. Revision History\n| Version | Date | Author | Changes |",
+    "variables": [
+      {"name": "process_name", "description": "Name of the process", "example": "Customer Refund Processing", "required": true},
+      {"name": "process_overview", "description": "Brief description", "example": "Handle customer refund requests from submission to payment", "required": true},
+      {"name": "compliance", "description": "Regulatory requirements", "example": "PCI-DSS for payment data, SOX for financial controls", "required": false}
+    ],
+    "category": "operations",
+    "frameworks": ["SOP", "Process Documentation"],
+    "tier": "premium",
+    "tags": ["documentation", "compliance", "procedures"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "ops-004",
+    "title": "Lean Value Stream Map",
+    "description": "Map current and future state value streams to identify waste and improvement opportunities.",
+    "template": "Act as a Lean Six Sigma Consultant. Create a Value Stream Map analysis for {{process_name}}.\n\nProcess: {{process_description}}\nCurrent Metrics: {{current_metrics}}\n\nDeliver:\n\n## Current State Map\n- Process steps with cycle times\n- Wait times between steps\n- Inventory/WIP at each stage\n- Information flow\n- Key metrics: Lead Time, Process Time, %C&A\n\n## Waste Identification (8 Wastes - DOWNTIME)\n- Defects:\n- Overproduction:\n- Waiting:\n- Non-utilized talent:\n- Transportation:\n- Inventory:\n- Motion:\n- Extra-processing:\n\n## Future State Vision\n- Target lead time reduction\n- Waste elimination priorities\n- Flow improvements\n- Pull system opportunities\n\n## Implementation Roadmap\n| Kaizen Event | Waste Addressed | Expected Impact | Timeline |",
+    "variables": [
+      {"name": "process_name", "description": "Process to map", "example": "Order-to-Cash", "required": true},
+      {"name": "process_description", "description": "End-to-end process", "example": "From customer order to payment receipt", "required": true},
+      {"name": "current_metrics", "description": "Known performance data", "example": "Lead time: 15 days, 5 handoffs, 3 approval steps", "required": true}
+    ],
+    "category": "operations",
+    "frameworks": ["Lean", "Value Stream Mapping"],
+    "tier": "premium",
+    "tags": ["lean", "waste-reduction", "process-mapping"],
+    "estimatedTimeSaved": "4-5 hours"
+  },
+  {
+    "id": "ops-005",
+    "title": "Capacity Planning Analysis",
+    "description": "Analyze resource capacity against demand to optimize staffing and equipment utilization.",
+    "template": "Act as an Operations Analyst. Perform a Capacity Planning analysis for {{department}}.\n\nCurrent State:\n- Resources: {{resources}}\n- Current Demand: {{current_demand}}\n- Projected Growth: {{growth_forecast}}\n\nDeliver:\n\n## Current Capacity Analysis\n- Available capacity (hours/units)\n- Current utilization %\n- Bottleneck identification\n\n## Demand Forecast\n- Short-term (3 months)\n- Medium-term (6-12 months)\n- Seasonality factors\n\n## Gap Analysis\n| Period | Demand | Capacity | Gap | Utilization % |\n\n## Recommendations\n1. Immediate actions (0-3 months)\n2. Medium-term investments (3-12 months)\n3. Long-term strategy\n\n## Scenarios\n- Best case\n- Expected case\n- Worst case\n\n## Cost-Benefit of Capacity Options\n| Option | Cost | Capacity Added | ROI Timeline |",
+    "variables": [
+      {"name": "department", "description": "Department/area to analyze", "example": "Customer Support Center", "required": true},
+      {"name": "resources", "description": "Current resources", "example": "25 agents, 8-hour shifts, 5 days/week", "required": true},
+      {"name": "current_demand", "description": "Current workload", "example": "500 tickets/day, 20 min avg handle time", "required": true},
+      {"name": "growth_forecast", "description": "Expected growth", "example": "20% increase in tickets expected Q3", "required": true}
+    ],
+    "category": "operations",
+    "frameworks": ["Capacity Planning", "Resource Management"],
+    "tier": "premium",
+    "tags": ["capacity", "resource-planning", "forecasting"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "ba-001",
+    "title": "Business Requirements Document (BRD)",
+    "description": "Create a comprehensive BRD capturing stakeholder needs and functional requirements.",
+    "template": "Act as a Senior Business Analyst (CBAP). Create a Business Requirements Document for {{project_name}}.\n\nBusiness Need: {{business_need}}\nStakeholder Input: {{stakeholder_input}}\n\n# Business Requirements Document\n\n## 1. Executive Summary\n## 2. Business Objectives\n- Primary Objectives\n- Success Metrics (KPIs)\n- Alignment to Strategic Goals\n\n## 3. Stakeholder Analysis\n| Stakeholder | Role | Key Concerns | Priority |\n\n## 4. Current State Analysis\n- As-Is Process\n- Pain Points\n- Gaps\n\n## 5. Future State Vision\n- To-Be Process\n- Benefits\n\n## 6. Functional Requirements\n| ID | Requirement | Priority | Source | Acceptance Criteria |\n\n## 7. Non-Functional Requirements\n- Performance\n- Security\n- Scalability\n- Usability\n\n## 8. Assumptions & Constraints\n## 9. Dependencies\n## 10. Out of Scope\n## 11. Risks\n## 12. Appendices",
+    "variables": [
+      {"name": "project_name", "description": "Project name", "example": "Customer Portal Redesign", "required": true},
+      {"name": "business_need", "description": "Why this project exists", "example": "Reduce support calls by enabling self-service", "required": true},
+      {"name": "stakeholder_input", "description": "Gathered requirements", "example": "Users want password reset, order tracking, invoice download", "required": true}
+    ],
+    "category": "business-analysis",
+    "frameworks": ["BABOK", "BRD"],
+    "tier": "free",
+    "tags": ["requirements", "documentation", "cbap"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "ba-002",
+    "title": "User Story Generator with Acceptance Criteria",
+    "description": "Transform requirements into well-formed user stories with detailed acceptance criteria.",
+    "template": "Act as an Agile Business Analyst. Convert the following requirements into user stories.\n\nFeature/Epic: {{feature_name}}\nRequirements: {{requirements}}\nUser Personas: {{personas}}\n\nFor each user story provide:\n\n## User Story [Number]\n**Title:** [Short descriptive title]\n\n**Story:**\nAs a {{persona}},\nI want to {{action}},\nSo that {{benefit}}.\n\n**Acceptance Criteria (Gherkin format):**\n```\nGiven [precondition]\nWhen [action]\nThen [expected result]\n```\n\n**Additional Details:**\n- Priority: [Must/Should/Could/Won't]\n- Story Points: [Estimate]\n- Dependencies: [List]\n- Notes: [Any clarifications]\n\n---\n\nGenerate at least 5 user stories from the provided requirements.",
+    "variables": [
+      {"name": "feature_name", "description": "Feature or epic name", "example": "User Authentication", "required": true},
+      {"name": "requirements", "description": "Raw requirements to convert", "example": "Users need to log in, reset password, enable 2FA, manage sessions", "required": true},
+      {"name": "personas", "description": "User types", "example": "End User, Admin, Guest", "required": true}
+    ],
+    "category": "business-analysis",
+    "frameworks": ["Agile", "User Stories", "Gherkin"],
+    "tier": "free",
+    "tags": ["user-stories", "agile", "acceptance-criteria"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "ba-003",
+    "title": "Process Flow Documentation",
+    "description": "Document business processes with swim lanes, decision points, and exception handling.",
+    "template": "Act as a Process Analyst. Document the {{process_name}} process in detail.\n\nProcess Overview: {{process_overview}}\nParticipants: {{participants}}\nSystems: {{systems}}\n\nCreate comprehensive process documentation:\n\n## Process Overview\n- Process Name\n- Process Owner\n- Trigger/Start Event\n- End Event/Outcome\n\n## Swim Lane Diagram (Text Representation)\n| Step | {{participant_1}} | {{participant_2}} | {{participant_3}} | System |\n\n## Detailed Process Steps\nFor each step:\n1. Step Number & Name\n2. Actor/Role\n3. Action Description\n4. Inputs Required\n5. Outputs Produced\n6. Business Rules\n7. Decision Points (if any)\n8. Exception Handling\n\n## Decision Points\n| Decision | Criteria | Yes Path | No Path |\n\n## Exception Scenarios\n## Integration Points\n## Metrics & SLAs",
+    "variables": [
+      {"name": "process_name", "description": "Process to document", "example": "Employee Onboarding", "required": true},
+      {"name": "process_overview", "description": "High-level description", "example": "New hire from offer acceptance to Day 30", "required": true},
+      {"name": "participants", "description": "Roles involved", "example": "HR, Hiring Manager, IT, New Employee", "required": true},
+      {"name": "systems", "description": "Systems used", "example": "Workday, ServiceNow, Active Directory", "required": false}
+    ],
+    "category": "business-analysis",
+    "frameworks": ["BPMN", "Process Mapping"],
+    "tier": "premium",
+    "tags": ["process-documentation", "bpmn", "workflows"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "ba-004",
+    "title": "Gap Analysis Report",
+    "description": "Identify gaps between current and desired state with actionable recommendations.",
+    "template": "Act as a Business Analyst. Conduct a Gap Analysis for {{analysis_subject}}.\n\nCurrent State: {{current_state}}\nDesired State: {{desired_state}}\nContext: {{context}}\n\n# Gap Analysis Report\n\n## Executive Summary\n[Brief overview of key gaps and recommendations]\n\n## Current State Assessment\n- Capabilities\n- Performance Metrics\n- Strengths\n- Limitations\n\n## Desired Future State\n- Target Capabilities\n- Target Metrics\n- Strategic Alignment\n\n## Gap Identification\n| Area | Current | Desired | Gap | Impact | Priority |\n\n## Root Cause of Gaps\n## Recommendations\n| Gap | Recommendation | Effort | Cost | Timeline | Risk |\n\n## Implementation Roadmap\n- Quick Wins (0-3 months)\n- Short-term (3-6 months)\n- Long-term (6-12 months)\n\n## Success Metrics\n## Dependencies & Risks",
+    "variables": [
+      {"name": "analysis_subject", "description": "What is being analyzed", "example": "Digital Marketing Capabilities", "required": true},
+      {"name": "current_state", "description": "Where we are today", "example": "Manual campaigns, no automation, basic analytics", "required": true},
+      {"name": "desired_state", "description": "Where we want to be", "example": "Automated multi-channel campaigns with AI-driven personalization", "required": true},
+      {"name": "context", "description": "Business context", "example": "Preparing for 50% growth, competitors are more advanced", "required": false}
+    ],
+    "category": "business-analysis",
+    "frameworks": ["Gap Analysis", "Current/Future State"],
+    "tier": "premium",
+    "tags": ["gap-analysis", "assessment", "roadmap"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "fin-001",
+    "title": "Financial Business Case",
+    "description": "Build a comprehensive financial business case with ROI, NPV, and payback analysis.",
+    "template": "Act as a Financial Analyst (CFA). Create a Financial Business Case for {{initiative_name}}.\n\nInvestment Required: {{investment}}\nExpected Benefits: {{benefits}}\nTimeline: {{timeline}}\n\n# Financial Business Case\n\n## Executive Summary\n[Investment ask, expected return, recommendation]\n\n## Investment Analysis\n### Capital Expenditure\n| Item | Year 1 | Year 2 | Year 3 | Total |\n\n### Operating Expenditure\n| Item | Year 1 | Year 2 | Year 3 | Total |\n\n## Benefit Quantification\n### Revenue Impact\n### Cost Savings\n### Productivity Gains\n### Risk Reduction Value\n\n## Financial Metrics\n- **Total Investment:** $X\n- **NPV (10% discount):** $X\n- **IRR:** X%\n- **Payback Period:** X months\n- **ROI:** X%\n\n## Cash Flow Projection\n| Period | Investment | Benefits | Net Cash Flow | Cumulative |\n\n## Sensitivity Analysis\n| Scenario | NPV | IRR | Payback |\n| Best Case | | | |\n| Base Case | | | |\n| Worst Case | | | |\n\n## Risks & Assumptions\n## Recommendation",
+    "variables": [
+      {"name": "initiative_name", "description": "Project/initiative name", "example": "Marketing Automation Platform", "required": true},
+      {"name": "investment", "description": "Required investment", "example": "$500K software + $200K implementation", "required": true},
+      {"name": "benefits", "description": "Expected benefits", "example": "$300K/year efficiency + 15% lead conversion increase", "required": true},
+      {"name": "timeline", "description": "Project timeline", "example": "3-year analysis period, 6-month implementation", "required": true}
+    ],
+    "category": "financial",
+    "frameworks": ["ROI Analysis", "NPV", "IRR"],
+    "tier": "premium",
+    "tags": ["business-case", "roi", "financial-analysis"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "fin-002",
+    "title": "Budget Variance Analysis",
+    "description": "Analyze budget vs actual performance with variance explanations and forecasts.",
+    "template": "Act as a Financial Controller. Perform a Budget Variance Analysis for {{department}} for {{period}}.\n\nBudget Data: {{budget_data}}\nActual Data: {{actual_data}}\n\n# Budget Variance Report\n\n## Executive Summary\n[Key variances, overall performance, action items]\n\n## Variance Summary\n| Category | Budget | Actual | Variance $ | Variance % | Status |\n\n## Detailed Analysis by Category\n\n### Revenue Variances\n[For each line item: variance, root cause, trend]\n\n### Expense Variances\n[For each line item: variance, root cause, controllable vs non-controllable]\n\n## Favorable Variances\n| Item | Amount | Reason | Sustainable? |\n\n## Unfavorable Variances\n| Item | Amount | Reason | Corrective Action |\n\n## Forecast Update\n- Original Full-Year Budget: $X\n- Current Forecast: $X\n- Variance to Budget: $X (X%)\n\n## Key Drivers & Trends\n## Recommendations\n## Action Items\n| Action | Owner | Due Date |",
+    "variables": [
+      {"name": "department", "description": "Department/cost center", "example": "Marketing Department", "required": true},
+      {"name": "period", "description": "Reporting period", "example": "Q3 2024", "required": true},
+      {"name": "budget_data", "description": "Budget figures", "example": "Revenue $5M, Payroll $2M, Marketing $500K", "required": true},
+      {"name": "actual_data", "description": "Actual figures", "example": "Revenue $4.7M, Payroll $2.1M, Marketing $480K", "required": true}
+    ],
+    "category": "financial",
+    "frameworks": ["Variance Analysis", "Management Reporting"],
+    "tier": "free",
+    "tags": ["budgeting", "variance", "financial-reporting"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "fin-003",
+    "title": "DCF Valuation Model Setup",
+    "description": "Structure a Discounted Cash Flow valuation with assumptions, projections, and sensitivity analysis.",
+    "template": "Act as an Investment Banking Analyst. Structure a DCF valuation for {{company_name}}.\n\nCompany Info: {{company_info}}\nHistorical Financials: {{historical_data}}\n\n# DCF Valuation Framework\n\n## 1. Revenue Projections (5-Year)\n| Year | Revenue | Growth % | Assumptions |\n\n## 2. Operating Model\n- Gross Margin trajectory\n- Operating expenses as % of revenue\n- EBITDA margin evolution\n\n## 3. Free Cash Flow Build\n| Item | Y1 | Y2 | Y3 | Y4 | Y5 |\n| EBITDA | | | | | |\n| (-) D&A | | | | | |\n| (-) Taxes | | | | | |\n| (-) CapEx | | | | | |\n| (-) Change in NWC | | | | | |\n| = Unlevered FCF | | | | | |\n\n## 4. WACC Calculation\n- Cost of Equity (CAPM)\n- Cost of Debt\n- Target Capital Structure\n- WACC: X%\n\n## 5. Terminal Value\n- Method: Perpetuity Growth / Exit Multiple\n- Assumptions\n\n## 6. Valuation Summary\n- Enterprise Value\n- (-) Net Debt\n- Equity Value\n- Per Share Value\n\n## 7. Sensitivity Analysis\n| WACC \\ Growth | 1% | 2% | 3% |",
+    "variables": [
+      {"name": "company_name", "description": "Company to value", "example": "TechCorp Inc.", "required": true},
+      {"name": "company_info", "description": "Company background", "example": "SaaS company, $50M ARR, 30% growth", "required": true},
+      {"name": "historical_data", "description": "Past financials", "example": "Last 3 years: Revenue $30M, $40M, $50M", "required": true}
+    ],
+    "category": "financial",
+    "frameworks": ["DCF", "Valuation"],
+    "tier": "premium",
+    "tags": ["valuation", "dcf", "investment-banking"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "fin-004",
+    "title": "Cost-Benefit Analysis",
+    "description": "Comprehensive cost-benefit analysis with quantified benefits and implementation costs.",
+    "template": "Act as a Finance Manager. Conduct a Cost-Benefit Analysis for {{decision}}.\n\nContext: {{context}}\nOptions: {{options}}\nTimeline: {{timeline}}\n\n# Cost-Benefit Analysis\n\n## Executive Summary\n[Recommendation with key numbers]\n\n## Options Evaluated\n1. Option A: [Description]\n2. Option B: [Description]\n3. Status Quo\n\n## Cost Analysis (per option)\n| Cost Category | One-Time | Recurring/Year | 3-Year Total |\n| Implementation | | | |\n| Training | | | |\n| Operations | | | |\n| Maintenance | | | |\n| Opportunity Cost | | | |\n\n## Benefit Analysis (per option)\n| Benefit | Annual Value | Confidence | 3-Year Total |\n| Revenue increase | | | |\n| Cost savings | | | |\n| Productivity | | | |\n| Risk reduction | | | |\n| Intangible benefits | | | |\n\n## Comparison Matrix\n| Metric | Option A | Option B | Status Quo |\n| Total Costs | | | |\n| Total Benefits | | | |\n| Net Benefit | | | |\n| BCR (Benefit-Cost Ratio) | | | |\n| Payback Period | | | |\n\n## Risk-Adjusted Analysis\n## Recommendation",
+    "variables": [
+      {"name": "decision", "description": "Decision to analyze", "example": "Build vs Buy CRM System", "required": true},
+      {"name": "context", "description": "Business context", "example": "Current system end-of-life, need to decide by Q2", "required": true},
+      {"name": "options", "description": "Options to compare", "example": "1) Build custom, 2) Buy Salesforce, 3) Extend current", "required": true},
+      {"name": "timeline", "description": "Analysis period", "example": "3-year analysis horizon", "required": true}
+    ],
+    "category": "financial",
+    "frameworks": ["Cost-Benefit Analysis", "Decision Analysis"],
+    "tier": "free",
+    "tags": ["cost-benefit", "decision-making", "analysis"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "hr-001",
+    "title": "Performance Review Writer",
+    "description": "Generate comprehensive, balanced performance reviews with SMART goals and development plans.",
+    "template": "Act as an HR Business Partner (SHRM-SCP). Write a performance review for {{employee_name}}.\n\nRole: {{role}}\nReview Period: {{period}}\nPerformance Data: {{performance_data}}\nFeedback Received: {{feedback}}\n\n# Performance Review\n\n## Employee Information\n- Name: {{employee_name}}\n- Role: {{role}}\n- Manager: [Name]\n- Review Period: {{period}}\n\n## Overall Rating: [Exceeds/Meets/Below Expectations]\n\n## Performance Against Goals\n| Goal | Target | Actual | Rating | Comments |\n\n## Competency Assessment\n| Competency | Rating (1-5) | Evidence |\n| Technical Skills | | |\n| Communication | | |\n| Teamwork | | |\n| Leadership | | |\n| Problem Solving | | |\n\n## Key Accomplishments\n[3-5 specific achievements with impact]\n\n## Areas for Development\n[2-3 areas with constructive framing]\n\n## Goals for Next Period (SMART)\n1. [Specific, Measurable, Achievable, Relevant, Time-bound]\n2. \n3. \n\n## Development Plan\n| Skill Gap | Development Action | Resources | Timeline |\n\n## Manager Comments\n## Employee Comments (to be added)",
+    "variables": [
+      {"name": "employee_name", "description": "Employee's name", "example": "Sarah Johnson", "required": true},
+      {"name": "role", "description": "Job title", "example": "Senior Software Engineer", "required": true},
+      {"name": "period", "description": "Review period", "example": "Jan - Dec 2024", "required": true},
+      {"name": "performance_data", "description": "Performance metrics", "example": "Delivered 5 projects, 98% on-time, mentored 2 juniors", "required": true},
+      {"name": "feedback", "description": "360 feedback received", "example": "Excellent technical skills, could improve documentation", "required": false}
+    ],
+    "category": "hr-talent",
+    "frameworks": ["SHRM", "Performance Management"],
+    "tier": "free",
+    "tags": ["performance-review", "hr", "talent-management"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "hr-002",
+    "title": "Job Description Generator",
+    "description": "Create compliant, inclusive job descriptions that attract diverse qualified candidates.",
+    "template": "Act as a Talent Acquisition Specialist. Create a job description for {{job_title}}.\n\nDepartment: {{department}}\nLevel: {{level}}\nKey Responsibilities: {{responsibilities}}\nRequirements: {{requirements}}\n\n# Job Description\n\n## {{job_title}}\n**Department:** {{department}}\n**Location:** [Location]\n**Reports To:** [Title]\n**Employment Type:** [Full-time/Part-time/Contract]\n\n## About Us\n[Company description placeholder]\n\n## Role Overview\n[2-3 sentences describing the role's purpose and impact]\n\n## Key Responsibilities\n- [Action verb] + [Task] + [Outcome/Purpose]\n- \n- \n- \n\n## Required Qualifications\n- [X] years of experience in...\n- \n- \n\n## Preferred Qualifications\n- \n- \n\n## Skills & Competencies\n- Technical: \n- Soft Skills: \n\n## What We Offer\n- Competitive compensation\n- Benefits package\n- Growth opportunities\n- [Culture/perks]\n\n## Equal Opportunity Statement\n[Inclusive language, EEOC compliance]\n\n---\n**Note:** This JD uses inclusive language per SHRM guidelines. Removed: gendered terms, unnecessary requirements, biased language.",
+    "variables": [
+      {"name": "job_title", "description": "Position title", "example": "Product Manager", "required": true},
+      {"name": "department", "description": "Department", "example": "Product Development", "required": true},
+      {"name": "level", "description": "Seniority level", "example": "Senior (5-8 years experience)", "required": true},
+      {"name": "responsibilities", "description": "Main duties", "example": "Own product roadmap, work with engineering, analyze metrics", "required": true},
+      {"name": "requirements", "description": "Must-have qualifications", "example": "5+ years PM experience, technical background, Agile certification", "required": true}
+    ],
+    "category": "hr-talent",
+    "frameworks": ["SHRM", "Inclusive Hiring"],
+    "tier": "free",
+    "tags": ["job-description", "recruiting", "dei"],
+    "estimatedTimeSaved": "1-2 hours"
+  },
+  {
+    "id": "hr-003",
+    "title": "Employee Engagement Survey Analysis",
+    "description": "Analyze engagement survey results and create action plans to improve workplace satisfaction.",
+    "template": "Act as an Organizational Development Consultant. Analyze engagement survey results for {{organization}}.\n\nSurvey Data: {{survey_data}}\nPrevious Results: {{previous_results}}\nIndustry Benchmarks: {{benchmarks}}\n\n# Engagement Survey Analysis\n\n## Executive Summary\n[Key findings, overall score, critical areas]\n\n## Response Metrics\n- Response Rate: X%\n- Total Responses: X\n- By Department breakdown\n\n## Overall Engagement Score\n- Current: X/100\n- Previous: X/100\n- Industry Benchmark: X/100\n- Trend: [↑/↓/→]\n\n## Category Scores\n| Category | Score | vs Last Year | vs Benchmark | Priority |\n| Leadership | | | | |\n| Growth & Development | | | | |\n| Compensation & Benefits | | | | |\n| Work-Life Balance | | | | |\n| Team Collaboration | | | | |\n| Communication | | | | |\n\n## Strengths (Top 3)\n[Areas scoring above benchmark]\n\n## Opportunities (Bottom 3)\n[Areas scoring below benchmark]\n\n## Key Themes from Comments\n[Sentiment analysis of open-ended responses]\n\n## Action Plan\n| Issue | Root Cause | Action | Owner | Timeline | Success Metric |\n\n## Quick Wins (30 days)\n## Medium-term Initiatives (90 days)\n## Long-term Strategy",
+    "variables": [
+      {"name": "organization", "description": "Company/department", "example": "Engineering Department", "required": true},
+      {"name": "survey_data", "description": "Survey results", "example": "Overall: 72%, Leadership: 65%, Growth: 58%, Benefits: 80%", "required": true},
+      {"name": "previous_results", "description": "Prior survey scores", "example": "Last year overall: 68%", "required": false},
+      {"name": "benchmarks", "description": "Industry comparisons", "example": "Tech industry average: 74%", "required": false}
+    ],
+    "category": "hr-talent",
+    "frameworks": ["Employee Engagement", "Organizational Development"],
+    "tier": "premium",
+    "tags": ["engagement", "survey-analysis", "culture"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "hr-004",
+    "title": "Compensation Benchmarking Analysis",
+    "description": "Analyze market compensation data to ensure competitive and equitable pay practices.",
+    "template": "Act as a Compensation Analyst. Conduct a compensation benchmarking analysis for {{role}}.\n\nCurrent Compensation: {{current_comp}}\nMarket Data: {{market_data}}\nLocation: {{location}}\n\n# Compensation Benchmarking Report\n\n## Position Overview\n- Job Title: {{role}}\n- Job Family: [Category]\n- Level: [Grade/Band]\n- Location: {{location}}\n\n## Market Data Summary\n| Percentile | Base Salary | Total Cash | Total Comp |\n| 25th | | | |\n| 50th (Median) | | | |\n| 75th | | | |\n| 90th | | | |\n\n## Current vs Market Position\n- Current Base: $X\n- Market Median: $X\n- Compa-Ratio: X%\n- Position: [Below/At/Above] market\n\n## Geographic Differential\n[Cost of labor adjustment for location]\n\n## Competitive Analysis\n| Competitor | Base Range | Bonus | Equity | Benefits |\n\n## Pay Equity Review\n- Internal equity analysis\n- Gender pay gap check\n- Tenure-based analysis\n\n## Recommendations\n| Scenario | Adjustment | New Salary | Compa-Ratio | Budget Impact |\n| Market Median | | | | |\n| Competitive (P60) | | | | |\n| Premium (P75) | | | | |\n\n## Implementation Considerations\n- Budget impact\n- Internal compression\n- Timing",
+    "variables": [
+      {"name": "role", "description": "Job title", "example": "Senior Data Scientist", "required": true},
+      {"name": "current_comp", "description": "Current pay", "example": "$145,000 base + 15% bonus", "required": true},
+      {"name": "market_data", "description": "Benchmark data", "example": "Radford shows P50 at $155K, P75 at $175K", "required": true},
+      {"name": "location", "description": "Work location", "example": "San Francisco Bay Area", "required": true}
+    ],
+    "category": "hr-talent",
+    "frameworks": ["Compensation Management", "Pay Equity"],
+    "tier": "premium",
+    "tags": ["compensation", "benchmarking", "pay-equity"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "hr-005",
+    "title": "Succession Planning Framework",
+    "description": "Identify and develop internal talent for critical leadership positions.",
+    "template": "Act as a Talent Management Director. Create a Succession Plan for {{position}}.\n\nPosition Context: {{position_context}}\nCurrent Incumbent: {{incumbent}}\nPotential Successors: {{candidates}}\n\n# Succession Planning Report\n\n## Critical Position Profile\n- Position: {{position}}\n- Business Criticality: [High/Medium/Low]\n- Flight Risk of Incumbent: [High/Medium/Low]\n- Time to Fill (External): [X months]\n- Succession Urgency: [Immediate/1-2 years/3-5 years]\n\n## Required Competencies\n| Competency | Importance | Description |\n| Strategic Thinking | Critical | |\n| Leadership | Critical | |\n| Technical Expertise | High | |\n| Stakeholder Management | High | |\n\n## Successor Assessment\n| Candidate | Readiness | Potential | Performance | Development Needs |\n| [Name 1] | Now/1-2yr/3-5yr | High/Med/Low | Rating | Gaps |\n| [Name 2] | | | | |\n| [Name 3] | | | | |\n\n## 9-Box Placement\n[Performance vs Potential grid]\n\n## Individual Development Plans\n### Candidate 1: [Name]\n- Current Role:\n- Readiness: X years\n- Key Strengths:\n- Development Gaps:\n- Development Actions:\n  | Action | Type | Timeline | Mentor/Sponsor |\n\n## Succession Bench Strength\n- Ready Now: X candidates\n- Ready 1-2 Years: X candidates\n- Bench Strength Rating: [Strong/Adequate/Weak]\n\n## Risk Mitigation\n## Recommendations",
+    "variables": [
+      {"name": "position", "description": "Target position", "example": "Chief Technology Officer", "required": true},
+      {"name": "position_context", "description": "Role importance", "example": "Critical for digital transformation, reports to CEO", "required": true},
+      {"name": "incumbent", "description": "Current holder", "example": "John Smith, 3 years in role, considering retirement in 2 years", "required": true},
+      {"name": "candidates", "description": "Potential successors", "example": "VP Engineering (strong), Director of Architecture (developing), External search possible", "required": true}
+    ],
+    "category": "hr-talent",
+    "frameworks": ["Succession Planning", "9-Box", "Talent Management"],
+    "tier": "premium",
+    "tags": ["succession", "talent-development", "leadership"],
+    "estimatedTimeSaved": "4-5 hours"
+  },
+  {
+    "id": "sales-001",
+    "title": "MEDDIC Sales Qualification",
+    "description": "Qualify enterprise opportunities using the MEDDIC framework with discovery questions.",
+    "template": "Act as an Enterprise Sales Director. Qualify this opportunity using MEDDIC.\n\nAccount: {{account}}\nOpportunity: {{opportunity}}\nKnown Information: {{known_info}}\n\n# MEDDIC Qualification\n\n## Opportunity Overview\n- Account: {{account}}\n- Opportunity: {{opportunity}}\n- Deal Size: $[TBD]\n- Stage: [Discovery/Evaluation/Negotiation]\n\n## MEDDIC Assessment\n\n### M - Metrics\n**What quantifiable results does the customer expect?**\n- Known metrics: \n- Questions to ask:\n  1. \"What does success look like in 12 months?\"\n  2. \"How are you measuring [pain point] today?\"\n- Score: [1-5] | Status: [Known/Partially/Unknown]\n\n### E - Economic Buyer\n**Who has final budget authority?**\n- Identified: [Yes/No]\n- Name/Title:\n- Questions to ask:\n  1. \"Who else needs to approve this budget?\"\n  2. \"What's the approval process for investments of this size?\"\n- Score: [1-5] | Status: [Access/No Access]\n\n### D - Decision Criteria\n**What criteria will they use to evaluate solutions?**\n- Known criteria:\n- Questions to ask:\n  1. \"What are your must-haves vs nice-to-haves?\"\n  2. \"How are you evaluating the options?\"\n- Score: [1-5]\n\n### D - Decision Process\n**What is their buying process?**\n- Timeline:\n- Steps:\n- Questions to ask:\n  1. \"Walk me through how decisions like this get made\"\n  2. \"What could delay this project?\"\n- Score: [1-5]\n\n### I - Identify Pain\n**What business problem are they solving?**\n- Stated pain:\n- Implied pain:\n- Impact of not solving:\n- Score: [1-5]\n\n### C - Champion\n**Who is our internal advocate?**\n- Champion: [Yes/No]\n- Name:\n- Power & Influence:\n- What they gain:\n- Score: [1-5]\n\n## Overall Qualification Score: X/30\n## Recommendation: [Pursue Aggressively/Pursue with Caution/Disqualify]\n## Next Steps",
+    "variables": [
+      {"name": "account", "description": "Company name", "example": "Global Financial Services Inc.", "required": true},
+      {"name": "opportunity", "description": "Deal description", "example": "Enterprise CRM replacement, 500 users", "required": true},
+      {"name": "known_info", "description": "What you know so far", "example": "Met with IT Director, current system Siebel, contract ends Q4", "required": true}
+    ],
+    "category": "sales",
+    "frameworks": ["MEDDIC", "Enterprise Sales"],
+    "tier": "free",
+    "tags": ["sales-qualification", "enterprise", "meddic"],
+    "estimatedTimeSaved": "1-2 hours"
+  },
+  {
+    "id": "sales-002",
+    "title": "Sales Proposal Generator",
+    "description": "Create compelling, customized sales proposals that address specific customer needs.",
+    "template": "Act as a Solutions Consultant. Create a sales proposal for {{prospect}}.\n\nOpportunity: {{opportunity}}\nRequirements: {{requirements}}\nBudget: {{budget}}\n\n# Proposal: [Solution] for {{prospect}}\n\n## Executive Summary\n[1 paragraph: Their challenge + Our solution + Expected outcome]\n\n## Understanding Your Needs\n### Current Challenges\n- Challenge 1: [Pain point] → [Business impact]\n- Challenge 2:\n- Challenge 3:\n\n### Desired Outcomes\n- [Outcome 1 with metric]\n- [Outcome 2 with metric]\n\n## Proposed Solution\n### Overview\n[Solution description aligned to their needs]\n\n### Key Components\n| Component | Description | Addresses |\n| [Feature 1] | | Challenge 1 |\n| [Feature 2] | | Challenge 2 |\n\n### Why [Our Company]\n- Differentiator 1\n- Differentiator 2\n- Relevant case study\n\n## Implementation Approach\n| Phase | Activities | Duration | Milestones |\n| Discovery | | Week 1-2 | |\n| Implementation | | Week 3-8 | |\n| Training | | Week 9-10 | |\n| Go-Live | | Week 11-12 | |\n\n## Investment\n| Item | One-Time | Recurring | Notes |\n| Software | | | |\n| Implementation | | | |\n| Training | | | |\n| Support | | | |\n| **Total** | | | |\n\n## Expected ROI\n- Year 1 savings: $X\n- Payback period: X months\n- 3-year ROI: X%\n\n## Next Steps\n1. [Action] - [Date]\n2. [Action] - [Date]\n\n## Terms & Conditions\n[Standard terms placeholder]",
+    "variables": [
+      {"name": "prospect", "description": "Customer name", "example": "Midwest Manufacturing Corp", "required": true},
+      {"name": "opportunity", "description": "What you're proposing", "example": "Supply chain optimization platform", "required": true},
+      {"name": "requirements", "description": "Their stated needs", "example": "Reduce inventory costs, improve demand forecasting, integrate with SAP", "required": true},
+      {"name": "budget", "description": "Known budget", "example": "$200-300K first year", "required": false}
+    ],
+    "category": "sales",
+    "frameworks": ["Solution Selling", "Value Proposition"],
+    "tier": "premium",
+    "tags": ["proposal", "sales-enablement", "solution-selling"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "sales-003",
+    "title": "Competitive Battle Card",
+    "description": "Create sales battle cards to win against specific competitors.",
+    "template": "Act as a Competitive Intelligence Manager. Create a battle card vs {{competitor}}.\n\nOur Product: {{our_product}}\nCompetitor: {{competitor}}\nCompetitor Info: {{competitor_info}}\n\n# Battle Card: {{our_product}} vs {{competitor}}\n\n## Quick Reference\n| Aspect | Us | {{competitor}} |\n| Target Market | | |\n| Pricing Model | | |\n| Key Strength | | |\n| Key Weakness | | |\n\n## When We Win\n- Scenario 1: [When customer values X]\n- Scenario 2:\n- Scenario 3:\n\n## When We Lose\n- Scenario 1: [When customer prioritizes Y]\n- Scenario 2:\n\n## Landmines to Set\n**Questions to ask prospects that expose competitor weaknesses:**\n1. \"How important is [our strength] to your evaluation?\"\n2. \"Have you considered the impact of [competitor weakness]?\"\n3. \"What's your experience with [common competitor issue]?\"\n\n## Landmines to Defuse\n**Questions competitor will ask (and your response):**\n| Their Question | Why They Ask | Your Response |\n| | | |\n\n## Feature Comparison\n| Capability | Us | {{competitor}} | Talking Point |\n| Feature 1 | ✓ | ✗ | \"Unlike X, we...\" |\n| Feature 2 | | | |\n\n## Objection Handling\n| Objection | Response |\n| \"{{competitor}} is cheaper\" | |\n| \"{{competitor}} has more market share\" | |\n| \"{{competitor}} has feature X\" | |\n\n## Proof Points\n- Customer win: [Company] chose us over {{competitor}} because...\n- Analyst quote:\n- Metric:\n\n## Trap Questions for Discovery\n[Questions that lead prospect to value our differentiators]",
+    "variables": [
+      {"name": "our_product", "description": "Your product/company", "example": "DataSync Platform", "required": true},
+      {"name": "competitor", "description": "Competitor name", "example": "CompetitorX", "required": true},
+      {"name": "competitor_info", "description": "What you know about them", "example": "Lower price, less features, poor support reputation, strong in SMB", "required": true}
+    ],
+    "category": "sales",
+    "frameworks": ["Competitive Selling", "Battle Cards"],
+    "tier": "premium",
+    "tags": ["competitive", "battle-card", "sales-enablement"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "sales-004",
+    "title": "Account Plan Builder",
+    "description": "Create strategic account plans to grow and protect key customer relationships.",
+    "template": "Act as a Strategic Account Manager. Build an Account Plan for {{account}}.\n\nAccount Overview: {{account_overview}}\nCurrent Relationship: {{relationship}}\nGrowth Goals: {{goals}}\n\n# Strategic Account Plan: {{account}}\n\n## Account Snapshot\n- Account: {{account}}\n- Industry: [Industry]\n- Annual Revenue: $[X]\n- Employees: [X]\n- Our Revenue: $[X]\n- Wallet Share: [X]%\n- Account Tier: [Strategic/Key/Growth]\n\n## Relationship Map\n| Contact | Title | Role | Relationship | Sentiment |\n| [Name] | | Champion/Blocker | Strong/Weak | Positive/Neutral/Negative |\n\n## Account Health\n| Metric | Current | Target | Status |\n| NPS | | | |\n| Product Adoption | | | |\n| Support Tickets | | | |\n| Renewal Risk | | | |\n\n## SWOT (Our Position in Account)\n| Strengths | Weaknesses |\n| | |\n| **Opportunities** | **Threats** |\n| | |\n\n## Growth Strategy\n### Whitespace Analysis\n| Product/Service | Current | Potential | Gap | Priority |\n\n### Expansion Opportunities\n1. [Opportunity]: $[X] potential\n   - Stakeholder:\n   - Timeline:\n   - Next step:\n\n## Defense Strategy\n- Competitive threats:\n- Mitigation actions:\n\n## 12-Month Action Plan\n| Quarter | Objective | Actions | Revenue Target |\n| Q1 | | | |\n| Q2 | | | |\n| Q3 | | | |\n| Q4 | | | |\n\n## Executive Engagement Plan\n| Their Executive | Our Executive | Cadence | Purpose |",
+    "variables": [
+      {"name": "account", "description": "Account name", "example": "Acme Corporation", "required": true},
+      {"name": "account_overview", "description": "Account background", "example": "Fortune 500 retailer, $10B revenue, 50K employees, HQ in Chicago", "required": true},
+      {"name": "relationship", "description": "Current state", "example": "Customer for 3 years, $500K ARR, using 2 of 5 products", "required": true},
+      {"name": "goals", "description": "Growth objectives", "example": "Grow to $1M ARR, expand to 2 new divisions, become strategic partner", "required": true}
+    ],
+    "category": "sales",
+    "frameworks": ["Account Planning", "Strategic Selling"],
+    "tier": "premium",
+    "tags": ["account-planning", "strategic-accounts", "growth"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "sales-005",
+    "title": "Sales Email Sequence",
+    "description": "Create personalized outbound email sequences for prospecting campaigns.",
+    "template": "Act as a Sales Development Representative. Create an email sequence targeting {{persona}} at {{industry}} companies.\n\nValue Prop: {{value_prop}}\nPain Points: {{pain_points}}\nCall to Action: {{cta}}\n\n# Outbound Email Sequence\n\n## Target Persona\n- Title: {{persona}}\n- Industry: {{industry}}\n- Company Size: [Ideal]\n- Pain Points: {{pain_points}}\n\n## Sequence Overview\n- Emails: 5\n- Duration: 14 days\n- Touches: Email + LinkedIn\n\n---\n\n## Email 1: The Pattern Interrupt (Day 1)\n**Subject:** [Curiosity-driven, personalized]\n**Preview:** [First 40 characters]\n\nHi {{first_name}},\n\n[Opening hook - pattern interrupt or relevant trigger]\n\n[1-2 sentences on pain point]\n\n[Value prop in their language]\n\n[Soft CTA]\n\n[Signature]\n\n---\n\n## Email 2: The Value Add (Day 3)\n**Subject:** Re: [Previous subject] OR [New angle]\n\n[Share relevant insight/resource]\n\n[Connect to their challenge]\n\n[Social proof - similar company result]\n\n[CTA]\n\n---\n\n## Email 3: The Social Proof (Day 6)\n**Subject:** How [Similar Company] achieved [Result]\n\n[Brief case study]\n[Specific metrics]\n[CTA to learn more]\n\n---\n\n## Email 4: The Breakup Tease (Day 10)\n**Subject:** Should I close your file?\n\n[Acknowledge busy]\n[Restate value briefly]\n[Binary CTA - yes/no]\n\n---\n\n## Email 5: The Genuine Breakup (Day 14)\n**Subject:** Goodbye for now\n\n[Professional close]\n[Door open for future]\n[Final value reminder]\n\n---\n\n## LinkedIn Touchpoints\n- Day 2: Connect request with note\n- Day 7: Engage with their content\n- Day 11: Send InMail",
+    "variables": [
+      {"name": "persona", "description": "Target job title", "example": "VP of Marketing", "required": true},
+      {"name": "industry", "description": "Target industry", "example": "B2B SaaS", "required": true},
+      {"name": "value_prop", "description": "Your value proposition", "example": "Increase demo bookings by 40% with AI-powered lead scoring", "required": true},
+      {"name": "pain_points", "description": "Their challenges", "example": "Low MQL to SQL conversion, sales complaining about lead quality", "required": true},
+      {"name": "cta", "description": "Desired action", "example": "15-minute discovery call", "required": true}
+    ],
+    "category": "sales",
+    "frameworks": ["Outbound Sales", "Email Sequences"],
+    "tier": "free",
+    "tags": ["prospecting", "email", "outbound"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "strat-006",
+    "title": "OKR Framework Setup",
+    "description": "Design Objectives and Key Results aligned with company strategy and measurable outcomes.",
+    "template": "Act as a Strategy Coach. Create OKRs for {{team}} for {{period}}.\n\nCompany Goals: {{company_goals}}\nTeam Context: {{team_context}}\n\n# OKR Framework\n\n## Team: {{team}}\n## Period: {{period}}\n\n## Objective 1: [Inspiring, qualitative goal]\n**Key Results:**\n1. KR1: [Measurable outcome] | Baseline: X | Target: Y\n2. KR2: [Measurable outcome] | Baseline: X | Target: Y\n3. KR3: [Measurable outcome] | Baseline: X | Target: Y\n\n**Initiatives:**\n- Initiative supporting KR1\n- Initiative supporting KR2\n\n## Objective 2: [Second major goal]\n[Repeat structure]\n\n## Objective 3: [Third goal if needed]\n[Repeat structure]\n\n## Alignment Check\n| Our OKR | Supports Company OKR |\n\n## Scoring Guidance\n- 0.0-0.3: Failed to make progress\n- 0.4-0.6: Made progress but fell short\n- 0.7-1.0: Delivered (0.7 is good!)\n\n## Review Cadence\n- Weekly: Check-in on KR progress\n- Monthly: Confidence scoring\n- Quarterly: Final scoring and retrospective",
+    "variables": [
+      {"name": "team", "description": "Team or department", "example": "Product Team", "required": true},
+      {"name": "period", "description": "OKR period", "example": "Q2 2024", "required": true},
+      {"name": "company_goals", "description": "Company-level goals", "example": "Grow ARR to $50M, expand to Europe, improve NPS to 50", "required": true},
+      {"name": "team_context", "description": "Team background", "example": "10-person product team, owns mobile and web apps", "required": true}
+    ],
+    "category": "strategy",
+    "frameworks": ["OKR", "Goal Setting"],
+    "tier": "free",
+    "tags": ["okr", "goals", "planning"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "strat-007",
+    "title": "Market Entry Strategy",
+    "description": "Plan expansion into new markets with competitive analysis and go-to-market approach.",
+    "template": "Act as a Growth Strategy Consultant. Develop a market entry strategy for {{company}} entering {{target_market}}.\n\nCurrent State: {{current_state}}\nResources: {{resources}}\n\n# Market Entry Strategy\n\n## Market Opportunity\n- Market Size (TAM/SAM/SOM)\n- Growth Rate\n- Key Trends\n\n## Market Attractiveness\n| Factor | Score (1-5) | Notes |\n| Market Size | | |\n| Growth Rate | | |\n| Competition | | |\n| Barriers to Entry | | |\n| Regulatory Environment | | |\n\n## Competitive Landscape\n| Competitor | Market Share | Strengths | Weaknesses |\n\n## Entry Mode Options\n| Option | Pros | Cons | Investment | Time to Market |\n| Organic Growth | | | | |\n| Partnership | | | | |\n| Acquisition | | | | |\n| Joint Venture | | | | |\n\n## Recommended Approach\n[Entry mode recommendation with rationale]\n\n## Go-to-Market Plan\n- Target Segment:\n- Value Proposition:\n- Pricing Strategy:\n- Channel Strategy:\n- Marketing Approach:\n\n## Financial Projections\n| Year | Investment | Revenue | Profit |\n\n## Risk Analysis\n| Risk | Probability | Impact | Mitigation |\n\n## Implementation Timeline\n[12-24 month phased plan]",
+    "variables": [
+      {"name": "company", "description": "Your company", "example": "TechFlow Solutions", "required": true},
+      {"name": "target_market", "description": "Market to enter", "example": "UK Enterprise SaaS market", "required": true},
+      {"name": "current_state", "description": "Current position", "example": "US-only, $20M ARR, 100 enterprise customers", "required": true},
+      {"name": "resources", "description": "Available resources", "example": "$5M budget, can hire 10 people, existing UK partners", "required": true}
+    ],
+    "category": "strategy",
+    "frameworks": ["Market Entry", "Go-to-Market"],
+    "tier": "premium",
+    "tags": ["expansion", "market-entry", "growth"],
+    "estimatedTimeSaved": "5-8 hours"
+  },
+  {
+    "id": "pm-006",
+    "title": "Agile Sprint Planning",
+    "description": "Plan sprints with capacity, velocity, and commitment aligned to team capability.",
+    "template": "Act as a Scrum Master. Facilitate Sprint Planning for {{team}}.\n\nSprint: {{sprint}}\nTeam Capacity: {{capacity}}\nProduct Backlog: {{backlog}}\nVelocity: {{velocity}}\n\n# Sprint Planning\n\n## Sprint Goal\n[One sentence capturing sprint purpose]\n\n## Team Capacity\n| Team Member | Days Available | Notes |\n| | | |\n**Total Capacity:** X person-days\n**Velocity (3-sprint avg):** {{velocity}} points\n\n## Selected Stories\n| ID | Story | Points | Assigned | Dependencies |\n| | | | | |\n\n**Total Committed:** X points\n**Capacity Utilization:** X%\n\n## Story Breakdown\n### Story 1: [Title]\n**Tasks:**\n| Task | Estimate (hrs) | Owner |\n| | | |\n\n[Repeat for each story]\n\n## Sprint Risks\n| Risk | Likelihood | Impact | Mitigation |\n\n## Definition of Done Reminder\n- Code complete and reviewed\n- Tests passing\n- Documentation updated\n- Product Owner accepted\n\n## Sprint Calendar\n| Day | Ceremonies | Notes |\n| Day 1 | Sprint Planning | |\n| Daily | Standup 9:30am | |\n| Day 10 | Sprint Review + Retro | |",
+    "variables": [
+      {"name": "team", "description": "Scrum team name", "example": "Team Phoenix", "required": true},
+      {"name": "sprint", "description": "Sprint number", "example": "Sprint 23 (Jan 15-26)", "required": true},
+      {"name": "capacity", "description": "Team availability", "example": "5 devs x 8 days = 40 days, minus 5 days PTO", "required": true},
+      {"name": "backlog", "description": "Top backlog items", "example": "User auth (8pts), Dashboard (5pts), API integration (13pts)", "required": true},
+      {"name": "velocity", "description": "Historical velocity", "example": "Average 34 points/sprint", "required": true}
+    ],
+    "category": "project-management",
+    "frameworks": ["Scrum", "Agile"],
+    "tier": "free",
+    "tags": ["sprint-planning", "agile", "scrum"],
+    "estimatedTimeSaved": "1-2 hours"
+  },
+  {
+    "id": "pm-007",
+    "title": "Project Retrospective Facilitator",
+    "description": "Run effective retrospectives that generate actionable improvements.",
+    "template": "Act as an Agile Coach. Facilitate a retrospective for {{project}}.\n\nProject/Sprint: {{project}}\nContext: {{context}}\nPrevious Actions: {{previous_actions}}\n\n# Retrospective: {{project}}\n\n## Retro Format: Start-Stop-Continue + Action Items\n\n## Ground Rules\n- Vegas Rule: What's said here stays here\n- No blame, focus on process\n- Everyone participates\n- Time-boxed discussion\n\n## Start Doing\n[Things we should begin doing]\n1. \n2. \n3. \n\n## Stop Doing\n[Things that aren't working]\n1. \n2. \n3. \n\n## Continue Doing\n[Things working well - keep them]\n1. \n2. \n3. \n\n## Key Discussion Points\n| Topic | Discussion Summary | Sentiment |\n\n## Root Cause Analysis\n[For top issue identified]\n- Issue:\n- 5 Whys:\n- Root Cause:\n\n## Action Items\n| Action | Owner | Due | Success Metric |\n| | | | |\n\n## Follow-up from Last Retro\n| Previous Action | Status | Notes |\n| | | |\n\n## Team Health Check\n| Area | Rating (1-5) | Trend |\n| Collaboration | | |\n| Delivery | | |\n| Fun | | |\n| Learning | | |",
+    "variables": [
+      {"name": "project", "description": "Project or sprint", "example": "Sprint 22 / Q4 Release", "required": true},
+      {"name": "context", "description": "What happened", "example": "Delivered 2 of 3 epics, hit production issues, new team member joined", "required": true},
+      {"name": "previous_actions", "description": "Last retro actions", "example": "1. Improve code reviews (done), 2. Add monitoring (in progress)", "required": false}
+    ],
+    "category": "project-management",
+    "frameworks": ["Agile", "Retrospectives"],
+    "tier": "free",
+    "tags": ["retrospective", "agile", "continuous-improvement"],
+    "estimatedTimeSaved": "1-2 hours"
+  },
+  {
+    "id": "ops-006",
+    "title": "Incident Post-Mortem",
+    "description": "Conduct blameless post-mortems that drive systemic improvements.",
+    "template": "Act as a Site Reliability Engineer. Conduct a post-mortem for {{incident}}.\n\nIncident Summary: {{incident_summary}}\nTimeline: {{timeline}}\nImpact: {{impact}}\n\n# Incident Post-Mortem\n\n## Incident Overview\n- **Incident ID:** INC-[XXX]\n- **Date:** [Date]\n- **Duration:** [X hours]\n- **Severity:** [P1/P2/P3]\n- **Status:** Resolved\n\n## Impact\n- Users Affected: X\n- Revenue Impact: $X\n- SLA Breach: Yes/No\n- Customer Tickets: X\n\n## Timeline\n| Time | Event | Action Taken | By Whom |\n| | Detection | | |\n| | Investigation | | |\n| | Mitigation | | |\n| | Resolution | | |\n| | All Clear | | |\n\n## Root Cause\n[Detailed technical explanation - blameless]\n\n## Contributing Factors\n1. [Factor 1]\n2. [Factor 2]\n3. [Factor 3]\n\n## What Went Well\n- [Positive 1]\n- [Positive 2]\n\n## What Went Poorly\n- [Issue 1]\n- [Issue 2]\n\n## Action Items\n| Action | Type | Priority | Owner | Due | Status |\n| | Prevent | P1 | | | |\n| | Detect | P2 | | | |\n| | Mitigate | P2 | | | |\n\n## Lessons Learned\n[Key takeaways for the organization]\n\n## Follow-up Meeting\n- Date: [+2 weeks]\n- Review action item progress",
+    "variables": [
+      {"name": "incident", "description": "Incident name", "example": "Payment Processing Outage", "required": true},
+      {"name": "incident_summary", "description": "What happened", "example": "Payment gateway unavailable for 2 hours due to expired certificate", "required": true},
+      {"name": "timeline", "description": "Key events", "example": "11:00 alerts fired, 11:15 identified cert issue, 11:45 renewed, 12:00 restored", "required": true},
+      {"name": "impact", "description": "Business impact", "example": "$50K lost transactions, 500 failed orders, 2 enterprise customers complained", "required": true}
+    ],
+    "category": "operations",
+    "frameworks": ["Incident Management", "Post-Mortem"],
+    "tier": "free",
+    "tags": ["incident-management", "post-mortem", "sre"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "ops-007",
+    "title": "Vendor Evaluation Matrix",
+    "description": "Systematically evaluate and compare vendors using weighted criteria.",
+    "template": "Act as a Procurement Manager. Create a vendor evaluation for {{category}}.\n\nRequirements: {{requirements}}\nVendors: {{vendors}}\nBudget: {{budget}}\n\n# Vendor Evaluation Matrix\n\n## Evaluation Overview\n- Category: {{category}}\n- Evaluator: [Name]\n- Date: [Date]\n- Vendors Evaluated: {{vendors}}\n\n## Evaluation Criteria & Weights\n| Criterion | Weight | Description |\n| Functionality | 25% | Meets technical requirements |\n| Price | 20% | Total cost of ownership |\n| Support | 15% | Service and support quality |\n| Security | 15% | Security and compliance |\n| Integration | 15% | Ease of integration |\n| Vendor Stability | 10% | Company viability |\n\n## Detailed Scoring\n\n### Vendor A: [Name]\n| Criterion | Score (1-5) | Weighted | Notes |\n| Functionality | | | |\n| Price | | | |\n| Support | | | |\n| Security | | | |\n| Integration | | | |\n| Vendor Stability | | | |\n| **Total** | | X/5 | |\n\n[Repeat for each vendor]\n\n## Comparison Summary\n| Vendor | Total Score | Price | Rank |\n| | | | |\n\n## Strengths & Weaknesses\n| Vendor | Key Strengths | Key Weaknesses |\n| | | |\n\n## Reference Checks\n| Vendor | Reference | Feedback |\n\n## Recommendation\n**Selected Vendor:** [Name]\n**Rationale:** [Why this vendor]\n**Risks:** [Key risks and mitigations]\n**Next Steps:** [Contract negotiation points]",
+    "variables": [
+      {"name": "category", "description": "Product category", "example": "Cloud Data Warehouse", "required": true},
+      {"name": "requirements", "description": "Key requirements", "example": "Handle 10TB, SQL support, real-time ingestion, SOC2 compliant", "required": true},
+      {"name": "vendors", "description": "Vendors to evaluate", "example": "Snowflake, Databricks, BigQuery, Redshift", "required": true},
+      {"name": "budget", "description": "Budget range", "example": "$100-150K annually", "required": true}
+    ],
+    "category": "operations",
+    "frameworks": ["Vendor Evaluation", "Procurement"],
+    "tier": "premium",
+    "tags": ["vendor-selection", "procurement", "evaluation"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "ba-005",
+    "title": "Data Dictionary Generator",
+    "description": "Create comprehensive data dictionaries for databases and analytics systems.",
+    "template": "Act as a Data Analyst. Create a Data Dictionary for {{system}}.\n\nSystem: {{system}}\nTables/Entities: {{entities}}\nPurpose: {{purpose}}\n\n# Data Dictionary: {{system}}\n\n## Overview\n- System: {{system}}\n- Database: [Type]\n- Last Updated: [Date]\n- Owner: [Team/Person]\n\n## Table: [Table Name 1]\n**Description:** [What this table stores]\n**Primary Key:** [Field]\n**Record Count:** ~X\n**Update Frequency:** [Real-time/Daily/etc]\n\n| Field Name | Data Type | Nullable | Description | Example | Business Rules |\n| | | | | | |\n\n**Relationships:**\n- FK to [Table] via [Field]\n\n**Indexes:**\n- [Index name]: [Fields]\n\n---\n\n[Repeat for each table]\n\n## Entity Relationship Summary\n[Text description of key relationships]\n\n## Data Quality Rules\n| Rule | Table | Field | Validation |\n| | | | |\n\n## Common Queries\n```sql\n-- [Query purpose]\nSELECT ...\n```\n\n## Change Log\n| Date | Change | Author |",
+    "variables": [
+      {"name": "system", "description": "System name", "example": "Customer Data Platform", "required": true},
+      {"name": "entities", "description": "Main tables/entities", "example": "Customers, Orders, Products, Transactions", "required": true},
+      {"name": "purpose", "description": "Dictionary purpose", "example": "Support analytics team onboarding and data governance", "required": true}
+    ],
+    "category": "business-analysis",
+    "frameworks": ["Data Governance", "Data Dictionary"],
+    "tier": "premium",
+    "tags": ["data-dictionary", "documentation", "analytics"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "ba-006",
+    "title": "Meeting Notes to Actions",
+    "description": "Transform meeting notes into structured summaries with clear action items.",
+    "template": "Act as an Executive Assistant. Transform these meeting notes into a structured summary.\n\nMeeting: {{meeting_title}}\nDate: {{date}}\nRaw Notes: {{notes}}\n\n# Meeting Summary\n\n## Meeting Details\n- **Meeting:** {{meeting_title}}\n- **Date:** {{date}}\n- **Duration:** [X minutes]\n- **Attendees:** [List]\n- **Facilitator:** [Name]\n\n## Executive Summary\n[2-3 sentences capturing key outcomes]\n\n## Topics Discussed\n\n### Topic 1: [Title]\n- **Discussion:** [Key points discussed]\n- **Decision:** [Decision made, if any]\n- **Owner:** [Who is responsible]\n\n### Topic 2: [Title]\n[Repeat structure]\n\n## Decisions Made\n| # | Decision | Made By | Effective Date |\n| 1 | | | |\n\n## Action Items\n| # | Action | Owner | Due Date | Priority | Status |\n| 1 | | | | High/Med/Low | Open |\n\n## Parking Lot\n[Items deferred for future discussion]\n- \n\n## Next Meeting\n- **Date:** [Date]\n- **Agenda Items:**\n  - Review action items\n  - [Topic 1]\n  - [Topic 2]\n\n## Appendix\n[Supporting materials, links, references]",
+    "variables": [
+      {"name": "meeting_title", "description": "Meeting name", "example": "Q4 Planning Session", "required": true},
+      {"name": "date", "description": "Meeting date", "example": "January 15, 2024", "required": true},
+      {"name": "notes", "description": "Raw meeting notes", "example": "Discussed budget - John said we need 20% more. Sarah disagrees. Decided to revisit next week. Also talked about hiring...", "required": true}
+    ],
+    "category": "business-analysis",
+    "frameworks": ["Meeting Management", "Documentation"],
+    "tier": "free",
+    "tags": ["meeting-notes", "action-items", "documentation"],
+    "estimatedTimeSaved": "30-60 min"
+  },
+  {
+    "id": "fin-005",
+    "title": "Financial Dashboard KPIs",
+    "description": "Define and calculate key financial metrics for executive dashboards.",
+    "template": "Act as a CFO. Define financial KPIs for {{company_type}} dashboard.\n\nCompany Type: {{company_type}}\nCurrent Metrics: {{current_metrics}}\nStakeholders: {{stakeholders}}\n\n# Financial Dashboard KPIs\n\n## Dashboard Overview\n- Audience: {{stakeholders}}\n- Refresh: [Real-time/Daily/Weekly/Monthly]\n- Purpose: [Decision-making context]\n\n## Tier 1: Executive Summary KPIs\n| KPI | Formula | Target | Current | Status |\n| Revenue | | | | |\n| Gross Margin | | | | |\n| EBITDA | | | | |\n| Cash Position | | | | |\n\n## Tier 2: Operational KPIs\n\n### Revenue Metrics\n| KPI | Formula | Benchmark | Notes |\n| MRR/ARR | | | |\n| Revenue Growth | (Current - Prior) / Prior | | |\n| Net Revenue Retention | | >100% | |\n\n### Profitability Metrics\n| KPI | Formula | Benchmark | Notes |\n| Gross Margin % | Gross Profit / Revenue | | |\n| Operating Margin | | | |\n| Net Margin | | | |\n\n### Efficiency Metrics\n| KPI | Formula | Benchmark | Notes |\n| CAC | Total S&M / New Customers | | |\n| LTV | ARPU × Gross Margin / Churn | | |\n| LTV:CAC Ratio | | >3:1 | |\n| Payback Period | CAC / (ARPU × Gross Margin) | | |\n\n### Cash Flow Metrics\n| KPI | Formula | Benchmark | Notes |\n| Operating Cash Flow | | | |\n| Free Cash Flow | | | |\n| Runway | Cash / Monthly Burn | | |\n\n## Visualization Recommendations\n| KPI | Chart Type | Drill-down |\n| Revenue | Line + Bar | By segment, geo |\n\n## Alert Thresholds\n| KPI | Green | Yellow | Red |",
+    "variables": [
+      {"name": "company_type", "description": "Business model", "example": "B2B SaaS", "required": true},
+      {"name": "current_metrics", "description": "Current state", "example": "$5M ARR, 75% gross margin, 18-month runway", "required": true},
+      {"name": "stakeholders", "description": "Dashboard users", "example": "CEO, Board, Leadership Team", "required": true}
+    ],
+    "category": "financial",
+    "frameworks": ["Financial KPIs", "SaaS Metrics"],
+    "tier": "premium",
+    "tags": ["kpis", "dashboard", "financial-metrics"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "hr-006",
+    "title": "Interview Question Bank",
+    "description": "Generate structured behavioral and technical interview questions for any role.",
+    "template": "Act as a Talent Acquisition Lead. Create an interview question bank for {{role}}.\n\nRole: {{role}}\nLevel: {{level}}\nKey Competencies: {{competencies}}\n\n# Interview Question Bank: {{role}}\n\n## Role Overview\n- Position: {{role}}\n- Level: {{level}}\n- Key Competencies: {{competencies}}\n\n## Screening Questions (Phone Screen)\n1. [Background question]\n2. [Motivation question]\n3. [Basic qualification check]\n\n## Behavioral Questions (STAR Format)\n\n### Competency: [Competency 1]\n**Question 1:** \"Tell me about a time when you [situation related to competency].\"\n- **What to listen for:** [Good answer indicators]\n- **Red flags:** [Warning signs]\n- **Follow-ups:** \"What was the outcome?\" \"What would you do differently?\"\n\n**Question 2:** [Alternative question for same competency]\n\n### Competency: [Competency 2]\n[Repeat structure]\n\n## Technical/Functional Questions\n| Question | Expected Answer | Scoring Criteria |\n| | | |\n\n## Situational Questions\n1. \"How would you handle [realistic scenario]?\"\n   - Strong answer:\n   - Weak answer:\n\n## Culture Fit Questions\n1. [Values-based question]\n2. [Team dynamics question]\n\n## Questions for Candidate\n[Questions the candidate might ask + suggested answers]\n\n## Scoring Rubric\n| Competency | 1 (Poor) | 2 (Below) | 3 (Meets) | 4 (Exceeds) | 5 (Exceptional) |\n\n## Interview Scorecard\n| Competency | Score | Evidence/Notes |",
+    "variables": [
+      {"name": "role", "description": "Job title", "example": "Senior Product Manager", "required": true},
+      {"name": "level", "description": "Seniority", "example": "Senior (5-8 years experience)", "required": true},
+      {"name": "competencies", "description": "Key skills to assess", "example": "Strategic thinking, Stakeholder management, Data-driven decisions, Technical acumen", "required": true}
+    ],
+    "category": "hr-talent",
+    "frameworks": ["Behavioral Interviewing", "STAR Method"],
+    "tier": "premium",
+    "tags": ["interviewing", "hiring", "talent-acquisition"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "hr-007",
+    "title": "Training Needs Assessment",
+    "description": "Identify skill gaps and design targeted training programs for teams.",
+    "template": "Act as a Learning & Development Manager. Conduct a Training Needs Assessment for {{team}}.\n\nTeam: {{team}}\nCurrent Skills: {{current_skills}}\nBusiness Goals: {{business_goals}}\n\n# Training Needs Assessment\n\n## Assessment Overview\n- Team: {{team}}\n- Assessment Date: [Date]\n- Assessor: [Name]\n- Business Context: {{business_goals}}\n\n## Current State Analysis\n\n### Skills Inventory\n| Skill | Importance | Current Level | Gap | Priority |\n| | High/Med/Low | 1-5 | | |\n\n### Competency Heat Map\n| Team Member | Skill 1 | Skill 2 | Skill 3 | Skill 4 |\n| | | | | |\n(1=Novice, 5=Expert)\n\n## Gap Analysis\n\n### Critical Gaps (Immediate Action)\n| Gap | Impact | Affected Roles | Urgency |\n| | | | |\n\n### Development Gaps (Medium-term)\n| Gap | Impact | Affected Roles | Timeline |\n\n## Root Causes\n- [Why do these gaps exist?]\n\n## Recommended Training Program\n\n### Priority 1: [Topic]\n- Audience: [Who]\n- Format: [Workshop/Online/Coaching]\n- Duration: [Hours]\n- Provider: [Internal/External]\n- Cost Estimate: $[X]\n- Expected Outcome: [Measurable]\n\n### Priority 2: [Topic]\n[Repeat structure]\n\n## Implementation Roadmap\n| Month | Training | Audience | Investment |\n\n## Success Metrics\n| Metric | Baseline | Target | Measurement Method |\n\n## Budget Summary\n| Category | Cost |\n| Training Programs | |\n| Materials | |\n| External Vendors | |\n| Time Investment | |\n| **Total** | |",
+    "variables": [
+      {"name": "team", "description": "Team to assess", "example": "Customer Success Team (15 people)", "required": true},
+      {"name": "current_skills", "description": "Existing capabilities", "example": "Strong product knowledge, weak data analysis, inconsistent presentation skills", "required": true},
+      {"name": "business_goals", "description": "Business objectives", "example": "Reduce churn by 20%, increase upsell by 30%, improve CSAT to 4.5", "required": true}
+    ],
+    "category": "hr-talent",
+    "frameworks": ["Training Needs Assessment", "L&D"],
+    "tier": "premium",
+    "tags": ["training", "skill-development", "learning"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "sales-006",
+    "title": "Discovery Call Framework",
+    "description": "Structure discovery conversations to uncover pain, budget, timeline, and decision process.",
+    "template": "Act as a Sales Trainer. Create a Discovery Call Framework for {{product}}.\n\nProduct: {{product}}\nTarget Buyer: {{buyer}}\nCommon Pain Points: {{pain_points}}\n\n# Discovery Call Framework\n\n## Call Objectives\n1. Understand their current situation\n2. Identify pain points and business impact\n3. Qualify budget, authority, need, timeline (BANT)\n4. Determine next steps\n\n## Pre-Call Research\n- [ ] Company background\n- [ ] Recent news/announcements\n- [ ] LinkedIn profile of attendees\n- [ ] Industry challenges\n- [ ] Potential use cases\n\n## Opening (2 min)\n\"Thanks for taking the time, [Name]. I've done some research on [Company] and I'm curious about [specific observation]. Before I share how we might help, I'd love to understand your world better. Would it be okay if I asked some questions?\"\n\n## Situation Questions (5 min)\n1. \"Can you tell me about your current [process/system/approach]?\"\n2. \"How long have you been doing it this way?\"\n3. \"Who else is involved in this process?\"\n\n## Problem Questions (10 min)\n1. \"What's working well? What's not?\"\n2. \"If you could wave a magic wand, what would change?\"\n3. \"How is [pain point] impacting [relevant metric]?\"\n4. \"What have you tried so far to address this?\"\n\n## Impact Questions (5 min)\n1. \"What happens if you don't solve this?\"\n2. \"How does this affect [other stakeholders]?\"\n3. \"Can you quantify the cost of this problem?\"\n\n## Need-Payoff Questions (5 min)\n1. \"What would it mean for you if you could [solve problem]?\"\n2. \"How would [outcome] impact your [goals]?\"\n\n## Qualification (BANT) (5 min)\n- **Budget:** \"Is there budget allocated for solving this?\"\n- **Authority:** \"Who else needs to be involved in this decision?\"\n- **Need:** \"On a scale of 1-10, how urgent is this?\"\n- **Timeline:** \"When would you need a solution in place?\"\n\n## Closing & Next Steps (3 min)\n\"Based on what you've shared, it sounds like [summarize pain + impact]. I think we can help with [brief value prop]. Would it make sense to [next step]?\"\n\n## Post-Call Actions\n- [ ] Send summary email within 2 hours\n- [ ] Update CRM with qualification details\n- [ ] Schedule follow-up\n- [ ] Share relevant content",
+    "variables": [
+      {"name": "product", "description": "Your product/solution", "example": "Marketing Automation Platform", "required": true},
+      {"name": "buyer", "description": "Target buyer persona", "example": "VP of Marketing at mid-market companies", "required": true},
+      {"name": "pain_points", "description": "Common challenges", "example": "Manual campaign execution, poor lead scoring, no attribution", "required": true}
+    ],
+    "category": "sales",
+    "frameworks": ["SPIN Selling", "Discovery"],
+    "tier": "free",
+    "tags": ["discovery", "qualification", "sales-process"],
+    "estimatedTimeSaved": "1-2 hours"
+  },
+  {
+    "id": "sales-007",
+    "title": "Win/Loss Analysis",
+    "description": "Analyze won and lost deals to improve sales effectiveness and messaging.",
+    "template": "Act as a Sales Operations Analyst. Conduct a Win/Loss Analysis for {{period}}.\n\nPeriod: {{period}}\nDeals Analyzed: {{deals}}\nWin Rate: {{win_rate}}\n\n# Win/Loss Analysis Report\n\n## Executive Summary\n[Key findings and recommendations]\n\n## Analysis Overview\n- Period: {{period}}\n- Deals Analyzed: X won, Y lost\n- Win Rate: {{win_rate}}\n- Average Deal Size: $X\n\n## Win Analysis\n\n### Why We Win\n| Reason | Frequency | Example Deal |\n| Better product fit | 35% | [Deal name] |\n| Stronger relationships | 25% | |\n| Competitive pricing | 20% | |\n| Superior support | 15% | |\n| Other | 5% | |\n\n### Winning Deal Profile\n- Average sales cycle: X days\n- Typical entry point: [Title]\n- Common use case: [Use case]\n- Competitive situations: [Competitor]\n\n## Loss Analysis\n\n### Why We Lose\n| Reason | Frequency | Example Deal | Preventable? |\n| Lost to competitor | 30% | | |\n| No decision | 25% | | |\n| Price | 20% | | |\n| Missing feature | 15% | | |\n| Poor timing | 10% | | |\n\n### Lost Deal Profile\n- Where in funnel: [Stage]\n- Common objections: [List]\n- Competitor most lost to: [Name]\n\n## Competitive Insights\n| Competitor | Win vs Them | Lose vs Them | Key Differentiators |\n\n## Recommendations\n\n### Sales Process\n1. [Improvement]\n2. [Improvement]\n\n### Messaging\n1. [Adjustment]\n2. [Adjustment]\n\n### Product Feedback\n| Feature Request | Deals Lost | Priority |\n\n## Action Plan\n| Action | Owner | Due | Expected Impact |",
+    "variables": [
+      {"name": "period", "description": "Analysis period", "example": "Q4 2024", "required": true},
+      {"name": "deals", "description": "Deals analyzed", "example": "25 closed-won, 40 closed-lost, 15 no-decision", "required": true},
+      {"name": "win_rate", "description": "Current win rate", "example": "38% (down from 42% last quarter)", "required": true}
+    ],
+    "category": "sales",
+    "frameworks": ["Win/Loss Analysis", "Sales Operations"],
+    "tier": "premium",
+    "tags": ["win-loss", "sales-analysis", "competitive"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "strat-008",
+    "title": "Business Model Canvas",
+    "description": "Map your business model across all nine building blocks of the canvas.",
+    "template": "Act as a Business Strategist. Complete a Business Model Canvas for {{company}}.\n\nCompany: {{company}}\nIndustry: {{industry}}\nContext: {{context}}\n\n# Business Model Canvas: {{company}}\n\n## 1. Customer Segments\n**Who are we creating value for?**\n- Primary: [Segment 1]\n- Secondary: [Segment 2]\n- Niche: [Segment 3]\n\n## 2. Value Propositions\n**What value do we deliver?**\n- For [Segment 1]: [Value prop]\n- For [Segment 2]: [Value prop]\n\n**Unique differentiators:**\n- [Differentiator 1]\n- [Differentiator 2]\n\n## 3. Channels\n**How do we reach customers?**\n| Phase | Channel | Effectiveness |\n| Awareness | | |\n| Evaluation | | |\n| Purchase | | |\n| Delivery | | |\n| After-sales | | |\n\n## 4. Customer Relationships\n**What type of relationship?**\n- [Segment]: [Relationship type]\n- Examples: Self-service, Personal, Automated, Community\n\n## 5. Revenue Streams\n**How do we make money?**\n| Stream | Model | % of Revenue |\n| | Subscription/One-time/Usage | |\n\n## 6. Key Resources\n**What do we need to deliver value?**\n- Physical:\n- Intellectual:\n- Human:\n- Financial:\n\n## 7. Key Activities\n**What must we do well?**\n- Production:\n- Problem-solving:\n- Platform/Network:\n\n## 8. Key Partnerships\n**Who helps us?**\n| Partner | What They Provide | What We Provide |\n\n## 9. Cost Structure\n**What are our major costs?**\n| Cost Category | Fixed/Variable | % of Total |\n\n---\n\n## Canvas Visualization\n```\n+------------------+------------------+------------------+\n| Key Partners     | Key Activities   | Value Props      |\n|                  +------------------+                  |\n|                  | Key Resources    |                  |\n+------------------+------------------+------------------+\n| Cost Structure                      | Revenue Streams  |\n+------------------+------------------+------------------+\n```\n\n## Strategic Insights\n- Strengths of this model:\n- Vulnerabilities:\n- Innovation opportunities:",
+    "variables": [
+      {"name": "company", "description": "Company name", "example": "StreamFit - Online Fitness Platform", "required": true},
+      {"name": "industry", "description": "Industry", "example": "Digital Health & Fitness", "required": true},
+      {"name": "context", "description": "Business context", "example": "B2C subscription, live + on-demand classes, launching corporate wellness", "required": true}
+    ],
+    "category": "strategy",
+    "frameworks": ["Business Model Canvas", "Osterwalder"],
+    "tier": "free",
+    "tags": ["business-model", "canvas", "strategy"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "pm-008",
+    "title": "Change Management Plan",
+    "description": "Plan organizational change with stakeholder engagement, communication, and training.",
+    "template": "Act as a Change Management Consultant. Create a Change Management Plan for {{change_initiative}}.\n\nInitiative: {{change_initiative}}\nScope: {{scope}}\nTimeline: {{timeline}}\n\n# Change Management Plan\n\n## Change Overview\n- Initiative: {{change_initiative}}\n- Sponsor: [Name/Title]\n- Change Manager: [Name]\n- Timeline: {{timeline}}\n\n## Current vs Future State\n| Aspect | Current State | Future State |\n| Process | | |\n| Technology | | |\n| People | | |\n| Culture | | |\n\n## Stakeholder Analysis\n| Stakeholder | Impact | Influence | Current | Desired | Strategy |\n| | High/Med/Low | High/Med/Low | Support level | Support level | |\n\n## Impact Assessment\n### Who is affected?\n| Group | # People | Type of Change | Impact Level |\n\n### What's changing?\n- Processes:\n- Tools:\n- Roles:\n- Skills needed:\n\n## Resistance Analysis\n| Source of Resistance | Likelihood | Mitigation Strategy |\n\n## Communication Plan\n| Audience | Message | Channel | Frequency | Owner |\n| Executives | | | | |\n| Managers | | | | |\n| End Users | | | | |\n\n## Training Plan\n| Audience | Training Need | Format | Duration | Timeline |\n\n## Reinforcement\n- Recognition program:\n- Success metrics:\n- Feedback mechanisms:\n\n## Rollout Approach\n- [ ] Pilot: [Group] - [Date]\n- [ ] Wave 1: [Group] - [Date]\n- [ ] Wave 2: [Group] - [Date]\n- [ ] Full deployment: [Date]\n\n## Risk Register\n| Risk | Probability | Impact | Mitigation |\n\n## Success Metrics\n| Metric | Baseline | Target | Measurement |",
+    "variables": [
+      {"name": "change_initiative", "description": "What's changing", "example": "CRM Migration from Salesforce to HubSpot", "required": true},
+      {"name": "scope", "description": "Who's affected", "example": "200 sales reps across 3 regions, 50 managers", "required": true},
+      {"name": "timeline", "description": "Implementation timeline", "example": "6 months: Jan pilot, March Wave 1, May full rollout", "required": true}
+    ],
+    "category": "project-management",
+    "frameworks": ["ADKAR", "Change Management"],
+    "tier": "premium",
+    "tags": ["change-management", "transformation", "adoption"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "fin-006",
+    "title": "Pricing Strategy Analysis",
+    "description": "Analyze and optimize pricing strategy with competitive and value-based approaches.",
+    "template": "Act as a Pricing Strategist. Develop a pricing strategy for {{product}}.\n\nProduct: {{product}}\nCurrent Pricing: {{current_pricing}}\nCompetitors: {{competitors}}\nCost Structure: {{costs}}\n\n# Pricing Strategy Analysis\n\n## Product Overview\n- Product: {{product}}\n- Target Market: [Segment]\n- Current Pricing: {{current_pricing}}\n- Current Revenue: $[X]\n\n## Pricing Objectives\n- [ ] Maximize revenue\n- [ ] Maximize profit\n- [ ] Gain market share\n- [ ] Premium positioning\n\n## Cost Analysis\n| Cost Component | Amount | % of Price |\n| COGS | | |\n| Customer Acquisition | | |\n| Support | | |\n| Infrastructure | | |\n| **Total Cost** | | |\n| **Target Margin** | | |\n\n## Competitive Pricing\n| Competitor | Price | Positioning | Key Differences |\n| | | | |\n\n## Value-Based Analysis\n| Value Driver | Customer Benefit | Quantified Value |\n| | | |\n**Total Economic Value:** $[X]\n**Value-Based Price Range:** $[X-Y]\n\n## Pricing Options\n| Option | Price | Projected Volume | Revenue | Margin |\n| Status Quo | | | | |\n| Value-Based | | | | |\n| Competitive | | | | |\n| Penetration | | | | |\n\n## Recommended Pricing Structure\n### Tiered Pricing\n| Tier | Price | Features | Target Segment |\n| Basic | | | |\n| Pro | | | |\n| Enterprise | | | |\n\n## Implementation Plan\n- Existing customers: [Grandfather/Migrate]\n- New customers: [Immediate]\n- Communication: [Approach]\n\n## Price Sensitivity Testing\n| Price Point | Expected Conversion | Revenue Impact |\n\n## Monitoring & Adjustment\n- Review frequency: [Quarterly]\n- Key metrics to track:\n- Trigger for adjustment:",
+    "variables": [
+      {"name": "product", "description": "Product to price", "example": "ProjectFlow SaaS Platform", "required": true},
+      {"name": "current_pricing", "description": "Current prices", "example": "$49/user/month, no tiers", "required": true},
+      {"name": "competitors", "description": "Competitor pricing", "example": "Asana $25, Monday $30, Jira $20", "required": true},
+      {"name": "costs", "description": "Cost structure", "example": "Infrastructure $5/user, support $3/user, CAC $150", "required": true}
+    ],
+    "category": "financial",
+    "frameworks": ["Value-Based Pricing", "Competitive Pricing"],
+    "tier": "premium",
+    "tags": ["pricing", "revenue", "strategy"],
+    "estimatedTimeSaved": "4-5 hours"
+  },
+  {
+    "id": "strat-009",
+    "title": "Blue Ocean Strategy Canvas",
+    "description": "Identify uncontested market space by analyzing value curves and eliminating competition.",
+    "template": "Act as a Strategy Consultant. Create a Blue Ocean Strategy Canvas for {{company}}.\n\nIndustry: {{industry}}\nCurrent Offering: {{current_offering}}\nCompetitors: {{competitors}}\n\n# Blue Ocean Strategy Canvas\n\n## Industry Analysis\n- Industry: {{industry}}\n- Current Red Ocean factors (what everyone competes on):\n\n## Value Curve Comparison\n| Factor | Industry Avg | Competitor A | Competitor B | Our Current | Our Blue Ocean |\n| [Factor 1] | | | | | |\n| [Factor 2] | | | | | |\n| [Factor 3] | | | | | |\n| [Factor 4] | | | | | |\n| [Factor 5] | | | | | |\n| [Factor 6] | | | | | |\n\n## Four Actions Framework\n\n### ELIMINATE\nWhich factors should be eliminated that the industry takes for granted?\n1. \n2. \n\n### REDUCE\nWhich factors should be reduced well below industry standard?\n1. \n2. \n\n### RAISE\nWhich factors should be raised well above industry standard?\n1. \n2. \n\n### CREATE\nWhich factors should be created that the industry has never offered?\n1. \n2. \n\n## New Value Proposition\n[One sentence capturing the blue ocean positioning]\n\n## Non-Customer Analysis\n| Tier | Description | Size | How to Convert |\n| Soon-to-be | Almost customers | | |\n| Refusing | Consciously reject | | |\n| Unexplored | Distant from market | | |\n\n## Strategic Sequence\n- Buyer Utility: [Pass/Fail]\n- Price: [Pass/Fail]\n- Cost: [Pass/Fail]\n- Adoption: [Pass/Fail]\n\n## Implementation Roadmap",
+    "variables": [
+      {"name": "company", "description": "Your company", "example": "FitTech Gyms", "required": true},
+      {"name": "industry", "description": "Industry to disrupt", "example": "Traditional Fitness Centers", "required": true},
+      {"name": "current_offering", "description": "What you offer now", "example": "Full-service gym with equipment, classes, personal training", "required": true},
+      {"name": "competitors", "description": "Main competitors", "example": "Planet Fitness, Equinox, Local gyms", "required": true}
+    ],
+    "category": "strategy",
+    "frameworks": ["Blue Ocean Strategy", "Value Innovation"],
+    "tier": "premium",
+    "tags": ["innovation", "differentiation", "market-creation"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "strat-010",
+    "title": "BCG Growth-Share Matrix",
+    "description": "Analyze product portfolio using the Boston Consulting Group matrix for resource allocation.",
+    "template": "Act as a Portfolio Strategist. Create a BCG Matrix analysis for {{company}}.\n\nProducts/Business Units: {{products}}\nMarket Data: {{market_data}}\n\n# BCG Growth-Share Matrix Analysis\n\n## Portfolio Overview\n- Company: {{company}}\n- Analysis Date: [Date]\n- Products Analyzed: {{products}}\n\n## Market Analysis\n| Product/BU | Revenue | Market Growth Rate | Relative Market Share | Quadrant |\n| | $ | % | vs largest competitor | |\n\n## Quadrant Classification\n\n### ⭐ STARS (High Growth, High Share)\n| Product | Growth | Share | Strategy |\n| | | | Invest to maintain leadership |\n\n### 💰 CASH COWS (Low Growth, High Share)\n| Product | Growth | Share | Strategy |\n| | | | Harvest, fund Stars |\n\n### ❓ QUESTION MARKS (High Growth, Low Share)\n| Product | Growth | Share | Strategy |\n| | | | Invest selectively or divest |\n\n### 🐕 DOGS (Low Growth, Low Share)\n| Product | Growth | Share | Strategy |\n| | | | Divest or reposition |\n\n## Portfolio Balance Assessment\n- Stars: X% of revenue\n- Cash Cows: X% of revenue\n- Question Marks: X% of revenue\n- Dogs: X% of revenue\n- **Health Score:** [Balanced/Unbalanced]\n\n## Strategic Recommendations\n\n### Resource Allocation\n| Product | Current Investment | Recommended | Change |\n\n### Movement Strategies\n- Move [Product] from Question Mark to Star by...\n- Milk [Product] to fund...\n- Divest [Product] because...\n\n## 3-Year Portfolio Vision\n[Target state of portfolio]",
+    "variables": [
+      {"name": "company", "description": "Company name", "example": "TechCorp Industries", "required": true},
+      {"name": "products", "description": "Products or business units", "example": "Cloud Platform, Legacy Software, Mobile App, IoT Division, Consulting", "required": true},
+      {"name": "market_data", "description": "Market information", "example": "Cloud growing 25%, Legacy flat, Mobile growing 15%, IoT growing 40%", "required": true}
+    ],
+    "category": "strategy",
+    "frameworks": ["BCG Matrix", "Portfolio Management"],
+    "tier": "premium",
+    "tags": ["portfolio", "resource-allocation", "growth"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "strat-011",
+    "title": "Ansoff Growth Matrix",
+    "description": "Evaluate growth strategies across market penetration, development, product development, and diversification.",
+    "template": "Act as a Growth Strategist. Apply the Ansoff Matrix to {{company}}.\n\nCurrent State: {{current_state}}\nGrowth Target: {{growth_target}}\n\n# Ansoff Growth Matrix Analysis\n\n## Current Position\n- Company: {{company}}\n- Current Markets: [List]\n- Current Products: [List]\n- Revenue: $[X]\n- Growth Target: {{growth_target}}\n\n## Growth Strategy Options\n\n### 1. MARKET PENETRATION (Existing Products, Existing Markets)\n**Risk Level:** Low\n\n| Tactic | Potential | Investment | Timeline |\n| Increase usage frequency | | | |\n| Win competitor customers | | | |\n| Convert non-users | | | |\n\n**Estimated Growth Contribution:** X%\n\n### 2. MARKET DEVELOPMENT (Existing Products, New Markets)\n**Risk Level:** Medium\n\n| New Market | Size | Entry Barrier | Fit |\n| Geographic expansion | | | |\n| New customer segments | | | |\n| New channels | | | |\n\n**Estimated Growth Contribution:** X%\n\n### 3. PRODUCT DEVELOPMENT (New Products, Existing Markets)\n**Risk Level:** Medium\n\n| New Product/Feature | Customer Need | Development Cost | Revenue Potential |\n| | | | |\n\n**Estimated Growth Contribution:** X%\n\n### 4. DIVERSIFICATION (New Products, New Markets)\n**Risk Level:** High\n\n| Opportunity | Related/Unrelated | Synergies | Risk |\n| | | | |\n\n**Estimated Growth Contribution:** X%\n\n## Recommended Strategy Mix\n| Strategy | % of Growth | Investment | Priority |\n| Market Penetration | | | |\n| Market Development | | | |\n| Product Development | | | |\n| Diversification | | | |\n\n## Implementation Roadmap\n- Year 1: Focus on [Strategy]\n- Year 2: Add [Strategy]\n- Year 3: Scale [Strategy]",
+    "variables": [
+      {"name": "company", "description": "Company name", "example": "HealthTech Solutions", "required": true},
+      {"name": "current_state", "description": "Current business state", "example": "$10M revenue, US-only, 2 products, healthcare vertical", "required": true},
+      {"name": "growth_target", "description": "Growth objective", "example": "Reach $25M in 3 years (150% growth)", "required": true}
+    ],
+    "category": "strategy",
+    "frameworks": ["Ansoff Matrix", "Growth Strategy"],
+    "tier": "premium",
+    "tags": ["growth", "expansion", "strategic-planning"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "ops-008",
+    "title": "KPI Dashboard Design",
+    "description": "Design operational KPI dashboards with metrics, targets, and visualization recommendations.",
+    "template": "Act as a Business Intelligence Analyst. Design a KPI Dashboard for {{department}}.\n\nDepartment: {{department}}\nBusiness Goals: {{goals}}\nCurrent Pain Points: {{pain_points}}\n\n# KPI Dashboard Design\n\n## Dashboard Overview\n- Department: {{department}}\n- Primary Users: [Roles]\n- Refresh Frequency: [Real-time/Daily/Weekly]\n- Access Level: [Executive/Manager/Team]\n\n## Tier 1: Executive Summary (Top of Dashboard)\n| KPI | Definition | Target | Current | Trend |\n| Primary Metric 1 | | | | |\n| Primary Metric 2 | | | | |\n| Primary Metric 3 | | | | |\n\n## Tier 2: Operational Metrics\n\n### Category A: [Category Name]\n| Metric | Formula | Target | Visualization | Drill-down |\n| | | | Line/Bar/Gauge | By region/time |\n\n### Category B: [Category Name]\n| Metric | Formula | Target | Visualization | Drill-down |\n\n## Tier 3: Diagnostic Metrics\n[Detailed metrics for root cause analysis]\n\n## Alert Thresholds\n| KPI | Green | Yellow | Red | Alert Action |\n| | >X | X-Y | <Y | Email/Slack |\n\n## Data Sources\n| Metric | Source System | Update Frequency | Data Quality |\n\n## Layout Recommendation\n```\n+------------------+------------------+\n| Summary Cards (4)                   |\n+------------------+------------------+\n| Trend Chart      | Distribution     |\n+------------------+------------------+\n| Table View       | Map/Breakdown    |\n+------------------+------------------+\n```\n\n## Implementation Notes\n- Tool Recommendation: [Tableau/Power BI/Looker]\n- Development Estimate: [X days]\n- Dependencies: [Data pipeline requirements]",
+    "variables": [
+      {"name": "department", "description": "Department name", "example": "Customer Success", "required": true},
+      {"name": "goals", "description": "Business objectives", "example": "Reduce churn to <5%, increase NPS to 50, improve response time", "required": true},
+      {"name": "pain_points", "description": "Current visibility gaps", "example": "No real-time view of at-risk accounts, manual reporting takes 2 days", "required": true}
+    ],
+    "category": "operations",
+    "frameworks": ["KPI Design", "Business Intelligence"],
+    "tier": "premium",
+    "tags": ["kpi", "dashboard", "metrics"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "ops-009",
+    "title": "Process Automation Assessment",
+    "description": "Evaluate processes for automation potential with ROI analysis and implementation roadmap.",
+    "template": "Act as a Process Automation Consultant. Assess automation opportunities for {{process}}.\n\nProcess: {{process}}\nCurrent State: {{current_state}}\nVolume: {{volume}}\n\n# Process Automation Assessment\n\n## Process Overview\n- Process: {{process}}\n- Current Owner: [Team/Role]\n- Frequency: {{volume}}\n- Current Duration: [X hours/transaction]\n\n## Automation Readiness Score\n\n| Criteria | Score (1-5) | Weight | Weighted |\n| Rule-based/Structured | | 20% | |\n| Digital Inputs | | 15% | |\n| High Volume | | 20% | |\n| Stable Process | | 15% | |\n| Low Exception Rate | | 15% | |\n| Clear Business Rules | | 15% | |\n| **Total Score** | | 100% | X/5 |\n\n## Current Process Analysis\n\n### Process Steps\n| Step | Manual/Auto | Time | Complexity | Automation Potential |\n| 1. | | min | High/Med/Low | High/Med/Low |\n\n### Pain Points\n- [Pain point 1]: Impact $X or Y hours/month\n- [Pain point 2]: Impact $X or Y hours/month\n\n## Automation Options\n\n| Option | Technology | Coverage | Cost | Timeline |\n| Full Automation | RPA + AI | 90% | $$$ | 3 months |\n| Partial Automation | RPA only | 60% | $$ | 6 weeks |\n| Workflow Enhancement | Low-code | 40% | $ | 2 weeks |\n\n## ROI Analysis\n\n### Current Costs (Annual)\n- Labor: X hours × $Y/hour = $Z\n- Errors/Rework: $X\n- Delays: $X\n- **Total:** $X\n\n### Automation Investment\n- Implementation: $X\n- Annual Maintenance: $X\n- Training: $X\n- **Total Year 1:** $X\n\n### Savings\n- Time Saved: X hours/year\n- Error Reduction: X%\n- **Annual Savings:** $X\n- **Payback Period:** X months\n- **3-Year ROI:** X%\n\n## Recommendation\n[Selected approach with rationale]\n\n## Implementation Roadmap\n| Phase | Activities | Duration | Dependencies |",
+    "variables": [
+      {"name": "process", "description": "Process to assess", "example": "Invoice Processing", "required": true},
+      {"name": "current_state", "description": "How it works today", "example": "Manual data entry from PDF invoices, 3-way matching, approval routing", "required": true},
+      {"name": "volume", "description": "Transaction volume", "example": "500 invoices/month, 3 FTEs, 15 min per invoice", "required": true}
+    ],
+    "category": "operations",
+    "frameworks": ["Process Automation", "RPA Assessment"],
+    "tier": "premium",
+    "tags": ["automation", "rpa", "efficiency"],
+    "estimatedTimeSaved": "4-5 hours"
+  },
+  {
+    "id": "fin-007",
+    "title": "Monthly Financial Close Checklist",
+    "description": "Comprehensive month-end close checklist ensuring accuracy and compliance.",
+    "template": "Act as a Financial Controller. Create a Month-End Close Checklist for {{company_type}}.\n\nCompany Type: {{company_type}}\nClose Timeline: {{timeline}}\nKey Accounts: {{key_accounts}}\n\n# Month-End Close Checklist\n\n## Close Overview\n- Period: [Month Year]\n- Close Deadline: [Date]\n- Controller: [Name]\n- Status: [In Progress/Complete]\n\n## Pre-Close Activities (Day -5 to -1)\n- [ ] Send close calendar to all departments\n- [ ] Confirm cutoff dates for AP/AR\n- [ ] Review open POs and accrual needs\n- [ ] Verify bank reconciliation access\n- [ ] Confirm intercompany balances\n\n## Day 1: Cash & Bank\n- [ ] Download bank statements\n- [ ] Complete bank reconciliations\n- [ ] Clear outstanding items >30 days\n- [ ] Record cash transactions\n- [ ] Verify cash position\n\n## Day 2: Revenue & Receivables\n- [ ] Review revenue recognition\n- [ ] Post deferred revenue entries\n- [ ] Reconcile AR subledger to GL\n- [ ] Review aging report\n- [ ] Calculate bad debt allowance\n- [ ] Post AR adjustments\n\n## Day 3: Expenses & Payables\n- [ ] Ensure all invoices posted\n- [ ] Record accruals for unbilled expenses\n- [ ] Reconcile AP subledger to GL\n- [ ] Review prepaid amortization\n- [ ] Process employee expense reports\n\n## Day 4: Payroll & Benefits\n- [ ] Verify payroll posted correctly\n- [ ] Reconcile payroll accounts\n- [ ] Accrue vacation/PTO liability\n- [ ] Review benefit expenses\n\n## Day 5: Fixed Assets & Inventory\n- [ ] Run depreciation\n- [ ] Review asset additions/disposals\n- [ ] Inventory count reconciliation\n- [ ] Review inventory reserves\n\n## Day 6: Intercompany & Consolidation\n- [ ] Reconcile intercompany accounts\n- [ ] Eliminate intercompany transactions\n- [ ] FX translation entries\n- [ ] Consolidation adjustments\n\n## Day 7: Review & Reporting\n- [ ] Run trial balance\n- [ ] Flux analysis vs prior month/budget\n- [ ] Prepare financial statements\n- [ ] Management review\n- [ ] Final adjusting entries\n- [ ] Lock period\n\n## Close Sign-Off\n| Area | Preparer | Reviewer | Date |\n| Cash | | | |\n| Revenue | | | |\n| Expenses | | | |\n| Payroll | | | |\n| Assets | | | |",
+    "variables": [
+      {"name": "company_type", "description": "Type of company", "example": "Mid-size SaaS company", "required": true},
+      {"name": "timeline", "description": "Close timeline", "example": "7 business days after month end", "required": true},
+      {"name": "key_accounts", "description": "Critical accounts", "example": "Deferred revenue, ARR, Commissions payable", "required": true}
+    ],
+    "category": "financial",
+    "frameworks": ["Financial Close", "Month-End Procedures"],
+    "tier": "free",
+    "tags": ["month-end", "close-process", "accounting"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "fin-008",
+    "title": "Cash Flow Forecasting Model",
+    "description": "Build rolling cash flow forecasts with scenario planning and runway analysis.",
+    "template": "Act as a Treasury Analyst. Create a Cash Flow Forecast for {{company}}.\n\nCurrent Cash: {{current_cash}}\nBurn Rate: {{burn_rate}}\nRevenue Model: {{revenue_model}}\n\n# Cash Flow Forecast\n\n## Current Position\n- Cash Balance: {{current_cash}}\n- Monthly Burn: {{burn_rate}}\n- Current Runway: [X months]\n\n## 13-Week Rolling Forecast\n\n| Week | Beginning Cash | Inflows | Outflows | Net | Ending Cash |\n| W1 | | | | | |\n| W2 | | | | | |\n| ... | | | | | |\n| W13 | | | | | |\n\n## Monthly Forecast (12 months)\n\n### Cash Inflows\n| Category | M1 | M2 | M3 | M4 | M5 | M6 |\n| Collections | | | | | | |\n| New Sales | | | | | | |\n| Other Income | | | | | | |\n| **Total Inflows** | | | | | | |\n\n### Cash Outflows\n| Category | M1 | M2 | M3 | M4 | M5 | M6 |\n| Payroll | | | | | | |\n| Rent/Facilities | | | | | | |\n| Software/Tools | | | | | | |\n| Marketing | | | | | | |\n| Professional Services | | | | | | |\n| COGS/Hosting | | | | | | |\n| Other | | | | | | |\n| **Total Outflows** | | | | | | |\n\n### Net Cash Flow\n| | M1 | M2 | M3 | M4 | M5 | M6 |\n| Net Flow | | | | | | |\n| Ending Balance | | | | | | |\n\n## Scenario Analysis\n\n| Scenario | Assumptions | Runway | Action Needed |\n| Base Case | Current trajectory | X months | |\n| Best Case | +20% revenue, -10% costs | X months | |\n| Worst Case | -30% revenue, same costs | X months | |\n| Survival Mode | Cut to essentials | X months | |\n\n## Key Assumptions\n- Collection days: [X days]\n- Payment terms: [Net X]\n- Seasonal factors: [List]\n\n## Recommendations\n1. [Cash management action]\n2. [Cost optimization]\n3. [Revenue acceleration]",
+    "variables": [
+      {"name": "company", "description": "Company name", "example": "GrowthTech Inc.", "required": true},
+      {"name": "current_cash", "description": "Current cash balance", "example": "$2.5M in bank", "required": true},
+      {"name": "burn_rate", "description": "Monthly burn", "example": "$200K/month net burn", "required": true},
+      {"name": "revenue_model", "description": "Revenue characteristics", "example": "SaaS, annual contracts, 60% collected upfront", "required": true}
+    ],
+    "category": "financial",
+    "frameworks": ["Cash Flow Management", "Treasury"],
+    "tier": "premium",
+    "tags": ["cash-flow", "forecasting", "runway"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "hr-008",
+    "title": "Organizational Design Framework",
+    "description": "Design optimal organizational structures aligned with strategy and operating model.",
+    "template": "Act as an Organizational Design Consultant. Design an org structure for {{organization}}.\n\nContext: {{context}}\nCurrent Structure: {{current_structure}}\nStrategic Goals: {{goals}}\n\n# Organizational Design\n\n## Current State Assessment\n- Organization: {{organization}}\n- Headcount: [X]\n- Current Structure Type: [Functional/Divisional/Matrix]\n- Key Pain Points: {{context}}\n\n## Design Principles\n1. [Principle aligned with strategy]\n2. [Principle for efficiency]\n3. [Principle for agility]\n\n## Structure Options\n\n### Option A: [Structure Type]\n**Description:** [How it works]\n**Pros:**\n- \n**Cons:**\n- \n**Best for:** [Conditions]\n\n### Option B: [Structure Type]\n[Same format]\n\n## Recommended Structure\n\n### Org Chart\n```\n                [CEO]\n                  |\n    +------+------+------+\n    |      |      |      |\n  [VP 1] [VP 2] [VP 3] [VP 4]\n    |      |      |      |\n  Teams  Teams  Teams  Teams\n```\n\n### Reporting Lines\n| Role | Reports To | Direct Reports | Key Interfaces |\n\n### Span of Control\n| Level | Target Span | Rationale |\n| Executive | 5-7 | | |\n| Manager | 6-10 | | |\n| Supervisor | 10-15 | | |\n\n## Role Clarity\n\n### New/Changed Roles\n| Role | Key Accountabilities | Decision Rights | KPIs |\n\n### RACI for Key Processes\n| Process | Role A | Role B | Role C | Role D |\n| | R/A/C/I | | | |\n\n## Governance Model\n- Leadership Team Meeting: [Cadence]\n- Cross-functional Forums: [List]\n- Escalation Path: [Process]\n\n## Transition Plan\n| Phase | Activities | Timeline | Risk Mitigation |\n| Announce | | Week 1 | |\n| Implement | | Week 2-4 | |\n| Stabilize | | Week 5-8 | |",
+    "variables": [
+      {"name": "organization", "description": "Organization to design", "example": "Product & Engineering Division (200 people)", "required": true},
+      {"name": "context", "description": "Why redesigning", "example": "Post-merger integration, need to scale for growth, reduce silos", "required": true},
+      {"name": "current_structure", "description": "Current org structure", "example": "Functional silos: Engineering, Product, Design, QA separate", "required": true},
+      {"name": "goals", "description": "Strategic objectives", "example": "Faster delivery, better customer focus, enable platform teams", "required": true}
+    ],
+    "category": "hr-talent",
+    "frameworks": ["Organizational Design", "Operating Model"],
+    "tier": "premium",
+    "tags": ["org-design", "structure", "transformation"],
+    "estimatedTimeSaved": "6-8 hours"
+  },
+  {
+    "id": "hr-009",
+    "title": "Employee Onboarding Program",
+    "description": "Design comprehensive onboarding programs that accelerate time-to-productivity.",
+    "template": "Act as an HR Program Manager. Design an Onboarding Program for {{role_type}}.\n\nRole Type: {{role_type}}\nCompany Context: {{company}}\nCurrent Onboarding: {{current_state}}\n\n# Employee Onboarding Program\n\n## Program Overview\n- Target Role: {{role_type}}\n- Program Duration: [30/60/90 days]\n- Success Metric: Time to productivity\n\n## Pre-Boarding (Before Day 1)\n\n### Week Before Start\n- [ ] Send welcome email with first day details\n- [ ] Ship laptop and equipment\n- [ ] Create accounts (email, Slack, tools)\n- [ ] Assign buddy/mentor\n- [ ] Notify team of new hire\n- [ ] Prepare workspace/desk\n\n### Manager Prep\n- [ ] Create 30/60/90 day plan\n- [ ] Schedule key meetings\n- [ ] Prepare first project/assignment\n\n## Week 1: Foundation\n\n### Day 1\n| Time | Activity | Owner |\n| 9:00 | Welcome & building tour | HR |\n| 10:00 | IT setup & tools | IT |\n| 11:00 | Meet the team lunch | Manager |\n| 1:00 | Company overview | HR |\n| 3:00 | Role expectations | Manager |\n\n### Days 2-5\n- [ ] Complete compliance training\n- [ ] Department introductions\n- [ ] Review key documentation\n- [ ] Shadow team members\n- [ ] Daily check-in with buddy\n\n## Week 2-4: Learning\n- [ ] Product/service deep dives\n- [ ] Process training\n- [ ] Tool certifications\n- [ ] Cross-functional introductions\n- [ ] Small starter project\n- [ ] Weekly 1:1 with manager\n\n## Month 2: Contributing\n- [ ] Take on real projects\n- [ ] Attend team meetings as participant\n- [ ] Build key relationships\n- [ ] 30-day check-in with HR\n- [ ] Feedback session with manager\n\n## Month 3: Performing\n- [ ] Own deliverables independently\n- [ ] Contribute to team goals\n- [ ] Identify improvement opportunities\n- [ ] 90-day performance review\n- [ ] Onboarding feedback survey\n\n## Success Milestones\n| Milestone | Day 30 | Day 60 | Day 90 |\n| Knowledge | Understands role | Knows processes | Expert in area |\n| Relationships | Knows team | Cross-functional | Network built |\n| Output | Assisted work | Contributing | Independent |\n\n## Program Resources\n- Onboarding portal link\n- Key contacts list\n- FAQ document\n- Feedback channels",
+    "variables": [
+      {"name": "role_type", "description": "Type of role", "example": "Software Engineers", "required": true},
+      {"name": "company", "description": "Company context", "example": "Fast-growing startup, remote-first, 150 employees", "required": true},
+      {"name": "current_state", "description": "Current onboarding", "example": "Informal, manager-dependent, no standard program", "required": true}
+    ],
+    "category": "hr-talent",
+    "frameworks": ["Onboarding", "Employee Experience"],
+    "tier": "free",
+    "tags": ["onboarding", "new-hire", "employee-experience"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "pm-009",
+    "title": "Product Roadmap Template",
+    "description": "Create strategic product roadmaps aligned with business goals and customer needs.",
+    "template": "Act as a Product Manager. Create a Product Roadmap for {{product}}.\n\nProduct: {{product}}\nTime Horizon: {{timeframe}}\nStrategic Goals: {{goals}}\n\n# Product Roadmap\n\n## Product Vision\n[One sentence describing the product's purpose and impact]\n\n## Strategic Context\n- Business Goals: {{goals}}\n- Target Users: [Personas]\n- Key Metrics: [North star + supporting metrics]\n\n## Roadmap Themes\n\n### Theme 1: [Theme Name]\n**Goal:** [What we're trying to achieve]\n**Success Metric:** [How we'll measure it]\n\n### Theme 2: [Theme Name]\n[Same format]\n\n## Roadmap View\n\n### Now (Current Quarter)\n| Initiative | Theme | Effort | Impact | Status |\n| [Feature 1] | | S/M/L | High/Med | In Progress |\n| [Feature 2] | | | | Planned |\n\n### Next (Next Quarter)\n| Initiative | Theme | Effort | Impact | Dependencies |\n| [Feature 3] | | | | |\n| [Feature 4] | | | | |\n\n### Later (Future)\n| Initiative | Theme | Effort | Impact | Confidence |\n| [Feature 5] | | | | Low/Med/High |\n\n## Feature Details\n\n### [Feature Name]\n- **Problem:** What user problem does this solve?\n- **Solution:** High-level approach\n- **Success Criteria:** How we know it worked\n- **Risks:** What could go wrong\n- **Dependencies:** What's needed first\n\n## Resource Allocation\n| Theme | % of Effort | Rationale |\n| New Features | 60% | Growth |\n| Tech Debt | 20% | Sustainability |\n| Bug Fixes | 15% | Quality |\n| Experiments | 5% | Learning |\n\n## Risks & Dependencies\n| Risk/Dependency | Impact | Mitigation | Owner |\n\n## Review Cadence\n- Weekly: Progress updates\n- Monthly: Roadmap review\n- Quarterly: Strategic alignment",
+    "variables": [
+      {"name": "product", "description": "Product name", "example": "CustomerHub Mobile App", "required": true},
+      {"name": "timeframe", "description": "Roadmap horizon", "example": "12-month rolling roadmap", "required": true},
+      {"name": "goals", "description": "Business objectives", "example": "Increase mobile engagement 40%, reduce support tickets 25%", "required": true}
+    ],
+    "category": "project-management",
+    "frameworks": ["Product Management", "Roadmapping"],
+    "tier": "free",
+    "tags": ["roadmap", "product", "planning"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "pm-010",
+    "title": "Resource Allocation Matrix",
+    "description": "Optimize resource allocation across projects with capacity planning and conflict resolution.",
+    "template": "Act as a Resource Manager. Create a Resource Allocation Matrix for {{portfolio}}.\n\nPortfolio: {{portfolio}}\nResources: {{resources}}\nTime Period: {{period}}\n\n# Resource Allocation Matrix\n\n## Portfolio Overview\n- Projects: {{portfolio}}\n- Team Size: [X people]\n- Time Period: {{period}}\n\n## Resource Inventory\n| Resource | Role | Capacity (hrs/wk) | Skills | Cost Rate |\n| [Name] | Developer | 40 | Python, AWS | $X/hr |\n| [Name] | | | | |\n\n## Project Demand\n| Project | Priority | Duration | Required Skills | Total Hours |\n| Project A | P1 | 8 weeks | Dev, QA | 320 |\n| Project B | P2 | 6 weeks | Design, Dev | 240 |\n\n## Allocation Matrix\n\n| Resource | Project A | Project B | Project C | Total | Utilization |\n| [Name 1] | 50% | 30% | 0% | 80% | Optimal |\n| [Name 2] | 0% | 70% | 20% | 90% | Near max |\n| [Name 3] | 100% | 0% | 0% | 100% | At risk |\n\n## Timeline View\n\n### [Resource Name]\n| Week 1 | Week 2 | Week 3 | Week 4 | Week 5 | Week 6 |\n| Proj A | Proj A | Proj A | Proj B | Proj B | Proj B |\n\n## Conflicts Identified\n| Conflict | Resources | Impact | Resolution Options |\n| Over-allocation | [Name] @ 120% | Burnout risk | Defer Project C or add contractor |\n| Skill gap | No UX designer | Project B delayed | Hire or outsource |\n\n## Recommendations\n\n### Immediate Actions\n1. [Action to resolve conflict]\n2. [Action to optimize]\n\n### Hiring Needs\n| Role | Justification | Timeline | Budget |\n\n### Capacity Risks\n| Risk | Probability | Impact | Mitigation |\n| Key person dependency | High | High | Cross-train [Name] |",
+    "variables": [
+      {"name": "portfolio", "description": "Projects to staff", "example": "Q2 Portfolio: Platform Upgrade, Mobile App, API v2", "required": true},
+      {"name": "resources", "description": "Available team", "example": "8 engineers, 2 designers, 2 QA, 1 PM", "required": true},
+      {"name": "period", "description": "Planning period", "example": "Q2 2024 (April-June)", "required": true}
+    ],
+    "category": "project-management",
+    "frameworks": ["Resource Management", "Capacity Planning"],
+    "tier": "premium",
+    "tags": ["resource-planning", "allocation", "capacity"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "ba-007",
+    "title": "Stakeholder Communication Plan",
+    "description": "Design communication strategies tailored to different stakeholder groups.",
+    "template": "Act as a Communications Specialist. Create a Stakeholder Communication Plan for {{project}}.\n\nProject: {{project}}\nStakeholders: {{stakeholders}}\nProject Phase: {{phase}}\n\n# Stakeholder Communication Plan\n\n## Project Overview\n- Project: {{project}}\n- Duration: [X months]\n- Current Phase: {{phase}}\n- Communication Lead: [Name]\n\n## Stakeholder Mapping\n\n| Stakeholder | Role | Interest | Influence | Current Attitude | Desired Attitude |\n| [Name/Group] | Sponsor | High | High | Supportive | Champion |\n| [Name/Group] | User | High | Low | Neutral | Supportive |\n\n## Communication Matrix\n\n| Stakeholder | Information Needs | Frequency | Channel | Owner |\n| Executive Sponsor | Status, risks, decisions | Weekly | Email + meeting | PM |\n| Project Team | Tasks, blockers | Daily | Standup + Slack | Scrum Master |\n| End Users | Changes, training | As needed | Email + portal | Change Mgr |\n| Vendors | Requirements, timeline | Bi-weekly | Meeting | Tech Lead |\n\n## Key Messages by Audience\n\n### Executives\n- Core Message: [Value and progress]\n- Tone: Concise, outcome-focused\n- Avoid: Technical details\n\n### Project Team\n- Core Message: [Context and direction]\n- Tone: Transparent, collaborative\n- Include: Blockers, dependencies\n\n### End Users\n- Core Message: [Impact and benefits]\n- Tone: Supportive, clear\n- Address: \"What's in it for me?\"\n\n## Communication Schedule\n\n| Communication | Audience | Frequency | Day/Time | Format |\n| Status Report | Sponsor | Weekly | Friday 4pm | Email |\n| Team Standup | Team | Daily | 9:30am | Zoom |\n| Newsletter | All Staff | Monthly | 1st Monday | Email |\n| Town Hall | Organization | Quarterly | [Date] | All-hands |\n\n## Escalation Protocol\n| Issue Type | Escalation Path | Timeline |\n| Risk materialized | PM → Sponsor → SteerCo | 24 hours |\n| Scope change | PM → Change Board | 48 hours |\n\n## Feedback Mechanisms\n- Survey: [Link]\n- Office Hours: [Schedule]\n- Anonymous Channel: [Method]",
+    "variables": [
+      {"name": "project", "description": "Project name", "example": "ERP System Implementation", "required": true},
+      {"name": "stakeholders", "description": "Key stakeholders", "example": "CFO (Sponsor), Finance Team (Users), IT (Implementers), Vendors", "required": true},
+      {"name": "phase", "description": "Current project phase", "example": "Design phase, 3 months from go-live", "required": true}
+    ],
+    "category": "business-analysis",
+    "frameworks": ["Stakeholder Management", "Communication Planning"],
+    "tier": "premium",
+    "tags": ["communication", "stakeholder-management", "planning"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "sales-008",
+    "title": "Customer Success Playbook",
+    "description": "Create playbooks for customer success milestones from onboarding to expansion.",
+    "template": "Act as a Customer Success Director. Create a CS Playbook for {{product}}.\n\nProduct: {{product}}\nCustomer Segment: {{segment}}\nSuccess Metrics: {{metrics}}\n\n# Customer Success Playbook\n\n## Playbook Overview\n- Product: {{product}}\n- Segment: {{segment}}\n- CSM Ratio: [1:X customers]\n- Key Metrics: {{metrics}}\n\n## Customer Lifecycle Stages\n\n### Stage 1: Onboarding (Day 0-30)\n**Goal:** Successful implementation and first value\n\n| Milestone | Day | Owner | Success Criteria |\n| Kickoff call | 1 | CSM | Goals documented |\n| Technical setup | 7 | SE | System live |\n| Training | 14 | CSM | Users certified |\n| First value | 30 | CSM | Key use case working |\n\n**Playbook Actions:**\n- [ ] Send welcome kit\n- [ ] Schedule kickoff\n- [ ] Create success plan\n- [ ] Conduct training\n- [ ] 30-day check-in\n\n### Stage 2: Adoption (Day 31-90)\n**Goal:** Expand usage and embed in workflows\n\n| Metric | Target | Check-in |\n| Daily Active Users | 60% | Weekly |\n| Feature adoption | 3+ features | Day 60 |\n| Support tickets | <3/month | Ongoing |\n\n**Playbook Actions:**\n- [ ] Usage review call\n- [ ] Best practices training\n- [ ] Executive alignment\n- [ ] Identify champions\n\n### Stage 3: Value Realization (Day 91-180)\n**Goal:** Demonstrate ROI and capture value story\n\n- [ ] Conduct business review\n- [ ] Document value metrics\n- [ ] Gather testimonial\n- [ ] Identify expansion opportunities\n\n### Stage 4: Renewal & Expansion (Day 180+)\n**Goal:** Secure renewal and grow account\n\n| Activity | Timing | Owner |\n| Renewal conversation | 90 days before | CSM + AE |\n| Expansion proposal | With renewal | AE |\n| Contract renewal | 30 days before | AE |\n\n## Health Score Model\n| Factor | Weight | Green | Yellow | Red |\n| Usage | 30% | >80% | 50-80% | <50% |\n| Engagement | 25% | Monthly contact | Quarterly | None |\n| Support | 20% | <3 tickets | 3-10 | >10 |\n| NPS | 15% | >8 | 6-8 | <6 |\n| Payment | 10% | On time | 1-30 late | >30 late |\n\n## Risk Mitigation Playbooks\n\n### Low Usage Alert\n- Trigger: <30% DAU for 14 days\n- Actions: [Intervention steps]\n\n### At-Risk Renewal\n- Trigger: Health score Red + renewal in 90 days\n- Actions: [Save playbook]",
+    "variables": [
+      {"name": "product", "description": "Product name", "example": "DataSync Platform", "required": true},
+      {"name": "segment", "description": "Customer segment", "example": "Mid-market (100-500 employees), $20-50K ACV", "required": true},
+      {"name": "metrics", "description": "Success KPIs", "example": "NRR >110%, Churn <5%, NPS >50", "required": true}
+    ],
+    "category": "sales",
+    "frameworks": ["Customer Success", "Account Management"],
+    "tier": "premium",
+    "tags": ["customer-success", "retention", "playbook"],
+    "estimatedTimeSaved": "4-5 hours"
+  },
+  {
+    "id": "strat-012",
+    "title": "Digital Transformation Roadmap",
+    "description": "Plan enterprise digital transformation with technology, process, and people dimensions.",
+    "template": "Act as a Digital Transformation Consultant. Create a Digital Transformation Roadmap for {{company}}.\n\nCompany: {{company}}\nCurrent State: {{current_state}}\nVision: {{vision}}\n\n# Digital Transformation Roadmap\n\n## Transformation Vision\n**Future State:** {{vision}}\n**Timeline:** [X years]\n**Investment:** [Budget range]\n\n## Current State Assessment\n\n### Digital Maturity Score\n| Dimension | Score (1-5) | Gap | Priority |\n| Customer Experience | | | |\n| Operations | | | |\n| Data & Analytics | | | |\n| Technology | | | |\n| Culture & Skills | | | |\n| **Overall** | X/5 | | |\n\n### Legacy Challenges\n- [Challenge 1]: Impact and urgency\n- [Challenge 2]: Impact and urgency\n\n## Transformation Pillars\n\n### Pillar 1: Customer Experience\n| Initiative | Description | Business Value | Timeline |\n| Digital Channels | | | |\n| Personalization | | | |\n| Self-Service | | | |\n\n### Pillar 2: Operational Excellence\n| Initiative | Description | Business Value | Timeline |\n| Process Automation | | | |\n| Cloud Migration | | | |\n| Data Platform | | | |\n\n### Pillar 3: Innovation & Growth\n| Initiative | Description | Business Value | Timeline |\n| New Digital Products | | | |\n| AI/ML Capabilities | | | |\n| Ecosystem Integration | | | |\n\n## Implementation Roadmap\n\n### Phase 1: Foundation (Year 1)\n- Cloud infrastructure\n- Data platform\n- Core integrations\n- Change management\n\n### Phase 2: Acceleration (Year 2)\n- Customer-facing digital\n- Automation scale-up\n- Analytics deployment\n\n### Phase 3: Innovation (Year 3+)\n- AI/ML at scale\n- New business models\n- Continuous optimization\n\n## Investment & Returns\n| Year | Investment | Benefits | Net Value |\n| Y1 | $X | $Y | |\n| Y2 | $X | $Y | |\n| Y3 | $X | $Y | |\n\n## Risk Management\n| Risk | Probability | Impact | Mitigation |\n| Change resistance | High | High | [Strategy] |\n| Technical complexity | Medium | High | [Strategy] |\n\n## Governance\n- Steering Committee: [Composition]\n- Review Cadence: [Monthly/Quarterly]\n- Success Metrics: [KPIs]",
+    "variables": [
+      {"name": "company", "description": "Company name", "example": "Regional Bank Corp", "required": true},
+      {"name": "current_state", "description": "Current digital state", "example": "Legacy core systems, limited online banking, paper-heavy processes", "required": true},
+      {"name": "vision", "description": "Target future state", "example": "Digital-first bank with AI-powered services and seamless omnichannel experience", "required": true}
+    ],
+    "category": "strategy",
+    "frameworks": ["Digital Transformation", "Change Management"],
+    "tier": "premium",
+    "tags": ["digital", "transformation", "technology"],
+    "estimatedTimeSaved": "6-8 hours"
+  },
+  {
+    "id": "strat-013",
+    "title": "Balanced Scorecard",
+    "description": "Create a balanced scorecard linking strategy to metrics across financial, customer, process, and learning perspectives.",
+    "template": "Act as a Strategy Consultant. Create a Balanced Scorecard for {{organization}}.\n\nOrganization: {{organization}}\nStrategic Goals: {{goals}}\nTime Horizon: {{timeframe}}\n\n# Balanced Scorecard\n\n## Strategic Overview\n- Organization: {{organization}}\n- Vision: [Vision statement]\n- Mission: [Mission statement]\n- Strategy: {{goals}}\n\n## Strategy Map\n[How objectives link across perspectives]\n\n## Financial Perspective\n**Key Question:** How do we look to shareholders?\n\n| Objective | Measure | Target | Initiative |\n| Increase Revenue | Revenue Growth % | 15% | [Action] |\n| Improve Profitability | Operating Margin | 20% | [Action] |\n| Maximize Asset Utilization | ROA | 12% | [Action] |\n\n## Customer Perspective\n**Key Question:** How do customers see us?\n\n| Objective | Measure | Target | Initiative |\n| Customer Satisfaction | NPS Score | 50 | [Action] |\n| Market Share | % Market Share | 25% | [Action] |\n| Customer Retention | Retention Rate | 90% | [Action] |\n\n## Internal Process Perspective\n**Key Question:** What must we excel at?\n\n| Objective | Measure | Target | Initiative |\n| Operational Efficiency | Process Cycle Time | -30% | [Action] |\n| Quality Excellence | Defect Rate | <1% | [Action] |\n| Innovation Pipeline | New Products/Year | 4 | [Action] |\n\n## Learning & Growth Perspective\n**Key Question:** How can we continue to improve?\n\n| Objective | Measure | Target | Initiative |\n| Employee Engagement | Engagement Score | 80% | [Action] |\n| Skill Development | Training Hours/Employee | 40 | [Action] |\n| Technology Enablement | System Uptime | 99.9% | [Action] |\n\n## Scorecard Dashboard\n| Perspective | # Objectives | # Green | # Yellow | # Red |\n| Financial | | | | |\n| Customer | | | | |\n| Internal Process | | | | |\n| Learning & Growth | | | | |\n\n## Review Cadence\n- Monthly: Metric review\n- Quarterly: Strategy review\n- Annual: Scorecard refresh",
+    "variables": [
+      {"name": "organization", "description": "Organization name", "example": "Manufacturing Division", "required": true},
+      {"name": "goals", "description": "Strategic priorities", "example": "Market leadership, operational excellence, sustainable growth", "required": true},
+      {"name": "timeframe", "description": "Planning horizon", "example": "3-year strategic plan", "required": true}
+    ],
+    "category": "strategy",
+    "frameworks": ["Balanced Scorecard", "Strategy Execution"],
+    "tier": "premium",
+    "tags": ["balanced-scorecard", "kpi", "strategy-execution"],
+    "estimatedTimeSaved": "4-5 hours"
+  },
+  {
+    "id": "ops-010",
+    "title": "Quality Management System",
+    "description": "Design QMS frameworks aligned with ISO 9001 and continuous improvement principles.",
+    "template": "Act as a Quality Manager. Design a Quality Management System for {{organization}}.\n\nOrganization: {{organization}}\nIndustry: {{industry}}\nCertification Goal: {{certification}}\n\n# Quality Management System\n\n## QMS Overview\n- Scope: {{organization}}\n- Standard: {{certification}}\n- Quality Policy: [Statement]\n\n## Quality Policy Statement\n[Commitment to quality, customer focus, continuous improvement]\n\n## Organizational Context\n\n### Interested Parties\n| Party | Needs & Expectations | How We Address |\n| Customers | | |\n| Employees | | |\n| Regulators | | |\n| Suppliers | | |\n\n### Risk & Opportunity Assessment\n| Risk/Opportunity | Likelihood | Impact | Action |\n\n## Process Approach\n\n### Core Processes\n| Process | Owner | Inputs | Outputs | KPI |\n| Sales | | | | |\n| Production | | | | |\n| Delivery | | | | |\n\n### Support Processes\n| Process | Owner | Inputs | Outputs | KPI |\n| HR | | | | |\n| IT | | | | |\n| Procurement | | | | |\n\n## Quality Objectives\n| Objective | Measure | Target | Frequency | Owner |\n| Customer Satisfaction | CSAT Score | >4.5/5 | Monthly | |\n| On-Time Delivery | % On-Time | 98% | Weekly | |\n| First Pass Yield | % FPY | 95% | Daily | |\n\n## Documentation Structure\n- Level 1: Quality Manual\n- Level 2: Procedures\n- Level 3: Work Instructions\n- Level 4: Records & Forms\n\n## Control of Nonconformities\n| Type | Detection | Containment | Corrective Action |\n| Product NC | Inspection | Quarantine | CAPA |\n| Process NC | Audit | Stop process | Root cause analysis |\n\n## Internal Audit Program\n| Area | Frequency | Last Audit | Next Audit | Auditor |\n\n## Management Review\n- Frequency: [Quarterly]\n- Inputs: [Audit results, customer feedback, KPIs]\n- Outputs: [Actions, resource decisions]",
+    "variables": [
+      {"name": "organization", "description": "Organization scope", "example": "ABC Manufacturing Plant", "required": true},
+      {"name": "industry", "description": "Industry sector", "example": "Automotive parts manufacturing", "required": true},
+      {"name": "certification", "description": "Target standard", "example": "ISO 9001:2015", "required": true}
+    ],
+    "category": "operations",
+    "frameworks": ["ISO 9001", "Quality Management"],
+    "tier": "premium",
+    "tags": ["quality", "iso", "qms"],
+    "estimatedTimeSaved": "6-8 hours"
+  },
+  {
+    "id": "ops-011",
+    "title": "Supply Chain Risk Assessment",
+    "description": "Identify and mitigate supply chain risks across suppliers, logistics, and operations.",
+    "template": "Act as a Supply Chain Risk Manager. Conduct a Supply Chain Risk Assessment for {{company}}.\n\nCompany: {{company}}\nSupply Chain Scope: {{scope}}\nRecent Disruptions: {{disruptions}}\n\n# Supply Chain Risk Assessment\n\n## Assessment Scope\n- Company: {{company}}\n- Supply Chain: {{scope}}\n- Assessment Date: [Date]\n- Review Period: [Annual]\n\n## Risk Categories\n\n### Supplier Risks\n| Supplier | Category | Risk | Probability | Impact | Score | Mitigation |\n| [Name] | Single source | Supply disruption | High | Critical | 25 | Dual source |\n| [Name] | | | | | | |\n\n### Operational Risks\n| Risk | Description | Probability | Impact | Score | Mitigation |\n| Capacity constraints | | | | | |\n| Quality issues | | | | | |\n| Equipment failure | | | | | |\n\n### Logistics Risks\n| Risk | Description | Probability | Impact | Score | Mitigation |\n| Transportation disruption | | | | | |\n| Port congestion | | | | | |\n| Customs delays | | | | | |\n\n### External Risks\n| Risk | Description | Probability | Impact | Score | Mitigation |\n| Geopolitical | | | | | |\n| Natural disaster | | | | | |\n| Pandemic | | | | | |\n| Regulatory change | | | | | |\n\n## Risk Heat Map\n| | Low Impact | Medium Impact | High Impact |\n| High Prob | Yellow | Red | Red |\n| Med Prob | Green | Yellow | Red |\n| Low Prob | Green | Green | Yellow |\n\n## Critical Supplier Analysis\n| Supplier | Spend | % of Supply | Alternatives | Risk Score | Tier |\n| | $X | 30% | 2 known | High | Critical |\n\n## Mitigation Strategies\n\n### Immediate Actions\n1. [Action for highest risk]\n2. [Action for second highest]\n\n### Medium-term Initiatives\n1. Supplier diversification program\n2. Inventory buffer strategy\n3. Alternative logistics routes\n\n### Long-term Resilience\n1. Near-shoring evaluation\n2. Vertical integration assessment\n3. Technology investment (visibility tools)\n\n## Monitoring & Review\n| Metric | Frequency | Threshold | Action |\n| Supplier health score | Monthly | <70 | Review meeting |\n| Inventory days | Weekly | <15 | Expedite orders |",
+    "variables": [
+      {"name": "company", "description": "Company name", "example": "ElectroTech Manufacturing", "required": true},
+      {"name": "scope", "description": "Supply chain scope", "example": "Electronic components from Asia, assembly in Mexico, distribution NA/EU", "required": true},
+      {"name": "disruptions", "description": "Recent issues", "example": "Chip shortage 2021, port delays 2022, supplier bankruptcy Q3", "required": true}
+    ],
+    "category": "operations",
+    "frameworks": ["Supply Chain Risk Management", "Business Continuity"],
+    "tier": "premium",
+    "tags": ["supply-chain", "risk-management", "resilience"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "fin-009",
+    "title": "M&A Due Diligence Checklist",
+    "description": "Comprehensive due diligence framework for merger and acquisition transactions.",
+    "template": "Act as an M&A Advisor. Create a Due Diligence Checklist for acquiring {{target}}.\n\nTarget: {{target}}\nDeal Type: {{deal_type}}\nTimeline: {{timeline}}\n\n# M&A Due Diligence Checklist\n\n## Deal Overview\n- Target: {{target}}\n- Deal Type: {{deal_type}}\n- Timeline: {{timeline}}\n- Deal Team: [List]\n\n## Financial Due Diligence\n\n### Historical Financials\n- [ ] Audited financial statements (3 years)\n- [ ] Management accounts (monthly, 2 years)\n- [ ] Revenue by product/customer/geography\n- [ ] Gross margin analysis\n- [ ] EBITDA bridge and adjustments\n- [ ] Working capital analysis\n- [ ] CapEx history and plans\n\n### Quality of Earnings\n- [ ] Revenue recognition policies\n- [ ] One-time adjustments\n- [ ] Related party transactions\n- [ ] Off-balance sheet items\n\n### Projections\n- [ ] Management forecasts\n- [ ] Key assumptions validation\n- [ ] Sensitivity analysis\n\n## Commercial Due Diligence\n\n### Market\n- [ ] Market size and growth\n- [ ] Competitive landscape\n- [ ] Industry trends\n- [ ] Regulatory environment\n\n### Customers\n- [ ] Top 20 customer analysis\n- [ ] Customer concentration\n- [ ] Contract terms and renewal rates\n- [ ] Customer interviews\n\n### Products/Services\n- [ ] Product roadmap\n- [ ] Pricing analysis\n- [ ] Technology assessment\n\n## Legal Due Diligence\n\n- [ ] Corporate structure\n- [ ] Material contracts\n- [ ] IP ownership and protection\n- [ ] Litigation history and pending\n- [ ] Regulatory compliance\n- [ ] Employment agreements\n\n## Operational Due Diligence\n\n- [ ] Management team assessment\n- [ ] Organization structure\n- [ ] Key employee retention risk\n- [ ] Systems and technology\n- [ ] Facilities and equipment\n- [ ] Supply chain review\n\n## Tax Due Diligence\n\n- [ ] Tax returns (3 years)\n- [ ] Tax positions and risks\n- [ ] NOLs and tax attributes\n- [ ] Transfer pricing\n\n## HR Due Diligence\n\n- [ ] Employee census\n- [ ] Compensation and benefits\n- [ ] Pension liabilities\n- [ ] Employment issues\n\n## Risk Summary\n| Finding | Risk Level | Impact | Deal Implication |\n| | High/Med/Low | $ | Price adj/walk away |\n\n## Data Room Tracker\n| Document | Requested | Received | Reviewed | Issues |",
+    "variables": [
+      {"name": "target", "description": "Target company", "example": "TechStart Inc.", "required": true},
+      {"name": "deal_type", "description": "Transaction type", "example": "100% acquisition, strategic buyer", "required": true},
+      {"name": "timeline", "description": "DD timeline", "example": "6-week exclusivity period", "required": true}
+    ],
+    "category": "financial",
+    "frameworks": ["M&A", "Due Diligence"],
+    "tier": "premium",
+    "tags": ["m&a", "due-diligence", "acquisition"],
+    "estimatedTimeSaved": "8-12 hours"
+  },
+  {
+    "id": "ba-008",
+    "title": "API Requirements Specification",
+    "description": "Document API requirements with endpoints, data models, and integration specifications.",
+    "template": "Act as a Technical Business Analyst. Create API Requirements for {{api_name}}.\n\nAPI Name: {{api_name}}\nPurpose: {{purpose}}\nConsumers: {{consumers}}\n\n# API Requirements Specification\n\n## API Overview\n- Name: {{api_name}}\n- Version: 1.0\n- Purpose: {{purpose}}\n- Consumers: {{consumers}}\n\n## Business Requirements\n\n### Use Cases\n| UC# | Name | Actor | Description | Priority |\n| UC1 | | | | Must |\n| UC2 | | | | Should |\n\n### Business Rules\n| BR# | Rule | Validation | Error Message |\n| BR1 | | | |\n\n## Technical Specification\n\n### Base URL\n- Production: `https://api.company.com/v1`\n- Sandbox: `https://sandbox-api.company.com/v1`\n\n### Authentication\n- Method: [OAuth 2.0 / API Key / JWT]\n- Token Endpoint: [URL]\n- Scopes: [List]\n\n### Endpoints\n\n#### GET /resources\n**Description:** Retrieve list of resources\n**Parameters:**\n| Name | Type | Required | Description |\n| page | integer | No | Page number |\n| limit | integer | No | Results per page |\n\n**Response:**\n```json\n{\n  \"data\": [],\n  \"pagination\": {}\n}\n```\n\n#### POST /resources\n**Description:** Create new resource\n**Request Body:**\n```json\n{\n  \"field1\": \"string\",\n  \"field2\": \"integer\"\n}\n```\n\n### Data Models\n\n#### Resource Object\n| Field | Type | Required | Description |\n| id | string | Yes | Unique identifier |\n| name | string | Yes | Resource name |\n| created_at | datetime | Yes | Creation timestamp |\n\n### Error Handling\n| Code | Message | Description |\n| 400 | Bad Request | Invalid input |\n| 401 | Unauthorized | Auth failed |\n| 404 | Not Found | Resource not found |\n| 500 | Server Error | Internal error |\n\n### Rate Limiting\n- Limit: 1000 requests/minute\n- Headers: X-RateLimit-Limit, X-RateLimit-Remaining\n\n### Non-Functional Requirements\n| Requirement | Target | Measurement |\n| Latency | <200ms p95 | APM |\n| Availability | 99.9% | Uptime monitor |\n| Throughput | 1000 RPS | Load test |",
+    "variables": [
+      {"name": "api_name", "description": "API name", "example": "Customer Data API", "required": true},
+      {"name": "purpose", "description": "API purpose", "example": "Expose customer data to CRM and marketing systems", "required": true},
+      {"name": "consumers", "description": "API consumers", "example": "Salesforce, HubSpot, Mobile App, Partner Portal", "required": true}
+    ],
+    "category": "business-analysis",
+    "frameworks": ["API Design", "Technical Documentation"],
+    "tier": "premium",
+    "tags": ["api", "technical", "integration"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "pm-011",
+    "title": "Lessons Learned Report",
+    "description": "Capture and document project lessons for organizational learning and continuous improvement.",
+    "template": "Act as a Project Manager. Create a Lessons Learned Report for {{project}}.\n\nProject: {{project}}\nDuration: {{duration}}\nOutcome: {{outcome}}\n\n# Lessons Learned Report\n\n## Project Summary\n- Project: {{project}}\n- Duration: {{duration}}\n- Budget: [Planned vs Actual]\n- Outcome: {{outcome}}\n\n## Project Performance\n| Metric | Planned | Actual | Variance |\n| Duration | | | |\n| Budget | | | |\n| Scope | | | |\n| Quality | | | |\n\n## What Went Well\n\n| Success | Why It Worked | Recommendation |\n| [Success 1] | [Root cause of success] | [How to replicate] |\n| [Success 2] | | |\n| [Success 3] | | |\n\n## What Could Be Improved\n\n| Challenge | Root Cause | Impact | Recommendation |\n| [Challenge 1] | [Why it happened] | [Cost/delay] | [Prevention] |\n| [Challenge 2] | | | |\n| [Challenge 3] | | | |\n\n## Key Themes\n\n### Planning & Estimation\n- Lesson: [What we learned about planning]\n- Recommendation: [What to do differently]\n\n### Team & Resources\n- Lesson: [What we learned about team dynamics]\n- Recommendation: [What to do differently]\n\n### Stakeholder Management\n- Lesson: [What we learned about stakeholders]\n- Recommendation: [What to do differently]\n\n### Risk Management\n- Lesson: [What we learned about risks]\n- Recommendation: [What to do differently]\n\n### Technical/Process\n- Lesson: [What we learned about execution]\n- Recommendation: [What to do differently]\n\n## Action Items for Future Projects\n| Recommendation | Priority | Owner | Target Implementation |\n| | High/Med/Low | [Role] | [Next project/Immediately] |\n\n## Knowledge Transfer\n- Documentation created: [List]\n- Training provided: [Topics]\n- SME contacts: [Names/roles]\n\n## Team Feedback\n| Question | Rating (1-5) | Comments |\n| Clear objectives | | |\n| Adequate resources | | |\n| Good communication | | |\n| Would work together again | | |",
+    "variables": [
+      {"name": "project", "description": "Project name", "example": "Website Redesign Project", "required": true},
+      {"name": "duration", "description": "Project duration", "example": "6 months (Jan-June 2024)", "required": true},
+      {"name": "outcome", "description": "Final outcome", "example": "Launched on time, 10% over budget, all features delivered", "required": true}
+    ],
+    "category": "project-management",
+    "frameworks": ["PMI", "Lessons Learned"],
+    "tier": "free",
+    "tags": ["lessons-learned", "retrospective", "knowledge-management"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "pm-012",
+    "title": "Project Closure Report",
+    "description": "Formally close projects with deliverable sign-off, documentation, and transition planning.",
+    "template": "Act as a Senior PM. Create a Project Closure Report for {{project}}.\n\nProject: {{project}}\nSponsor: {{sponsor}}\nCompletion Date: {{date}}\n\n# Project Closure Report\n\n## Project Information\n- Project: {{project}}\n- Sponsor: {{sponsor}}\n- Project Manager: [Name]\n- Completion Date: {{date}}\n\n## Executive Summary\n[2-3 sentences on project outcome, key achievements, final status]\n\n## Deliverables Checklist\n| Deliverable | Status | Accepted By | Date | Notes |\n| [Deliverable 1] | Complete | [Name] | [Date] | |\n| [Deliverable 2] | Complete | | | |\n| [Deliverable 3] | Partial | | | [Reason] |\n\n## Objectives Achievement\n| Objective | Target | Achieved | Status |\n| [Objective 1] | [Metric] | [Actual] | Met/Exceeded/Missed |\n\n## Final Budget\n| Category | Budget | Actual | Variance | Notes |\n| Labor | $X | $Y | +/-$ | |\n| Vendors | | | | |\n| Software | | | | |\n| Other | | | | |\n| **Total** | | | | |\n\n## Final Schedule\n| Milestone | Planned | Actual | Variance |\n| Kickoff | | | |\n| Phase 1 | | | |\n| Phase 2 | | | |\n| Go-Live | | | |\n| Closure | | | |\n\n## Outstanding Items\n| Item | Description | Owner | Due Date | Status |\n| [Item] | | | | Open/In Progress |\n\n## Transition to Operations\n| Area | Receiving Team | Handoff Complete | Documentation |\n| Support | | Yes/No | [Link] |\n| Maintenance | | | |\n| Enhancements | | | |\n\n## Documentation Archive\n| Document | Location | Owner |\n| Project Plan | [Path/URL] | PM |\n| Requirements | | BA |\n| Technical Docs | | Tech Lead |\n| Training Materials | | |\n\n## Final Risk Register Status\n| Risk | Final Status | Actions Taken |\n| | Closed/Realized/Mitigated | |\n\n## Sign-Off\n| Role | Name | Signature | Date |\n| Sponsor | | | |\n| Project Manager | | | |\n| Technical Lead | | | |\n| Business Owner | | | |",
+    "variables": [
+      {"name": "project", "description": "Project name", "example": "CRM Implementation", "required": true},
+      {"name": "sponsor", "description": "Executive sponsor", "example": "Jane Smith, VP of Sales", "required": true},
+      {"name": "date", "description": "Completion date", "example": "December 15, 2024", "required": true}
+    ],
+    "category": "project-management",
+    "frameworks": ["PMBOK", "Project Closure"],
+    "tier": "premium",
+    "tags": ["closure", "sign-off", "transition"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "hr-010",
+    "title": "Workforce Planning Model",
+    "description": "Forecast workforce needs based on business growth and strategic initiatives.",
+    "template": "Act as an HR Director. Create a Workforce Plan for {{organization}}.\n\nOrganization: {{organization}}\nPlanning Horizon: {{horizon}}\nBusiness Growth: {{growth}}\n\n# Workforce Planning Model\n\n## Planning Overview\n- Organization: {{organization}}\n- Planning Period: {{horizon}}\n- Growth Assumption: {{growth}}\n\n## Current State Analysis\n\n### Headcount Summary\n| Department | Current HC | FTE | Contractors | Open Roles |\n| | | | | |\n| **Total** | | | | |\n\n### Workforce Demographics\n| Metric | Value | Benchmark | Risk |\n| Avg Tenure | X years | | |\n| Turnover Rate | X% | | |\n| Retirement Eligible | X% | | |\n| Diversity (Gender) | X% | | |\n\n## Future State Requirements\n\n### Demand Forecast\n| Department | Current | Y1 | Y2 | Y3 | Change |\n| Engineering | 50 | 60 | 75 | 90 | +80% |\n| Sales | 30 | 40 | 50 | 60 | +100% |\n| | | | | | |\n| **Total** | | | | | |\n\n### Demand Drivers\n| Driver | Impact | Assumptions |\n| Revenue growth | +X headcount per $1M | |\n| New product line | +X team | |\n| Automation | -X positions | |\n\n## Gap Analysis\n\n### Quantity Gaps\n| Role | Current | Needed (Y3) | Gap | Priority |\n| Senior Engineers | 10 | 25 | -15 | Critical |\n| | | | | |\n\n### Quality/Skill Gaps\n| Skill | Current Capability | Future Need | Gap |\n| Cloud/AWS | 30% | 80% | High |\n| AI/ML | 5% | 40% | Critical |\n| | | | |\n\n## Supply Strategies\n\n### Build (Develop)\n| Program | Target Population | Timeline | Investment |\n| Leadership development | HiPos | 18 months | $X |\n| Technical reskilling | Engineers | 12 months | $X |\n\n### Buy (Recruit)\n| Role Category | Quantity | Timeline | Cost/Hire |\n| | | | |\n\n### Borrow (Contract/Outsource)\n| Capability | Model | Duration | Cost |\n| | | | |\n\n## Financial Summary\n| Category | Y1 | Y2 | Y3 | Total |\n| Salaries | | | | |\n| Benefits | | | | |\n| Recruiting | | | | |\n| Training | | | | |\n| Contractors | | | | |\n| **Total** | | | | |",
+    "variables": [
+      {"name": "organization", "description": "Organization scope", "example": "Technology Division (200 employees)", "required": true},
+      {"name": "horizon", "description": "Planning period", "example": "3-year plan (2024-2027)", "required": true},
+      {"name": "growth", "description": "Business growth plans", "example": "Revenue doubling, new product line, geographic expansion", "required": true}
+    ],
+    "category": "hr-talent",
+    "frameworks": ["Workforce Planning", "Strategic HR"],
+    "tier": "premium",
+    "tags": ["workforce-planning", "headcount", "capacity"],
+    "estimatedTimeSaved": "5-6 hours"
+  },
+  {
+    "id": "sales-009",
+    "title": "Territory Planning Template",
+    "description": "Design sales territories with balanced workload and growth potential.",
+    "template": "Act as a Sales Operations Manager. Create a Territory Plan for {{sales_team}}.\n\nSales Team: {{sales_team}}\nCoverage Area: {{coverage}}\nTeam Size: {{team_size}}\n\n# Territory Planning\n\n## Territory Overview\n- Team: {{sales_team}}\n- Coverage: {{coverage}}\n- Reps: {{team_size}}\n- Total Quota: $[X]\n\n## Territory Design Criteria\n| Factor | Weight | Description |\n| Revenue Potential | 30% | Based on TAM |\n| Account Count | 25% | Number of accounts |\n| Geographic Spread | 20% | Travel requirements |\n| Workload Balance | 25% | Touches needed |\n\n## Territory Assignments\n\n| Territory | Rep | Accounts | Revenue Potential | Quota | Notes |\n| North | [Name] | 45 | $2.5M | $800K | Dense urban |\n| South | [Name] | 52 | $2.3M | $750K | Spread out |\n| East | [Name] | 38 | $2.8M | $900K | Enterprise heavy |\n| West | [Name] | 48 | $2.4M | $800K | SMB focus |\n\n## Account Segmentation\n\n### Per Territory\n| Territory | Enterprise | Mid-Market | SMB | Named Accounts |\n| | (>$1M) | ($100K-$1M) | (<$100K) | (Top 10) |\n\n## Quota Distribution\n\n| Territory | Existing Revenue | New Logo | Expansion | Total Quota |\n| | (Renewal) | Target | Target | |\n\n## Coverage Model\n\n| Segment | Touch Model | Frequency | Owner |\n| Enterprise | High-touch | Weekly | AE |\n| Mid-Market | Medium-touch | Bi-weekly | AE |\n| SMB | Tech-touch | Monthly | SDR + Digital |\n\n## Territory Metrics\n\n| Metric | Territory A | Territory B | Territory C | Benchmark |\n| Accounts/Rep | | | | 50 |\n| Revenue/Rep | | | | $800K |\n| Win Rate | | | | 25% |\n| Avg Deal Size | | | | $25K |\n\n## Territory Review Cadence\n- Quarterly: Performance review\n- Annual: Full territory redesign\n- Triggers: Rep change, major account move, >20% imbalance",
+    "variables": [
+      {"name": "sales_team", "description": "Team name", "example": "Enterprise Sales - Central Region", "required": true},
+      {"name": "coverage", "description": "Geographic coverage", "example": "Central US (TX, OK, KS, MO, IL, IN)", "required": true},
+      {"name": "team_size", "description": "Number of reps", "example": "8 AEs, 4 SDRs", "required": true}
+    ],
+    "category": "sales",
+    "frameworks": ["Territory Planning", "Sales Operations"],
+    "tier": "premium",
+    "tags": ["territory", "sales-planning", "quota"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "sales-010",
+    "title": "Quarterly Business Review (QBR)",
+    "description": "Structure customer QBR presentations with value delivered and expansion opportunities.",
+    "template": "Act as a Customer Success Manager. Create a QBR presentation for {{customer}}.\n\nCustomer: {{customer}}\nQuarter: {{quarter}}\nRelationship: {{relationship}}\n\n# Quarterly Business Review\n\n## Customer: {{customer}}\n## Period: {{quarter}}\n\n---\n\n## Agenda\n1. Relationship Summary\n2. Value Delivered\n3. Usage & Adoption Metrics\n4. Support Review\n5. Roadmap Preview\n6. Success Planning\n7. Next Steps\n\n---\n\n## 1. Relationship Summary\n\n| Metric | Value |\n| Customer Since | [Date] |\n| Contract Value | $[X] ARR |\n| Products Used | [List] |\n| Users Licensed | [X] |\n| Renewal Date | [Date] |\n\n**Key Contacts:**\n| Name | Role | Engagement |\n| | Executive Sponsor | Monthly |\n| | Day-to-day Owner | Weekly |\n\n---\n\n## 2. Value Delivered This Quarter\n\n| Goal | Target | Achieved | Impact |\n| [Customer Goal 1] | [Metric] | [Actual] | $[X] saved |\n| [Customer Goal 2] | | | |\n| [Customer Goal 3] | | | |\n\n**Success Story:**\n> [Specific example of value created this quarter]\n\n**ROI Summary:**\n- Investment: $[X]\n- Value Created: $[Y]\n- ROI: [X]%\n\n---\n\n## 3. Usage & Adoption\n\n| Metric | Last Quarter | This Quarter | Trend |\n| Active Users | | | |\n| Feature Adoption | | | |\n| API Calls | | | |\n| Key Workflow Usage | | | |\n\n**Adoption Opportunities:**\n- [Feature not being used]\n- [Department not onboarded]\n\n---\n\n## 4. Support Summary\n\n| Metric | This Quarter | Target | Status |\n| Tickets | X | <Y | |\n| Avg Resolution | X hours | <Y | |\n| CSAT | X/5 | >4.5 | |\n\n**Open Issues:**\n| Issue | Priority | Status | ETA |\n\n---\n\n## 5. Product Roadmap Preview\n\n| Feature | Timeline | Benefit for {{customer}} |\n| [Feature 1] | Q[X] | [Specific value] |\n| [Feature 2] | Q[X] | |\n\n---\n\n## 6. Success Plan - Next Quarter\n\n| Objective | Key Result | Owner | Due |\n| | | | |\n\n---\n\n## 7. Next Steps\n\n| Action | Owner | Due Date |\n| | | |\n\n**Next QBR:** [Date]",
+    "variables": [
+      {"name": "customer", "description": "Customer name", "example": "Acme Corporation", "required": true},
+      {"name": "quarter", "description": "Review period", "example": "Q4 2024", "required": true},
+      {"name": "relationship", "description": "Customer context", "example": "3-year customer, $150K ARR, 200 users, using 3 products", "required": true}
+    ],
+    "category": "sales",
+    "frameworks": ["QBR", "Customer Success"],
+    "tier": "free",
+    "tags": ["qbr", "customer-review", "retention"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "fin-010",
+    "title": "Annual Budget Template",
+    "description": "Create comprehensive annual operating budgets with departmental breakdowns.",
+    "template": "Act as a Finance Manager. Create an Annual Budget for {{department}}.\n\nDepartment: {{department}}\nFiscal Year: {{fiscal_year}}\nGuidelines: {{guidelines}}\n\n# Annual Operating Budget\n\n## Budget Overview\n- Department: {{department}}\n- Fiscal Year: {{fiscal_year}}\n- Budget Owner: [Name]\n- Submission Date: [Date]\n\n## Executive Summary\n| Category | Prior Year | Proposed | Change | % Change |\n| Total Budget | $X | $Y | +/- $Z | X% |\n| Headcount | X | Y | +/- Z | X% |\n\n## Revenue (if applicable)\n| Line Item | Prior Year | Budget | Assumptions |\n| Product Revenue | | | |\n| Service Revenue | | | |\n| Other | | | |\n| **Total Revenue** | | | |\n\n## Personnel Costs\n| Category | Headcount | Avg Cost | Total | Notes |\n| Salaries | X | $Y | $Z | [Assumptions] |\n| Bonuses | | | | |\n| Benefits (X%) | | | | |\n| Payroll Taxes | | | | |\n| Contractors | | | | |\n| **Total Personnel** | | | | |\n\n## Operating Expenses\n| Category | Prior Year | Budget | Change | Justification |\n| Software/Tools | | | | |\n| Travel | | | | |\n| Training | | | | |\n| Marketing | | | | |\n| Professional Services | | | | |\n| Equipment | | | | |\n| Facilities | | | | |\n| Other | | | | |\n| **Total OpEx** | | | | |\n\n## Capital Expenditures\n| Item | Amount | Timing | Depreciation |\n| | | | |\n\n## Monthly Phasing\n| Category | Jan | Feb | Mar | Q1 | ... | Total |\n| Personnel | | | | | | |\n| OpEx | | | | | | |\n| CapEx | | | | | | |\n| **Total** | | | | | | |\n\n## Key Assumptions\n- Headcount: [Growth assumptions]\n- Inflation: [X% on certain categories]\n- Salary increases: [X% merit pool]\n\n## Risks & Sensitivities\n| Risk | Impact | Probability | Contingency |\n\n## Approval\n| Role | Name | Date | Signature |\n| Budget Owner | | | |\n| Department Head | | | |\n| Finance | | | |",
+    "variables": [
+      {"name": "department", "description": "Department name", "example": "Marketing Department", "required": true},
+      {"name": "fiscal_year", "description": "Budget year", "example": "FY 2025 (Jan-Dec)", "required": true},
+      {"name": "guidelines", "description": "Budget constraints", "example": "Flat budget YoY, 3% merit increases allowed, no new headcount", "required": true}
+    ],
+    "category": "financial",
+    "frameworks": ["Budgeting", "Financial Planning"],
+    "tier": "free",
+    "tags": ["budget", "planning", "annual"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "ba-009",
+    "title": "System Selection Criteria",
+    "description": "Define weighted evaluation criteria for enterprise software selection.",
+    "template": "Act as a Business Analyst. Create System Selection Criteria for {{system_type}}.\n\nSystem Type: {{system_type}}\nBusiness Needs: {{needs}}\nBudget Range: {{budget}}\n\n# System Selection Criteria\n\n## Selection Overview\n- System Type: {{system_type}}\n- Selection Lead: [Name]\n- Timeline: [Date range]\n- Budget: {{budget}}\n\n## Business Requirements Summary\n{{needs}}\n\n## Evaluation Categories & Weights\n\n| Category | Weight | Description |\n| Functionality | 30% | Meets business requirements |\n| Usability | 15% | User experience and adoption |\n| Integration | 15% | Connects with existing systems |\n| Vendor Viability | 10% | Company stability and support |\n| Total Cost | 20% | Implementation and ongoing |\n| Security | 10% | Compliance and data protection |\n\n## Detailed Criteria\n\n### Functionality (30%)\n| # | Criterion | Must/Want | Weight | Description |\n| F1 | [Requirement 1] | Must | 5 | |\n| F2 | [Requirement 2] | Must | 5 | |\n| F3 | [Requirement 3] | Want | 3 | |\n\n### Usability (15%)\n| # | Criterion | Weight | Description |\n| U1 | Intuitive interface | 5 | |\n| U2 | Mobile access | 3 | |\n| U3 | Training resources | 2 | |\n\n### Integration (15%)\n| # | Criterion | Weight | Description |\n| I1 | API availability | 5 | |\n| I2 | Pre-built connectors | 3 | |\n| I3 | SSO support | 2 | |\n\n### Vendor Viability (10%)\n| # | Criterion | Weight | Description |\n| V1 | Years in business | 3 | |\n| V2 | Customer references | 3 | |\n| V3 | Support SLA | 4 | |\n\n### Total Cost (20%)\n| # | Criterion | Weight | Description |\n| C1 | License cost | 5 | |\n| C2 | Implementation | 3 | |\n| C3 | Ongoing maintenance | 2 | |\n\n### Security (10%)\n| # | Criterion | Weight | Description |\n| S1 | SOC 2 compliance | 5 | |\n| S2 | Data encryption | 3 | |\n| S3 | Access controls | 2 | |\n\n## Scoring Rubric\n| Score | Definition |\n| 5 | Fully meets, exceeds expectations |\n| 4 | Meets requirements |\n| 3 | Partially meets, minor gaps |\n| 2 | Significant gaps, workarounds needed |\n| 1 | Does not meet requirement |\n| 0 | Capability not available |\n\n## Evaluation Process\n1. RFP Distribution: [Date]\n2. Vendor Demos: [Date range]\n3. Scoring: [Date]\n4. Reference Checks: [Date]\n5. Final Selection: [Date]",
+    "variables": [
+      {"name": "system_type", "description": "Type of system", "example": "Human Resource Information System (HRIS)", "required": true},
+      {"name": "needs", "description": "Key requirements", "example": "Core HR, payroll, benefits admin, performance management, reporting", "required": true},
+      {"name": "budget", "description": "Budget range", "example": "$50-100K implementation, $30-50K annual", "required": true}
+    ],
+    "category": "business-analysis",
+    "frameworks": ["System Selection", "RFP Evaluation"],
+    "tier": "premium",
+    "tags": ["software-selection", "evaluation", "rfp"],
+    "estimatedTimeSaved": "4-5 hours"
+  },
+  {
+    "id": "ops-012",
+    "title": "Business Continuity Plan",
+    "description": "Develop business continuity strategies for critical operations during disruptions.",
+    "template": "Act as a Business Continuity Manager. Create a BCP for {{organization}}.\n\nOrganization: {{organization}}\nCritical Functions: {{functions}}\nRisk Context: {{risks}}\n\n# Business Continuity Plan\n\n## Plan Overview\n- Organization: {{organization}}\n- Plan Owner: [Name]\n- Last Updated: [Date]\n- Next Review: [Date]\n\n## Purpose & Scope\nThis plan ensures continuity of critical operations during disruptions.\n\n## Critical Business Functions\n\n| Function | RTO | RPO | Dependencies | Priority |\n| {{functions}} | X hours | X hours | [Systems/People] | P1 |\n| | | | | |\n\n**RTO:** Recovery Time Objective (max downtime)\n**RPO:** Recovery Point Objective (max data loss)\n\n## Risk Assessment\n\n| Threat | Likelihood | Impact | Risk Score | Priority |\n| Natural disaster | Low | High | | |\n| Cyber attack | Medium | High | | |\n| Pandemic | Medium | High | | |\n| Power outage | High | Medium | | |\n| Key person loss | Medium | Medium | | |\n\n## Response Strategies\n\n### Scenario 1: Facility Unavailable\n| Phase | Actions | Timeline | Owner |\n| Immediate | Activate remote work | 0-2 hours | IT |\n| Short-term | Relocate to backup site | 2-24 hours | Facilities |\n| Recovery | Return to primary | [Variable] | |\n\n### Scenario 2: Technology Failure\n| Phase | Actions | Timeline | Owner |\n| Immediate | Activate DR site | 0-4 hours | IT |\n| Short-term | Manual workarounds | 4-24 hours | Ops |\n| Recovery | Restore primary | [Variable] | IT |\n\n### Scenario 3: Personnel Crisis\n| Phase | Actions | Timeline | Owner |\n| Immediate | Activate cross-training | 0-4 hours | HR |\n| Short-term | Contractor support | 1-5 days | HR |\n| Recovery | Hire/return | [Variable] | |\n\n## Emergency Contacts\n\n| Role | Primary | Backup | Phone | Email |\n| Crisis Manager | | | | |\n| IT Lead | | | | |\n| Facilities | | | | |\n| HR Lead | | | | |\n| Communications | | | | |\n\n## Communication Plan\n\n| Audience | Message | Channel | Timing | Owner |\n| Employees | Status update | Email/SMS | Within 1 hour | HR |\n| Customers | Service status | Website/Email | Within 2 hours | Comms |\n| Vendors | Impact assessment | Email | Within 4 hours | Procurement |\n\n## Testing Schedule\n\n| Test Type | Frequency | Last Test | Next Test | Owner |\n| Tabletop exercise | Annual | | | |\n| DR failover | Semi-annual | | | |\n| Communication test | Quarterly | | | |",
+    "variables": [
+      {"name": "organization", "description": "Organization name", "example": "Operations Division", "required": true},
+      {"name": "functions", "description": "Critical functions", "example": "Order processing, Customer support, Payment processing", "required": true},
+      {"name": "risks", "description": "Key risk context", "example": "Single data center, coastal location, lean staffing", "required": true}
+    ],
+    "category": "operations",
+    "frameworks": ["Business Continuity", "Disaster Recovery"],
+    "tier": "premium",
+    "tags": ["bcp", "disaster-recovery", "resilience"],
+    "estimatedTimeSaved": "6-8 hours"
+  },
+  {
+    "id": "strat-014",
+    "title": "Scenario Planning Workshop",
+    "description": "Facilitate strategic scenario planning to prepare for multiple possible futures.",
+    "template": "Act as a Scenario Planning Facilitator. Design scenario planning for {{organization}}.\n\nOrganization: {{organization}}\nPlanning Horizon: {{horizon}}\nKey Uncertainties: {{uncertainties}}\n\n# Scenario Planning Workshop\n\n## Workshop Overview\n- Organization: {{organization}}\n- Horizon: {{horizon}}\n- Participants: [List key stakeholders]\n\n## Step 1: Identify Driving Forces\n\n### PESTLE Scan\n| Category | Force | Impact | Uncertainty |\n| Political | | High/Med/Low | High/Med/Low |\n| Economic | | | |\n| Social | | | |\n| Technological | | | |\n| Legal | | | |\n| Environmental | | | |\n\n### Critical Uncertainties (High Impact + High Uncertainty)\n1. {{uncertainties}}\n2. [Uncertainty 2]\n\n## Step 2: Scenario Framework\n\n### Axes Definition\n- Axis 1: [First critical uncertainty] (e.g., Economic Growth: High vs Low)\n- Axis 2: [Second critical uncertainty] (e.g., Technology Disruption: Fast vs Slow)\n\n### Scenario Matrix\n```\n                    [Axis 1 High]\n                         |\n    Scenario A          |          Scenario B\n    \"[Name]\"            |          \"[Name]\"\n                        |\n[Axis 2 Low] -----------+----------- [Axis 2 High]\n                        |\n    Scenario C          |          Scenario D\n    \"[Name]\"            |          \"[Name]\"\n                        |\n                    [Axis 1 Low]\n```\n\n## Step 3: Scenario Narratives\n\n### Scenario A: \"[Evocative Name]\"\n- **Description:** [2-3 sentence narrative]\n- **Key Characteristics:**\n  - [Characteristic 1]\n  - [Characteristic 2]\n- **Implications for Us:** [How this affects our business]\n- **Early Warning Signs:** [Indicators this scenario is emerging]\n\n### Scenario B: \"[Evocative Name]\"\n[Same structure]\n\n### Scenario C: \"[Evocative Name]\"\n[Same structure]\n\n### Scenario D: \"[Evocative Name]\"\n[Same structure]\n\n## Step 4: Strategic Implications\n\n| Strategy Element | Scenario A | Scenario B | Scenario C | Scenario D |\n| Our current strategy | Works/Fails | | | |\n| Key opportunities | | | | |\n| Key threats | | | | |\n| Required capabilities | | | | |\n\n## Step 5: Robust Strategies\n\n### Strategies That Work Across All Scenarios\n1. [Strategy 1]\n2. [Strategy 2]\n\n### Scenario-Specific Strategies\n| If [Scenario] | Then [Strategy] | Trigger to Activate |\n\n## Monitoring Dashboard\n| Indicator | Current | Scenario A | Scenario B | Scenario C | Scenario D |",
+    "variables": [
+      {"name": "organization", "description": "Organization name", "example": "Energy Company Strategic Planning", "required": true},
+      {"name": "horizon", "description": "Planning horizon", "example": "10-year horizon (2025-2035)", "required": true},
+      {"name": "uncertainties", "description": "Key uncertainties", "example": "Energy transition speed, Regulatory environment, Technology costs", "required": true}
+    ],
+    "category": "strategy",
+    "frameworks": ["Scenario Planning", "Strategic Foresight"],
+    "tier": "premium",
+    "tags": ["scenarios", "futures", "strategic-planning"],
+    "estimatedTimeSaved": "6-8 hours"
+  },
+  {
+    "id": "strat-015",
+    "title": "Value Chain Analysis",
+    "description": "Analyze primary and support activities to identify competitive advantages and cost optimization.",
+    "template": "Act as a Strategy Analyst. Conduct a Value Chain Analysis for {{company}}.\n\nCompany: {{company}}\nIndustry: {{industry}}\nFocus Area: {{focus}}\n\n# Value Chain Analysis\n\n## Company Overview\n- Company: {{company}}\n- Industry: {{industry}}\n- Analysis Purpose: {{focus}}\n\n## Primary Activities\n\n### 1. Inbound Logistics\n| Activity | Description | Cost | Value Added | Competitive Position |\n| Receiving | | | | Strength/Weakness |\n| Warehousing | | | | |\n| Inventory Management | | | | |\n\n**Improvement Opportunities:**\n- [Opportunity 1]\n\n### 2. Operations\n| Activity | Description | Cost | Value Added | Competitive Position |\n| Manufacturing | | | | |\n| Quality Control | | | | |\n| Packaging | | | | |\n\n**Improvement Opportunities:**\n- [Opportunity 1]\n\n### 3. Outbound Logistics\n| Activity | Description | Cost | Value Added | Competitive Position |\n| Order Fulfillment | | | | |\n| Distribution | | | | |\n| Delivery | | | | |\n\n### 4. Marketing & Sales\n| Activity | Description | Cost | Value Added | Competitive Position |\n| Advertising | | | | |\n| Sales Force | | | | |\n| Pricing | | | | |\n\n### 5. Service\n| Activity | Description | Cost | Value Added | Competitive Position |\n| Customer Support | | | | |\n| Warranty | | | | |\n| Training | | | | |\n\n## Support Activities\n\n### Firm Infrastructure\n- Finance, Legal, General Management\n- Contribution to Value: [Assessment]\n\n### Human Resource Management\n- Recruiting, Training, Compensation\n- Contribution to Value: [Assessment]\n\n### Technology Development\n- R&D, Process Automation, IT\n- Contribution to Value: [Assessment]\n\n### Procurement\n- Supplier Management, Purchasing\n- Contribution to Value: [Assessment]\n\n## Cost Analysis\n| Activity | % of Total Cost | Industry Benchmark | Gap |\n| | | | |\n\n## Value Creation Summary\n| Activity | Value Created | Cost | Margin | Strategic Importance |\n| | | | | High/Med/Low |\n\n## Competitive Advantage Sources\n1. [Source of differentiation or cost advantage]\n2. [Source 2]\n\n## Strategic Recommendations\n| Recommendation | Impact | Investment | Priority |",
+    "variables": [
+      {"name": "company", "description": "Company name", "example": "RetailCo", "required": true},
+      {"name": "industry", "description": "Industry", "example": "E-commerce Retail", "required": true},
+      {"name": "focus", "description": "Analysis focus", "example": "Identify cost reduction opportunities and differentiation sources", "required": true}
+    ],
+    "category": "strategy",
+    "frameworks": ["Value Chain", "Porter"],
+    "tier": "premium",
+    "tags": ["value-chain", "competitive-advantage", "cost-analysis"],
+    "estimatedTimeSaved": "4-5 hours"
+  },
+  {
+    "id": "fin-011",
+    "title": "Investment Proposal",
+    "description": "Build compelling investment proposals with financial projections and risk analysis.",
+    "template": "Act as a Finance Director. Create an Investment Proposal for {{initiative}}.\n\nInitiative: {{initiative}}\nInvestment Ask: {{investment}}\nStrategic Fit: {{strategic_fit}}\n\n# Investment Proposal\n\n## Executive Summary\n- **Initiative:** {{initiative}}\n- **Investment Required:** {{investment}}\n- **Expected Return:** [ROI/IRR]\n- **Recommendation:** Approve / Conditional / Defer\n\n## Strategic Alignment\n{{strategic_fit}}\n\n| Strategic Priority | How This Aligns |\n| [Priority 1] | [Alignment] |\n| [Priority 2] | [Alignment] |\n\n## Problem Statement\n[What problem are we solving? What opportunity are we capturing?]\n\n## Proposed Solution\n[Description of the initiative]\n\n### Key Features/Deliverables\n1. [Deliverable 1]\n2. [Deliverable 2]\n3. [Deliverable 3]\n\n## Financial Analysis\n\n### Investment Requirements\n| Category | Year 0 | Year 1 | Year 2 | Total |\n| Capital Expenditure | | | | |\n| Operating Costs | | | | |\n| Implementation | | | | |\n| Contingency (10%) | | | | |\n| **Total Investment** | | | | |\n\n### Expected Benefits\n| Benefit | Year 1 | Year 2 | Year 3 | Total |\n| Revenue Increase | | | | |\n| Cost Savings | | | | |\n| Avoided Costs | | | | |\n| **Total Benefits** | | | | |\n\n### Financial Metrics\n| Metric | Value | Threshold |\n| NPV (10% discount) | $X | >$0 |\n| IRR | X% | >15% |\n| Payback Period | X months | <24 months |\n| ROI (3-year) | X% | >50% |\n\n### Cash Flow Summary\n| Year | Investment | Benefits | Net Cash Flow | Cumulative |\n| 0 | ($X) | $0 | ($X) | ($X) |\n| 1 | ($X) | $Y | $Z | |\n| 2 | $0 | $Y | $Y | |\n| 3 | $0 | $Y | $Y | |\n\n## Risk Assessment\n| Risk | Probability | Impact | Mitigation | Residual Risk |\n| [Risk 1] | High/Med/Low | High/Med/Low | [Action] | |\n\n## Alternatives Considered\n| Alternative | Pros | Cons | Why Not Selected |\n| Do Nothing | | | |\n| Option B | | | |\n\n## Implementation Plan\n| Phase | Duration | Key Activities | Milestone |\n| Phase 1 | | | |\n| Phase 2 | | | |\n\n## Governance & Oversight\n- Sponsor: [Name]\n- Project Lead: [Name]\n- Steering Committee: [Names]\n- Review Cadence: [Monthly/Quarterly]\n\n## Recommendation\n[Clear recommendation with rationale]\n\n## Approval\n| Approver | Signature | Date |\n| | | |",
+    "variables": [
+      {"name": "initiative", "description": "Initiative name", "example": "Customer Data Platform Implementation", "required": true},
+      {"name": "investment", "description": "Investment amount", "example": "$1.2M over 18 months", "required": true},
+      {"name": "strategic_fit", "description": "Strategic alignment", "example": "Supports digital transformation and customer-centric strategy", "required": true}
+    ],
+    "category": "financial",
+    "frameworks": ["Investment Analysis", "Business Case"],
+    "tier": "premium",
+    "tags": ["investment", "business-case", "approval"],
+    "estimatedTimeSaved": "4-6 hours"
+  },
+  {
+    "id": "hr-011",
+    "title": "Diversity & Inclusion Strategy",
+    "description": "Develop comprehensive D&I strategies with goals, programs, and accountability measures.",
+    "template": "Act as a Chief Diversity Officer. Create a D&I Strategy for {{organization}}.\n\nOrganization: {{organization}}\nCurrent State: {{current_state}}\nPriorities: {{priorities}}\n\n# Diversity & Inclusion Strategy\n\n## Vision Statement\n[Aspirational statement about what D&I success looks like]\n\n## Current State Assessment\n\n### Workforce Demographics\n| Dimension | Current | Industry Benchmark | Gap |\n| Gender (Women) | X% | Y% | |\n| Underrepresented Minorities | X% | Y% | |\n| Leadership Diversity | X% | Y% | |\n| Pay Equity | X% gap | 0% | |\n\n### Culture Assessment\n| Metric | Score | Benchmark | Insight |\n| Inclusion Index | | | |\n| Belonging Score | | | |\n| Psychological Safety | | | |\n\n### Key Challenges\n1. {{current_state}}\n2. [Challenge 2]\n\n## Strategic Pillars\n\n### Pillar 1: Workforce Diversity\n**Goal:** Increase representation at all levels\n\n| Objective | Target | Timeline | Owner |\n| Diverse hiring | X% diverse slates | 2025 | Talent Acq |\n| Leadership pipeline | X% diverse promotions | 2026 | HR |\n\n**Initiatives:**\n- [Initiative 1]\n- [Initiative 2]\n\n### Pillar 2: Inclusive Culture\n**Goal:** Create environment where all employees thrive\n\n| Objective | Target | Timeline | Owner |\n| Inclusion score | X% | 2025 | All Leaders |\n| ERG participation | X% | 2025 | D&I |\n\n**Initiatives:**\n- Inclusive leadership training\n- Employee Resource Groups\n- Allyship programs\n\n### Pillar 3: Equitable Systems\n**Goal:** Ensure fair policies and practices\n\n| Objective | Target | Timeline | Owner |\n| Pay equity | <1% gap | 2025 | Comp |\n| Promotion parity | Equal rates | 2026 | HR |\n\n**Initiatives:**\n- Annual pay equity audit\n- Bias-free performance reviews\n- Transparent career paths\n\n### Pillar 4: Community & Accountability\n**Goal:** Extend impact and ensure progress\n\n| Objective | Target | Timeline | Owner |\n| Supplier diversity | X% spend | 2025 | Procurement |\n| Public reporting | Annual | 2025 | D&I |\n\n## Governance & Accountability\n\n### D&I Council\n- Executive Sponsor: [Name]\n- D&I Lead: [Name]\n- Members: [Representatives from each function]\n\n### Metrics Dashboard\n| KPI | Current | Target | Frequency |\n| | | | |\n\n### Leader Accountability\n- D&I goals in performance reviews\n- Quarterly progress reviews\n- Annual public report\n\n## Investment\n| Program | Year 1 | Year 2 | Year 3 |\n| Training | | | |\n| ERGs | | | |\n| Recruiting | | | |\n| **Total** | | | |",
+    "variables": [
+      {"name": "organization", "description": "Organization name", "example": "Global Technology Company", "required": true},
+      {"name": "current_state", "description": "Current D&I state", "example": "Low representation in leadership, recent employee feedback highlighted inclusion gaps", "required": true},
+      {"name": "priorities", "description": "Key D&I priorities", "example": "Gender parity in leadership, inclusive culture, supplier diversity", "required": true}
+    ],
+    "category": "hr-talent",
+    "frameworks": ["D&I Strategy", "DEI"],
+    "tier": "premium",
+    "tags": ["diversity", "inclusion", "dei"],
+    "estimatedTimeSaved": "6-8 hours"
+  },
+  {
+    "id": "ba-010",
+    "title": "Use Case Documentation",
+    "description": "Document detailed use cases with actors, flows, and exception handling.",
+    "template": "Act as a Business Analyst. Document Use Cases for {{system}}.\n\nSystem: {{system}}\nActor: {{actor}}\nFeature Area: {{feature}}\n\n# Use Case Documentation\n\n## Use Case: [UC-001] [Use Case Name]\n\n### Overview\n| Attribute | Value |\n| UC ID | UC-001 |\n| Name | [Descriptive name] |\n| Actor | {{actor}} |\n| Description | [Brief description] |\n| Priority | Must Have / Should Have / Could Have |\n| Complexity | High / Medium / Low |\n\n### Preconditions\n1. [Condition that must be true before UC starts]\n2. [Condition 2]\n\n### Postconditions\n1. [State after successful completion]\n2. [State 2]\n\n### Triggers\n- [What initiates this use case]\n\n### Basic Flow (Happy Path)\n| Step | Actor Action | System Response |\n| 1 | [Actor does X] | [System does Y] |\n| 2 | | |\n| 3 | | |\n| 4 | | |\n| 5 | | |\n\n### Alternative Flows\n\n#### AF-1: [Alternative Flow Name]\n**Branches from:** Step [X]\n**Condition:** [When this alternative occurs]\n\n| Step | Actor Action | System Response |\n| 1a | | |\n| 1b | | |\n\n**Rejoins:** Step [X] or Ends\n\n#### AF-2: [Alternative Flow Name]\n[Same structure]\n\n### Exception Flows\n\n#### EF-1: [Exception Name]\n**Branches from:** Step [X]\n**Condition:** [Error condition]\n\n| Step | Actor Action | System Response |\n| E1 | | System displays error message |\n| E2 | [Actor corrects] | [System responds] |\n\n### Business Rules\n| BR# | Rule | Validation |\n| BR-1 | [Business rule] | [How validated] |\n| BR-2 | | |\n\n### Data Requirements\n| Field | Type | Required | Validation | Source |\n| [Field 1] | String | Yes | Max 50 chars | User input |\n| [Field 2] | | | | |\n\n### UI/UX Notes\n- [Screen/page where this occurs]\n- [Special UI considerations]\n\n### Non-Functional Requirements\n| Requirement | Target |\n| Response time | <2 seconds |\n| Availability | 99.9% |\n| Concurrent users | 100 |\n\n### Related Use Cases\n| UC ID | Relationship |\n| UC-002 | Extends this UC |\n| UC-003 | Included by this UC |\n\n### Open Questions\n| # | Question | Status | Answer |\n| 1 | [Question] | Open/Resolved | |",
+    "variables": [
+      {"name": "system", "description": "System name", "example": "Online Banking Portal", "required": true},
+      {"name": "actor", "description": "Primary actor", "example": "Retail Banking Customer", "required": true},
+      {"name": "feature", "description": "Feature area", "example": "Fund Transfers", "required": true}
+    ],
+    "category": "business-analysis",
+    "frameworks": ["UML Use Cases", "Requirements"],
+    "tier": "premium",
+    "tags": ["use-case", "requirements", "documentation"],
+    "estimatedTimeSaved": "2-3 hours"
+  },
+  {
+    "id": "pm-013",
+    "title": "Technical Debt Assessment",
+    "description": "Evaluate and prioritize technical debt with impact analysis and remediation planning.",
+    "template": "Act as a Technical Lead. Assess Technical Debt for {{system}}.\n\nSystem: {{system}}\nAge: {{age}}\nSymptoms: {{symptoms}}\n\n# Technical Debt Assessment\n\n## System Overview\n- System: {{system}}\n- Age: {{age}}\n- Technology Stack: [List]\n- Team Size: [X developers]\n- Deployment Frequency: [X per week/month]\n\n## Technical Debt Inventory\n\n### Code Debt\n| Item | Description | Location | Severity | Effort | Impact |\n| Legacy code | | [File/Module] | High/Med/Low | S/M/L | |\n| Code duplication | | | | | |\n| Missing tests | | | | | |\n| Poor naming | | | | | |\n\n### Architecture Debt\n| Item | Description | Impact | Severity | Effort |\n| Monolith | | | | |\n| Tight coupling | | | | |\n| Missing abstractions | | | | |\n\n### Infrastructure Debt\n| Item | Description | Risk | Severity | Effort |\n| Outdated dependencies | | Security | | |\n| Manual deployments | | Reliability | | |\n| No monitoring | | Visibility | | |\n\n### Documentation Debt\n| Item | Description | Impact | Effort |\n| Missing API docs | | Onboarding | |\n| Outdated README | | | |\n\n## Impact Analysis\n\n### Velocity Impact\n- Current velocity: [X story points/sprint]\n- Estimated velocity without debt: [Y story points/sprint]\n- Velocity tax: [Z]%\n\n### Quality Impact\n| Metric | Current | Target | Gap |\n| Bug rate | X/release | Y | |\n| Test coverage | X% | 80% | |\n| Build time | X min | Y min | |\n| Deployment failures | X% | <5% | |\n\n### Risk Exposure\n| Risk | Probability | Impact | Exposure |\n| Security vulnerability | | | |\n| System failure | | | |\n| Key person dependency | | | |\n\n## Prioritization Matrix\n\n| Debt Item | Business Impact | Remediation Effort | Priority Score | Rank |\n| | High/Med/Low | S/M/L/XL | | |\n\n## Remediation Roadmap\n\n### Quick Wins (1-2 weeks each)\n| Item | Effort | Impact | Owner |\n| | | | |\n\n### Medium-Term (1-3 months)\n| Item | Effort | Impact | Dependencies |\n| | | | |\n\n### Long-Term (3-6 months)\n| Item | Effort | Impact | Considerations |\n| | | | |\n\n## Investment Request\n| Phase | Duration | Team | Cost | Expected Benefit |\n| Phase 1 | | | | |\n| Phase 2 | | | | |\n\n## Recommendations\n1. Allocate [X]% of sprint capacity to debt reduction\n2. [Recommendation 2]\n3. [Recommendation 3]",
+    "variables": [
+      {"name": "system", "description": "System name", "example": "Core Payment Platform", "required": true},
+      {"name": "age", "description": "System age", "example": "8 years old, last major refactor 4 years ago", "required": true},
+      {"name": "symptoms", "description": "Current symptoms", "example": "Slow deployments, frequent bugs, hard to onboard new devs", "required": true}
+    ],
+    "category": "project-management",
+    "frameworks": ["Technical Debt", "Engineering Excellence"],
+    "tier": "premium",
+    "tags": ["technical-debt", "engineering", "code-quality"],
+    "estimatedTimeSaved": "4-5 hours"
+  },
+  {
+    "id": "sales-011",
+    "title": "Sales Forecast Model",
+    "description": "Build accurate sales forecasts using pipeline analysis and historical trends.",
+    "template": "Act as a Sales Operations Analyst. Create a Sales Forecast for {{team}}.\n\nTeam: {{team}}\nPeriod: {{period}}\nPipeline Data: {{pipeline}}\n\n# Sales Forecast\n\n## Forecast Overview\n- Team: {{team}}\n- Period: {{period}}\n- Forecast Date: [Date]\n- Forecast Owner: [Name]\n\n## Executive Summary\n| Metric | Target | Forecast | Confidence |\n| Revenue | $X | $Y | High/Med/Low |\n| New Logos | X | Y | |\n| Avg Deal Size | $X | $Y | |\n\n## Pipeline Analysis\n\n### Pipeline Summary\n| Stage | # Deals | Value | Weighted Value | Avg Age |\n| Prospect | | $ | $ | days |\n| Discovery | | | | |\n| Proposal | | | | |\n| Negotiation | | | | |\n| Commit | | | | |\n| **Total Pipeline** | | $ | $ | |\n\n### Stage Conversion Rates (Historical)\n| Stage | Historical Rate | Current Deals | Expected Closes |\n| Discovery → Proposal | 50% | X deals | Y deals |\n| Proposal → Negotiation | 60% | | |\n| Negotiation → Close | 70% | | |\n\n## Forecast by Method\n\n### Method 1: Weighted Pipeline\n| Stage | Value | Win Rate | Weighted |\n| | | | |\n| **Total Weighted** | | | $ |\n\n### Method 2: Historical Run Rate\n- Last Quarter: $X\n- Trailing 4Q Average: $Y\n- YoY Growth Rate: Z%\n- **Projected:** $W\n\n### Method 3: Rep-by-Rep Forecast\n| Rep | Commit | Best Case | Upside | Total Forecast |\n| [Name] | $ | $ | $ | $ |\n| [Name] | | | | |\n| **Total** | | | | |\n\n### Method 4: Category Forecast\n| Category | Closed | Commit | Best Case | Pipeline | Total |\n| Existing Customers | $ | $ | $ | $ | $ |\n| New Logos | | | | | |\n| **Total** | | | | | |\n\n## Final Forecast\n| Scenario | Amount | Probability | Weighted |\n| Commit | $ | 90% | $ |\n| Best Case | $ | 60% | $ |\n| Upside | $ | 30% | $ |\n| **Expected Value** | | | $ |\n\n## Risks & Opportunities\n\n### Upside Opportunities\n| Deal | Value | Probability | Notes |\n| | | | Could close early if... |\n\n### Downside Risks\n| Deal | Value | Risk | Mitigation |\n| | | May push to next Q | |\n\n## Assumptions & Notes\n- [Key assumption 1]\n- [Key assumption 2]\n\n## Action Items\n| Action | Owner | Due | Impact on Forecast |",
+    "variables": [
+      {"name": "team", "description": "Sales team", "example": "North America Enterprise", "required": true},
+      {"name": "period", "description": "Forecast period", "example": "Q4 2024", "required": true},
+      {"name": "pipeline", "description": "Pipeline context", "example": "$5M in pipeline, $2M in commit, 45 active opportunities", "required": true}
+    ],
+    "category": "sales",
+    "frameworks": ["Sales Forecasting", "Pipeline Management"],
+    "tier": "premium",
+    "tags": ["forecast", "pipeline", "revenue"],
+    "estimatedTimeSaved": "3-4 hours"
+  },
+  {
+    "id": "ops-013",
+    "title": "Service Level Agreement (SLA)",
+    "description": "Define SLAs with service levels, metrics, and remediation procedures.",
+    "template": "Act as a Service Delivery Manager. Create an SLA for {{service}}.\n\nService: {{service}}\nCustomer: {{customer}}\nCriticality: {{criticality}}\n\n# Service Level Agreement\n\n## Agreement Overview\n- **Service:** {{service}}\n- **Customer:** {{customer}}\n- **Effective Date:** [Date]\n- **Review Date:** [Date]\n- **Agreement Owner:** [Name]\n\n## Service Description\n{{service}}\n\n### Included Services\n- [Service component 1]\n- [Service component 2]\n- [Service component 3]\n\n### Excluded Services\n- [Exclusion 1]\n- [Exclusion 2]\n\n## Service Levels\n\n### Availability\n| Metric | Target | Measurement | Reporting |\n| Uptime | 99.9% | Monthly | Dashboard |\n| Planned Downtime | <4 hrs/month | Advance notice | 72 hours |\n\n### Performance\n| Metric | Target | Measurement | Threshold |\n| Response Time | <200ms | p95 | Alert at >500ms |\n| Throughput | 1000 TPS | Peak | |\n| Error Rate | <0.1% | Per day | |\n\n### Support Response\n| Priority | Description | Response Time | Resolution Time |\n| P1 Critical | Service down | 15 minutes | 4 hours |\n| P2 High | Major degradation | 1 hour | 8 hours |\n| P3 Medium | Minor issue | 4 hours | 24 hours |\n| P4 Low | Request/question | 8 hours | 72 hours |\n\n## Responsibilities\n\n### Service Provider Responsibilities\n- [Responsibility 1]\n- [Responsibility 2]\n- [Responsibility 3]\n\n### Customer Responsibilities\n- [Responsibility 1]\n- [Responsibility 2]\n\n## Service Credits\n\n| Availability | Credit |\n| 99.9% - 99.5% | 0% |\n| 99.5% - 99.0% | 10% |\n| 99.0% - 95.0% | 25% |\n| <95.0% | 50% |\n\n**Maximum Credit:** 50% of monthly fee\n**Claim Process:** Submit within 30 days\n\n## Reporting & Communication\n\n### Regular Reports\n| Report | Frequency | Contents | Recipient |\n| Performance Dashboard | Real-time | KPIs | Customer portal |\n| Monthly Report | Monthly | SLA compliance | Email |\n| Quarterly Review | Quarterly | Trends, improvements | Meeting |\n\n### Incident Communication\n| Event | Communication | Channel | Timeline |\n| P1 Incident | Immediate notification | Phone + Email | Within 15 min |\n| Status Update | Regular updates | Email | Every 30 min |\n| Resolution | Closure notice | Email | Within 1 hour |\n| RCA | Root cause analysis | Document | Within 5 days |\n\n## Escalation Path\n| Level | Role | Contact | Trigger |\n| 1 | Support Team | support@company.com | Initial contact |\n| 2 | Support Manager | [Name] | No response L1 |\n| 3 | Service Director | [Name] | P1 not resolved |\n| 4 | VP Operations | [Name] | Extended outage |\n\n## Review & Amendment\n- Annual review required\n- 30-day notice for changes\n- Both parties must agree to amendments\n\n## Signatures\n| Party | Name | Title | Signature | Date |\n| Provider | | | | |\n| Customer | | | | |",
+    "variables": [
+      {"name": "service", "description": "Service name", "example": "Cloud Hosting Platform", "required": true},
+      {"name": "customer", "description": "Customer name", "example": "Enterprise Client Corp", "required": true},
+      {"name": "criticality", "description": "Business criticality", "example": "Business-critical, 24/7 operations", "required": true}
+    ],
+    "category": "operations",
+    "frameworks": ["ITIL", "Service Management"],
+    "tier": "premium",
+    "tags": ["sla", "service-level", "support"],
+    "estimatedTimeSaved": "3-4 hours"
+  }
+]

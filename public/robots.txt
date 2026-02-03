@@ -1,0 +1,11 @@
+# robots.txt for BizPrompt Vault
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bizpromptvault.com/sitemap.xml
+
+# Disallow admin or private routes (none currently)
+# Disallow: /admin/
