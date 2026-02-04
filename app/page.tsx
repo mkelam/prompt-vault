@@ -11,7 +11,8 @@ import { useLicenseKey } from "@/hooks/useLicenseKey";
 import { useFavorites } from "@/hooks/useFavorites";
 import { useRecentlyViewed } from "@/hooks/useRecentlyViewed";
 import { useAnalytics } from "@/hooks/useAnalytics";
-import { Lock, Unlock, Crown, Heart, Clock } from "lucide-react";
+import { Lock, Unlock, Crown, Heart, Clock, Download } from "lucide-react";
+import { exportLibraryToJSON, exportLibraryToExcel } from "@/lib/export";
 
 type FilterMode = "all" | "favorites" | "recent";
 
@@ -22,6 +23,7 @@ export default function Home() {
   const [selectedPrompt, setSelectedPrompt] = useState<Prompt | null>(null);
   const [showUnlockModal, setShowUnlockModal] = useState(false);
   const [filterMode, setFilterMode] = useState<FilterMode>("all");
+  const [showDownloadMenu, setShowDownloadMenu] = useState(false);
 
   const { isUnlocked, isLoading, unlock, lock } = useLicenseKey();
   const { favorites, toggleFavorite, isFavorite } = useFavorites();
@@ -98,7 +100,7 @@ export default function Home() {
 
         {/* Premium Status Banner */}
         {!isLoading && (
-          <div className="flex justify-center pt-4">
+          <div className="flex flex-wrap justify-center gap-3 pt-4">
             {isUnlocked ? (
               <button
                 onClick={() => lock()}
@@ -117,6 +119,53 @@ export default function Home() {
                 Unlock {premiumCount} Premium Prompts
               </button>
             )}
+
+            {/* Download Library Button */}
+            <div className="relative">
+              <button
+                onClick={() => setShowDownloadMenu(!showDownloadMenu)}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 text-blue-300 text-sm hover:bg-blue-500/30 transition-colors"
+              >
+                <Download className="w-4 h-4" />
+                Download Library
+              </button>
+
+              {/* Download Dropdown */}
+              {showDownloadMenu && (
+                <div className="absolute top-full mt-2 right-0 z-50 bg-black/90 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl overflow-hidden min-w-[200px]">
+                  <button
+                    onClick={() => {
+                      exportLibraryToExcel(allPrompts);
+                      setShowDownloadMenu(false);
+                    }}
+                    className="w-full px-4 py-3 text-left text-sm text-white/80 hover:bg-white/10 transition-colors flex items-center gap-3"
+                  >
+                    <span className="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400">
+                      📊
+                    </span>
+                    <div>
+                      <div className="font-medium">Excel (.xlsx)</div>
+                      <div className="text-xs text-white/40">All prompts with summary</div>
+                    </div>
+                  </button>
+                  <button
+                    onClick={() => {
+                      exportLibraryToJSON(allPrompts);
+                      setShowDownloadMenu(false);
+                    }}
+                    className="w-full px-4 py-3 text-left text-sm text-white/80 hover:bg-white/10 transition-colors flex items-center gap-3 border-t border-white/10"
+                  >
+                    <span className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
+                      {"{ }"}
+                    </span>
+                    <div>
+                      <div className="font-medium">JSON (.json)</div>
+                      <div className="text-xs text-white/40">Raw data for developers</div>
+                    </div>
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         )}
       </header>
