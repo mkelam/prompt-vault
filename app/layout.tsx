@@ -138,7 +138,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} circuit-bg min-h-screen text-white/90`}>
-        <div className="fixed inset-0 bg-black/60 z-[-1]" />
+        <div className="fixed inset-0 bg-black/30 z-[-1]" />
         {children}
         <PWARegister />
       </body>
