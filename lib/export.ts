@@ -314,17 +314,6 @@ export function exportLibraryToHTML(prompts: Prompt[]) {
       color: #64748b;
       margin-bottom: 0.5rem;
     }
-    .template-box {
-      background: rgba(0,0,0,0.3);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 0.5rem;
-      padding: 1rem;
-      font-family: monospace;
-      font-size: 0.875rem;
-      line-height: 1.6;
-      white-space: pre-wrap;
-      color: #e2e8f0;
-    }
     .variable {
       background: rgba(59,130,246,0.3);
       color: #60a5fa;
@@ -343,40 +332,81 @@ export function exportLibraryToHTML(prompts: Prompt[]) {
     }
     .copy-btn:hover { transform: scale(1.02); }
     .copy-btn.copied { background: linear-gradient(135deg, #22c55e, #16a34a); }
-    /* Variable Input Styles */
+    /* Side-by-side layout for variables and preview */
+    .customization-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .variables-panel {
+      display: flex;
+      flex-direction: column;
+    }
+    .variables-panel-header {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #64748b;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .variables-scroll {
+      max-height: 400px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+    }
+    .variables-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .variables-scroll::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.05);
+      border-radius: 3px;
+    }
+    .variables-scroll::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.2);
+      border-radius: 3px;
+    }
+    .variables-scroll::-webkit-scrollbar-thumb:hover {
+      background: rgba(255,255,255,0.3);
+    }
     .variables-grid {
       display: grid;
-      gap: 1rem;
+      gap: 0.75rem;
     }
     .variable-input-group {
       background: rgba(0,0,0,0.2);
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 0.5rem;
-      padding: 1rem;
+      padding: 0.875rem;
     }
     .variable-label {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.375rem;
     }
     .variable-name {
       font-weight: 600;
       color: #60a5fa;
+      font-size: 0.875rem;
     }
     .variable-example {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: #64748b;
       font-style: italic;
     }
     .variable-desc {
-      font-size: 0.875rem;
+      font-size: 0.8rem;
       color: #94a3b8;
       margin-bottom: 0.5rem;
+      line-height: 1.4;
     }
     .variable-input {
       width: 100%;
-      padding: 0.625rem 0.875rem;
+      padding: 0.5rem 0.75rem;
       border-radius: 0.375rem;
       border: 1px solid rgba(255,255,255,0.2);
       background: rgba(0,0,0,0.3);
@@ -390,11 +420,18 @@ export function exportLibraryToHTML(prompts: Prompt[]) {
       box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
     }
     .variable-input::placeholder { color: #475569; }
+    .preview-panel {
+      display: flex;
+      flex-direction: column;
+    }
     .preview-section {
       background: rgba(59,130,246,0.1);
       border: 1px solid rgba(59,130,246,0.3);
       border-radius: 0.5rem;
       padding: 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
     .preview-label {
       display: flex;
@@ -417,6 +454,20 @@ export function exportLibraryToHTML(prompts: Prompt[]) {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.5; }
     }
+    .template-box {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      color: #e2e8f0;
+      flex: 1;
+      max-height: 400px;
+      overflow-y: auto;
+    }
     .filled-variable {
       background: rgba(34,197,94,0.3);
       color: #4ade80;
@@ -432,7 +483,7 @@ export function exportLibraryToHTML(prompts: Prompt[]) {
     .btn-row {
       display: flex;
       gap: 0.75rem;
-      margin-top: 1rem;
+      justify-content: flex-end;
     }
     .secondary-btn {
       background: rgba(255,255,255,0.1);
@@ -448,16 +499,37 @@ export function exportLibraryToHTML(prompts: Prompt[]) {
       background: rgba(255,255,255,0.15);
       color: #fff;
     }
+    /* No variables state */
+    .no-variables {
+      color: #64748b;
+      font-size: 0.875rem;
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(0,0,0,0.2);
+      border-radius: 0.5rem;
+      border: 1px dashed rgba(255,255,255,0.1);
+    }
     .empty-state {
       text-align: center;
       padding: 4rem 2rem;
       color: #64748b;
+    }
+    @media (max-width: 900px) {
+      .customization-layout {
+        grid-template-columns: 1fr;
+      }
+      .variables-scroll, .template-box {
+        max-height: 250px;
+      }
     }
     @media (max-width: 640px) {
       body { padding: 1rem; }
       h1 { font-size: 1.75rem; }
       .grid { grid-template-columns: 1fr; }
       .controls { flex-direction: column; }
+      .modal { padding: 1rem; }
+      .btn-row { flex-direction: column; }
+      .btn-row button { width: 100%; }
     }
   </style>
 </head>
@@ -503,22 +575,34 @@ export function exportLibraryToHTML(prompts: Prompt[]) {
         <p class="modal-section-title">Frameworks</p>
         <div id="modal-frameworks" class="card-frameworks"></div>
       </div>
-      <div class="modal-section" id="variables-section">
-        <p class="modal-section-title">Customize Variables</p>
-        <div class="variables-grid" id="modal-variables"></div>
-      </div>
-      <div class="modal-section">
-        <div class="preview-section">
-          <div class="preview-label">
-            <span class="live-indicator"></span>
-            Live Preview
+
+      <!-- Side-by-side customization layout -->
+      <div class="customization-layout" id="customization-section">
+        <!-- Left: Variables Panel -->
+        <div class="variables-panel" id="variables-section">
+          <div class="variables-panel-header">
+            <span>Customize Variables</span>
           </div>
-          <div class="template-box" id="modal-template"></div>
+          <div class="variables-scroll">
+            <div class="variables-grid" id="modal-variables"></div>
+          </div>
+        </div>
+
+        <!-- Right: Live Preview Panel -->
+        <div class="preview-panel">
+          <div class="preview-section">
+            <div class="preview-label">
+              <span class="live-indicator"></span>
+              Live Preview
+            </div>
+            <div class="template-box" id="modal-template"></div>
+          </div>
         </div>
       </div>
+
       <div class="btn-row">
-        <button class="copy-btn" id="copy-btn" onclick="copyPrompt()">Copy Filled Prompt</button>
         <button class="secondary-btn" onclick="resetVariables()">Reset</button>
+        <button class="copy-btn" id="copy-btn" onclick="copyPrompt()">Copy Filled Prompt</button>
       </div>
     </div>
   </div>
@@ -590,12 +674,11 @@ export function exportLibraryToHTML(prompts: Prompt[]) {
         .map(f => \`<span class="framework-tag">\${f}</span>\`).join('');
 
       // Render variable input fields
-      const variablesSection = document.getElementById('variables-section');
+      const variablesContainer = document.getElementById('modal-variables');
       if (selectedPrompt.variables.length === 0) {
-        variablesSection.style.display = 'none';
+        variablesContainer.innerHTML = '<div class="no-variables">No customizable variables for this prompt</div>';
       } else {
-        variablesSection.style.display = 'block';
-        document.getElementById('modal-variables').innerHTML = selectedPrompt.variables
+        variablesContainer.innerHTML = selectedPrompt.variables
           .map(v => \`
             <div class="variable-input-group">
               <div class="variable-label">
