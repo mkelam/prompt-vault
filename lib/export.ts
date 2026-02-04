@@ -343,6 +343,111 @@ export function exportLibraryToHTML(prompts: Prompt[]) {
     }
     .copy-btn:hover { transform: scale(1.02); }
     .copy-btn.copied { background: linear-gradient(135deg, #22c55e, #16a34a); }
+    /* Variable Input Styles */
+    .variables-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    .variable-input-group {
+      background: rgba(0,0,0,0.2);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 0.5rem;
+      padding: 1rem;
+    }
+    .variable-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .variable-name {
+      font-weight: 600;
+      color: #60a5fa;
+    }
+    .variable-example {
+      font-size: 0.75rem;
+      color: #64748b;
+      font-style: italic;
+    }
+    .variable-desc {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      margin-bottom: 0.5rem;
+    }
+    .variable-input {
+      width: 100%;
+      padding: 0.625rem 0.875rem;
+      border-radius: 0.375rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(0,0,0,0.3);
+      color: #fff;
+      font-size: 0.875rem;
+      transition: border-color 0.2s;
+    }
+    .variable-input:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+    }
+    .variable-input::placeholder { color: #475569; }
+    .preview-section {
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 0.5rem;
+      padding: 1rem;
+    }
+    .preview-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #60a5fa;
+      margin-bottom: 0.75rem;
+    }
+    .live-indicator {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    .filled-variable {
+      background: rgba(34,197,94,0.3);
+      color: #4ade80;
+      padding: 0.125rem 0.375rem;
+      border-radius: 0.25rem;
+    }
+    .unfilled-variable {
+      background: rgba(234,179,8,0.3);
+      color: #fbbf24;
+      padding: 0.125rem 0.375rem;
+      border-radius: 0.25rem;
+    }
+    .btn-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .secondary-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #94a3b8;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .secondary-btn:hover {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+    }
     .empty-state {
       text-align: center;
       padding: 4rem 2rem;
@@ -398,15 +503,23 @@ export function exportLibraryToHTML(prompts: Prompt[]) {
         <p class="modal-section-title">Frameworks</p>
         <div id="modal-frameworks" class="card-frameworks"></div>
       </div>
-      <div class="modal-section">
-        <p class="modal-section-title">Prompt Template</p>
-        <div class="template-box" id="modal-template"></div>
+      <div class="modal-section" id="variables-section">
+        <p class="modal-section-title">Customize Variables</p>
+        <div class="variables-grid" id="modal-variables"></div>
       </div>
       <div class="modal-section">
-        <p class="modal-section-title">Variables</p>
-        <div id="modal-variables"></div>
+        <div class="preview-section">
+          <div class="preview-label">
+            <span class="live-indicator"></span>
+            Live Preview
+          </div>
+          <div class="template-box" id="modal-template"></div>
+        </div>
       </div>
-      <button class="copy-btn" id="copy-btn" onclick="copyPrompt()">Copy Prompt</button>
+      <div class="btn-row">
+        <button class="copy-btn" id="copy-btn" onclick="copyPrompt()">Copy Filled Prompt</button>
+        <button class="secondary-btn" onclick="resetVariables()">Reset</button>
+      </div>
     </div>
   </div>
 
@@ -415,6 +528,7 @@ export function exportLibraryToHTML(prompts: Prompt[]) {
     let currentFilter = 'all';
     let searchQuery = '';
     let selectedPrompt = null;
+    let variableValues = {};
 
     function renderPrompts() {
       const grid = document.getElementById('prompts-grid');
@@ -463,24 +577,89 @@ export function exportLibraryToHTML(prompts: Prompt[]) {
       selectedPrompt = prompts.find(p => p.id === id);
       if (!selectedPrompt) return;
 
+      // Reset variable values for new prompt
+      variableValues = {};
+      selectedPrompt.variables.forEach(v => {
+        variableValues[v.name] = '';
+      });
+
       document.getElementById('modal-title').textContent = selectedPrompt.title;
       document.getElementById('modal-category').textContent = selectedPrompt.category;
       document.getElementById('modal-desc').textContent = selectedPrompt.description;
       document.getElementById('modal-frameworks').innerHTML = selectedPrompt.frameworks
         .map(f => \`<span class="framework-tag">\${f}</span>\`).join('');
 
-      // Highlight variables in template
-      const template = selectedPrompt.template.replace(/\\{\\{(\\w+)\\}\\}/g, '<span class="variable">{{\$1}}</span>');
-      document.getElementById('modal-template').innerHTML = template;
+      // Render variable input fields
+      const variablesSection = document.getElementById('variables-section');
+      if (selectedPrompt.variables.length === 0) {
+        variablesSection.style.display = 'none';
+      } else {
+        variablesSection.style.display = 'block';
+        document.getElementById('modal-variables').innerHTML = selectedPrompt.variables
+          .map(v => \`
+            <div class="variable-input-group">
+              <div class="variable-label">
+                <span class="variable-name">{{\${v.name}}}</span>
+                <span class="variable-example">e.g., \${v.example}</span>
+              </div>
+              <p class="variable-desc">\${v.description}</p>
+              <input
+                type="text"
+                class="variable-input"
+                data-variable="\${v.name}"
+                placeholder="Enter \${v.name.replace(/_/g, ' ')}..."
+                oninput="updateVariable('\${v.name}', this.value)"
+              />
+            </div>
+          \`).join('');
+      }
 
-      // Show variables
-      document.getElementById('modal-variables').innerHTML = selectedPrompt.variables
-        .map(v => \`<div style="margin-bottom:0.5rem"><strong>\${v.name}</strong>: \${v.description} <em style="color:#64748b">(e.g., \${v.example})</em></div>\`)
-        .join('');
+      // Update template preview
+      updateTemplatePreview();
 
       document.getElementById('modal').classList.add('active');
-      document.getElementById('copy-btn').textContent = 'Copy Prompt';
+      document.getElementById('copy-btn').textContent = 'Copy Filled Prompt';
       document.getElementById('copy-btn').classList.remove('copied');
+    }
+
+    function updateVariable(name, value) {
+      variableValues[name] = value;
+      updateTemplatePreview();
+    }
+
+    function updateTemplatePreview() {
+      if (!selectedPrompt) return;
+
+      let template = selectedPrompt.template;
+
+      // Replace variables with values or highlight unfilled ones
+      template = template.replace(/\\{\\{(\\w+)\\}\\}/g, (match, varName) => {
+        const value = variableValues[varName];
+        if (value && value.trim()) {
+          return \`<span class="filled-variable">\${value}</span>\`;
+        } else {
+          return \`<span class="unfilled-variable">\${match}</span>\`;
+        }
+      });
+
+      document.getElementById('modal-template').innerHTML = template;
+    }
+
+    function resetVariables() {
+      if (!selectedPrompt) return;
+
+      // Clear all values
+      selectedPrompt.variables.forEach(v => {
+        variableValues[v.name] = '';
+      });
+
+      // Clear all input fields
+      document.querySelectorAll('.variable-input').forEach(input => {
+        input.value = '';
+      });
+
+      // Update preview
+      updateTemplatePreview();
     }
 
     function closeModal() {
@@ -490,12 +669,20 @@ export function exportLibraryToHTML(prompts: Prompt[]) {
 
     function copyPrompt() {
       if (!selectedPrompt) return;
-      navigator.clipboard.writeText(selectedPrompt.template).then(() => {
+
+      // Get the filled prompt with variable values substituted
+      let filledPrompt = selectedPrompt.template;
+      filledPrompt = filledPrompt.replace(/\\{\\{(\\w+)\\}\\}/g, (match, varName) => {
+        const value = variableValues[varName];
+        return (value && value.trim()) ? value : match;
+      });
+
+      navigator.clipboard.writeText(filledPrompt).then(() => {
         const btn = document.getElementById('copy-btn');
         btn.textContent = 'Copied!';
         btn.classList.add('copied');
         setTimeout(() => {
-          btn.textContent = 'Copy Prompt';
+          btn.textContent = 'Copy Filled Prompt';
           btn.classList.remove('copied');
         }, 2000);
       });
