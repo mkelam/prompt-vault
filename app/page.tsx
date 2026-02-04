@@ -12,7 +12,7 @@ import { useFavorites } from "@/hooks/useFavorites";
 import { useRecentlyViewed } from "@/hooks/useRecentlyViewed";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { Lock, Unlock, Crown, Heart, Clock, Download } from "lucide-react";
-import { exportLibraryToJSON, exportLibraryToExcel } from "@/lib/export";
+import { exportLibraryToJSON, exportLibraryToExcel, exportLibraryToHTML } from "@/lib/export";
 
 type FilterMode = "all" | "favorites" | "recent";
 
@@ -146,6 +146,21 @@ export default function Home() {
                     <div>
                       <div className="font-medium">Excel (.xlsx)</div>
                       <div className="text-xs text-white/40">All prompts with summary</div>
+                    </div>
+                  </button>
+                  <button
+                    onClick={() => {
+                      exportLibraryToHTML(allPrompts);
+                      setShowDownloadMenu(false);
+                    }}
+                    className="w-full px-4 py-3 text-left text-sm text-white/80 hover:bg-white/10 transition-colors flex items-center gap-3 border-t border-white/10"
+                  >
+                    <span className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400">
+                      🌐
+                    </span>
+                    <div>
+                      <div className="font-medium">Interactive HTML</div>
+                      <div className="text-xs text-white/40">Offline-ready web app</div>
                     </div>
                   </button>
                   <button
